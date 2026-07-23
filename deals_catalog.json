@@ -16,7 +16,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/gl-chicago-architecture-boat-tours-2026?redemptionLocationId=605463f9-0a59-b7e3-dbce-015b5e488906"
+    "url": "https://www.groupon.com/deals/gl-chicago-architecture-boat-tours-2026?redemptionLocationId=605463f9-0a59-b7e3-dbce-015b5e488906",
+    "merchant_description": "Professional Chicago architecture boat tour featuring expert guide narration on iconic landmarks and city development from a unique river vantage point.",
+    "key_services": "Expert architecture commentary, 360-degree panoramic views, multi-branch river navigation"
   },
   {
     "deal_title": "Up to 32%: All-day Spa Admission for One or Two at King Spa Chicago",
@@ -35,7 +37,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/king-spa-and-sauna-chicago-35?redemptionLocationId=8b1313fe-5df1-b06a-768a-013a91155c05"
+    "url": "https://www.groupon.com/deals/king-spa-and-sauna-chicago-35?redemptionLocationId=8b1313fe-5df1-b06a-768a-013a91155c05",
+    "merchant_description": "King Spa Chicago is the largest Korean-inspired spa in the U.S., home to the rare Base Rock Room—one of only three worldwide. The 4.8-star rated destination (50,000+ reviews) operates 24/7, offering crystal-infused saunas, thermal hydrotherapy, and authentic Korean treatments.",
+    "key_services": "Base Rock Room, Crystal saunas, Korean massages"
   },
   {
     "deal_title": "65 or 90-Minute Foot Reflexology with Aloe Salt, Body Massage, and Spa Effervescent Foot Bath (Up To 45% Off)",
@@ -54,7 +58,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/foot-smile-spa-5?redemptionLocationId=8ea633fb-0a59-b7e3-dbce-015b82629d67"
+    "url": "https://www.groupon.com/deals/foot-smile-spa-5?redemptionLocationId=8ea633fb-0a59-b7e3-dbce-015b82629d67",
+    "merchant_description": "Foot Smile Spa specializes in expertly designed foot reflexology and body massage treatments complemented by rejuvenating spa effervescent foot baths. With over a decade of therapeutic expertise, their therapist tailors each session to individual needs for healing and relaxation.",
+    "key_services": "Foot reflexology, spa effervescent foot bath, body massage"
   },
   {
     "deal_title": "Luxury Spa Day with Pool Access at The Spa at Trump Chicago: 60 or 90 Minute Massage, Facial, Both or Couples, Up to 35%",
@@ -73,7 +79,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/the-spa-at-trump-chicago-11?redemptionLocationId=16186294-5b4b-b06a-768a-013ae2bbcfa4"
+    "url": "https://www.groupon.com/deals/the-spa-at-trump-chicago-11?redemptionLocationId=16186294-5b4b-b06a-768a-013ae2bbcfa4",
+    "merchant_description": "Renowned luxury spa within the iconic Trump International Hotel & Tower Chicago, specializing in transformative massage and facial treatments.",
+    "key_services": "Aroma Renewal Massage, Tailored Facial, Hot Stone Massage"
   },
   {
     "deal_title": "Ultimate Spa Experience! 50-Minute Massage, Facial or Couples Massage at Leaf Spa | Fairmont Chicago!",
@@ -92,7 +100,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/leaf-spa-at-the-fairmont?redemptionLocationId=9765d2fa-0008-b22d-b028-0185e2d75730"
+    "url": "https://www.groupon.com/deals/leaf-spa-at-the-fairmont?redemptionLocationId=9765d2fa-0008-b22d-b028-0185e2d75730",
+    "merchant_description": "Leaf Spa at Fairmont Chicago is a USA Today award-winning sanctuary specializing in holistic wellness, featuring signature experiences like the Wish Tree for intention-setting and the House of Knowledge, which celebrates the healing power of global botanicals.",
+    "key_services": "Facials with LED Therapy, Specialty massages with enhancements like Hot Stones and Scalp Rejuvenation, Couples spa experiences"
   },
   {
     "deal_title": "The LondonHouse Chicago on the River up to 41% Off Luxury Massage and Facial Treatments",
@@ -111,7 +121,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/the-spa-at-london-house-chicago?redemptionLocationId=442cf2fb-3edb-b478-8ad4-01596b9607f7"
+    "url": "https://www.groupon.com/deals/the-spa-at-london-house-chicago?redemptionLocationId=442cf2fb-3edb-b478-8ad4-01596b9607f7",
+    "merchant_description": "LondonHouse is a bespoke spa in Chicago specializing in customized massage and facial treatments tailored to your wellness needs, elevated with luxury enhancements like body melt therapies with peppermint and lime oils, plus traditional cupping.",
+    "key_services": "Bespoke Massage Therapy, Body Melt Foot Therapy, Chinese Cupping Therapy"
   },
   {
     "deal_title": "Unwind with a Swedish or Deep-Tissue Massage, Enhanced by Aromatherapy & CBD Oil for Solo or Couples",
@@ -130,7 +142,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/heavenly-massage-12?redemptionLocationId=acf4af41-1b49-bed3-9b7d-016d16c1cabb"
+    "url": "https://www.groupon.com/deals/heavenly-massage-12?redemptionLocationId=acf4af41-1b49-bed3-9b7d-016d16c1cabb",
+    "merchant_description": "Founded by Jim Bakopoulos, Heavenly Massage specializes in Swedish and Deep-Tissue massage with licensed practitioners across five Illinois locations, creating a serene sanctuary dedicated to relaxation and rejuvenation.",
+    "key_services": "Swedish massage, Deep-Tissue massage, Aromatherapy and steam therapy"
   },
   {
     "deal_title": "Tailor Your Personalized 75-Minute Massage for Ultimate Relaxation at Foot Smile Spa (Up to 50% Off)",
@@ -149,7 +163,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/foot-smile-spa-6?redemptionLocationId=be38aefe-6050-b4f3-b550-017a3a57d3cc"
+    "url": "https://www.groupon.com/deals/foot-smile-spa-6?redemptionLocationId=be38aefe-6050-b4f3-b550-017a3a57d3cc",
+    "merchant_description": "Foot Smile Spa specializes in personalized massage experiences tailored to each client's individual needs, with experienced therapists focused on long-term wellness rather than temporary relief.",
+    "key_services": "Build Your Own Massage, personalized therapeutic massage"
   },
   {
     "deal_title": "Indulge in Royal Treatment Packages or Swedish/Deep Tissue Massage at Versailles Massage & Bar - Up to 51% Off",
@@ -168,7 +184,9 @@
     ],
     "category": "spa",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/versailles-massage-bar-1?redemptionLocationId=a3fd3457-3cd6-b06a-9299-0152ec0c74c1"
+    "url": "https://www.groupon.com/deals/versailles-massage-bar-1?redemptionLocationId=a3fd3457-3cd6-b06a-9299-0152ec0c74c1",
+    "merchant_description": "Versailles Massage & Bar combines luxurious massage therapy with an onsite bar, creating a unique wellness experience where guests enjoy deep-tissue or Swedish massage paired with premium cocktails or champagne.",
+    "key_services": "Deep-tissue massage with aromatherapy, Swedish massage, massage with cocktail or champagne pairing"
   },
   {
     "deal_title": "Savor Homemade Delights – $25 or $40 General Spend on Food and Drinks at Omega Restaurant (Up to 37% Off)",
@@ -187,7 +205,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/omega-restaurant-24?redemptionLocationId=02f2f1fb-69dd-b06a-747e-013f0b044579"
+    "url": "https://www.groupon.com/deals/omega-restaurant-24?redemptionLocationId=02f2f1fb-69dd-b06a-747e-013f0b044579",
+    "merchant_description": "Family-owned favorite for decades, Omega Restaurant & Bakery serves classic American and authentic Greek specialties 24/7. In-house bakery crafts homemade desserts and their signature complimentary bread basket.",
+    "key_services": "Homemade in-house bakery, authentic Greek specialties, classic American dishes"
   },
   {
     "deal_title": "Savor Argentina in Chicago: Experience an Authentic Atmosphere at Artango Bar and Steakhouse",
@@ -206,7 +226,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/artango-bar-and-steakhouse?redemptionLocationId=23d85ef8-3cd6-b06a-9299-015283e069c4"
+    "url": "https://www.groupon.com/deals/artango-bar-and-steakhouse?redemptionLocationId=23d85ef8-3cd6-b06a-9299-015283e069c4",
+    "merchant_description": "Authentic Argentine steakhouse celebrating Buenos Aires' Golden Age with expertly prepared imported steaks, Art Nouveau décor, Prohibition-era cocktails, and weekly tango performances and live music.",
+    "key_services": "Imported steaks with ancestral cooking techniques, Prohibition-era cocktails, Tango performances and classes"
   },
   {
     "deal_title": "Relish the Vibrant Flavors at Monica's Mexican Restaurant on Favorites and Drinks (Up to 46% Off)",
@@ -225,7 +247,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/monica-s-mexican-restaurant?redemptionLocationId=fd93a700-4780-b06a-747e-013a914d9e59"
+    "url": "https://www.groupon.com/deals/monica-s-mexican-restaurant?redemptionLocationId=fd93a700-4780-b06a-747e-013a914d9e59",
+    "merchant_description": "Authentic Mexican restaurant preserving traditional family recipes using fresh ingredients. Lively atmosphere with outdoor seating perfect for any occasion.",
+    "key_services": "Traditional Mexican breakfasts, burritos and fajitas, signature margaritas"
   },
   {
     "deal_title": "Satisfy Your Cravings with $15 or $30 Towards Food and Drink at BoJono's Express (Up to 40% Off)",
@@ -243,7 +267,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/bojono-s-express?redemptionLocationId=819aeefe-4233-b06a-9298-013f1f29d68d"
+    "url": "https://www.groupon.com/deals/bojono-s-express?redemptionLocationId=819aeefe-4233-b06a-9298-013f1f29d68d",
+    "merchant_description": "Uptown Chicago's BoJono's Express specializes in handmade Italian-American casual dining using fresh local ingredients. Passion for tradition and quality defines every dish—from thin-crust pizzas to signature sandwiches—with a warm, neighborhood-focused approach.",
+    "key_services": "Crispy thin-crust pizzas, Italian sandwiches, rotating daily specials"
   },
   {
     "deal_title": "$100 Dining Credit at Geja's Cafe",
@@ -262,7 +288,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/gejas-cafe-8?redemptionLocationId=905eaef4-0c21-b06a-9053-014e17bdd675"
+    "url": "https://www.groupon.com/deals/gejas-cafe-8?redemptionLocationId=905eaef4-0c21-b06a-9053-014e17bdd675",
+    "merchant_description": "Iconic Chicago fondue restaurant since 1965, crowned America's Most Romantic Restaurant by USA Today and featuring live classical and Flamenco guitar music in an intimate candlelit setting with over 125 fine wines.",
+    "key_services": "Swiss Gruyere cheese fondue, beef and seafood fondue, Belgian chocolate fondue, live classical and Flamenco guitar"
   },
   {
     "deal_title": "Burger & Sushi Fusion at B.A.S.H., A Fine Dining Experience Up to 33% Off",
@@ -281,7 +309,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/b-a-s-h-burger-and-sushi-house?redemptionLocationId=01115167-000a-bbf2-4a56-01953f99fc82"
+    "url": "https://www.groupon.com/deals/b-a-s-h-burger-and-sushi-house?redemptionLocationId=01115167-000a-bbf2-4a56-01953f99fc82",
+    "merchant_description": "Fusion restaurant combining American burgers and Japanese sushi across casual outdoor patio and upscale event spaces.",
+    "key_services": "American burgers, Japanese sushi"
   },
   {
     "deal_title": "Discover the flavors at Izakaya Shinya with Japanese cuisine options worth $25 or $50, up to 37% off",
@@ -300,7 +330,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/izakaya-shinya?redemptionLocationId=2cb2e9fb-0008-bb71-5f41-018a1a56110a"
+    "url": "https://www.groupon.com/deals/izakaya-shinya?redemptionLocationId=2cb2e9fb-0008-bb71-5f41-018a1a56110a",
+    "merchant_description": "Izakaya Shinya brings authentic Japanese yakitori and izakaya dining to Chicago's Wicker Park, combining traditional cooking methods with locally sourced ingredients and premium Japanese imports.",
+    "key_services": "Yakitori, Grilled Seafood, Premium Sake"
   },
   {
     "deal_title": "Experience Jaimitos Burritos with a $10 Groupon offering authentic Mexican flavors and savings of up to 20%",
@@ -319,7 +351,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/jaimito-s-burritos-1?redemptionLocationId=fab51afa-731b-b06a-747e-013a9539a55d"
+    "url": "https://www.groupon.com/deals/jaimito-s-burritos-1?redemptionLocationId=fab51afa-731b-b06a-747e-013a9539a55d",
+    "merchant_description": "Authentic Mexican restaurant in Lincoln Park featuring extended late-night service until 3 AM on weekends, with inclusive menu options including gluten-free and vegan selections.",
+    "key_services": "Spicy gyros burrito, chorizo taco, tamales"
   },
   {
     "deal_title": "Ricano's Restaurant: Enjoy $15 or $30 Towards Mexican Cuisine Any Day (Up to 37% Off)",
@@ -338,7 +372,9 @@
     ],
     "category": "restaurant",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/ricanos-2?redemptionLocationId=93b48cfa-3de8-bed3-9b7d-0160e5d8ae3b"
+    "url": "https://www.groupon.com/deals/ricanos-2?redemptionLocationId=93b48cfa-3de8-bed3-9b7d-0160e5d8ae3b",
+    "merchant_description": "Authentic Mexican restaurant specializing in traditional dishes made with fresh ingredients and time-honored recipes. Casual, family-friendly atmosphere with outdoor seating.",
+    "key_services": "Traditional Mexican cuisine, Online ordering, Dine-in dining"
   },
   {
     "deal_title": "Rediscover Your Fitness Potential: CrossTown Fitness' 2 or 4 Weeks of Unlimited Fitness Classes- Up to 67% Off)",
@@ -357,7 +393,9 @@
     ],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/crosstown-fitness-chicago-4?redemptionLocationId=82e2bcf8-7e58-b06a-747e-013d5f12a445"
+    "url": "https://www.groupon.com/deals/crosstown-fitness-chicago-4?redemptionLocationId=82e2bcf8-7e58-b06a-747e-013d5f12a445",
+    "merchant_description": "CrossTown Fitness specializes in High-Intensity Interval Training (HIIT), scientifically designed to boost endurance and build strength efficiently. With expert trainers delivering 200+ weekly classes across four Chicago locations and a 4.9-star community rating, it's a vibrant gym where all fitness levels come together.",
+    "key_services": "High-Intensity Interval Training (HIIT) classes, expert-led cardio and strength training, on-site CTF Café with protein smoothies"
   },
   {
     "deal_title": "Boost Your Confidence & Learn Pole Dance at Lace and Steel Chicago",
@@ -372,7 +410,9 @@
     ],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/lace-and-steel-chicago?redemptionLocationId=e210f9fe-000a-bc7b-6199-019b5b6e6f06"
+    "url": "https://www.groupon.com/deals/lace-and-steel-chicago?redemptionLocationId=e210f9fe-000a-bc7b-6199-019b5b6e6f06",
+    "merchant_description": "Beginner-friendly pole dance studio offering inclusive, supportive classes designed to build confidence and fundamental skills. Step-by-step instruction welcomes adults of all body types and fitness levels.",
+    "key_services": "Beginner pole dance instruction, guided warm-ups, confidence-building fitness classes"
   },
   {
     "deal_title": "Up to 66% Off on Personal Trainer at Vazquez Fitness",
@@ -385,7 +425,9 @@
     "reviews": [],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/vazquez-fitness?redemptionLocationId=c9d0b4f9-75f7-b099-c72b-01768b80dade"
+    "url": "https://www.groupon.com/deals/vazquez-fitness?redemptionLocationId=c9d0b4f9-75f7-b099-c72b-01768b80dade",
+    "merchant_description": "Former division 1 athlete helps the community reach their fitness goals for fat loss and body sculpting.",
+    "key_services": "fat loss training, strength development, athletic development"
   },
   {
     "deal_title": "Up to 51% Off on Acupuncture at Chicago College of Oriental Medicine",
@@ -404,7 +446,9 @@
     ],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/chicago-college-of-oriental-medicine?redemptionLocationId=a79282fc-0014-b213-84ab-0192084267a4"
+    "url": "https://www.groupon.com/deals/chicago-college-of-oriental-medicine?redemptionLocationId=a79282fc-0014-b213-84ab-0192084267a4",
+    "merchant_description": "Student-led acupuncture clinic combining traditional Chinese medicine with modern medical practices. Located across from Millennium Park with focus on personalized treatment plans and preventive wellness.",
+    "key_services": "Acupuncture treatments, tongue and pulse diagnosis, stress and insomnia management"
   },
   {
     "deal_title": "Discover Mind Body Defense's kickboxing classes with options for 10 sessions or a month of unlimited training, up to 65% off",
@@ -423,7 +467,9 @@
     ],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/mind-body-defense-1?redemptionLocationId=c8760db5-31ba-bfdf-8e3a-01561ff00578"
+    "url": "https://www.groupon.com/deals/mind-body-defense-1?redemptionLocationId=c8760db5-31ba-bfdf-8e3a-01561ff00578",
+    "merchant_description": "Mind Body Defense leads expert kickboxing classes that blend martial arts, boxing, and fitness training. Beyond physical skills, the studio builds confidence through holistic self-defense training in an inclusive community welcoming all levels.",
+    "key_services": "Kickboxing, Self-defense training, Integrated martial arts fitness"
   },
   {
     "deal_title": "Enjoy Barre3 West Loop's Yoga-Barre Classes with Strength & Mindfulness, Up to 58% Off",
@@ -442,7 +488,9 @@
     ],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/barre3-west-loop?redemptionLocationId=2e2eacfe-75f7-b099-c72b-017b17e42b42"
+    "url": "https://www.groupon.com/deals/barre3-west-loop?redemptionLocationId=2e2eacfe-75f7-b099-c72b-017b17e42b42",
+    "merchant_description": "Barre3 specializes in full-body barre fitness classes that blend ballet, Pilates, and yoga to deliver strength conditioning, cardio, and mindfulness training.",
+    "key_services": "Ballet-Pilates-yoga fusion classes, Full-body conditioning, Flexibility and endurance training"
   },
   {
     "deal_title": "Join The Bar Method South Loop for Five Unique Barre Classes with Up to 60% Off",
@@ -455,7 +503,9 @@
     "reviews": [],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/the-bar-method-south-loop?redemptionLocationId=84c773fc-6393-b478-8ad4-015a0519a04d"
+    "url": "https://www.groupon.com/deals/the-bar-method-south-loop?redemptionLocationId=84c773fc-6393-b478-8ad4-015a0519a04d",
+    "merchant_description": "Transformative barre studio in Chicago's South Loop, led by highly-trained instructors who personalize each session combining strength and flexibility training for all fitness levels.",
+    "key_services": "Personalized barre classes, strength and flexibility training, virtual classes"
   },
   {
     "deal_title": "Begin Your Health Journey with 3 Hot Yoga Classes",
@@ -474,7 +524,9 @@
     ],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/bikram-yoga-west-loop-chicago-1-1?redemptionLocationId=78c2b1fe-43c9-b06a-9298-013c0e7d104d"
+    "url": "https://www.groupon.com/deals/bikram-yoga-west-loop-chicago-1-1?redemptionLocationId=78c2b1fe-43c9-b06a-9298-013c0e7d104d",
+    "merchant_description": "Woman- and minority-owned Bikram Yoga Chicago specializes in authentic hot yoga and Classical Mat practice, guided by expert instructors in a serene studio designed to melt stress and build genuine community connection.",
+    "key_services": "Bikram Yoga, Classical Mat yoga"
   },
   {
     "deal_title": "Elevate Your Fitness with Hyper, Hybrid Strength & Conditioning, and HIIT Classes at On Your Mark Coaching and Training",
@@ -487,7 +539,9 @@
     "reviews": [],
     "category": "fitness",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/on-your-mark-coaching-and-training-1?redemptionLocationId=885ef1f1-1508-b1fa-d5e8-016315d25352"
+    "url": "https://www.groupon.com/deals/on-your-mark-coaching-and-training-1?redemptionLocationId=885ef1f1-1508-b1fa-d5e8-016315d25352",
+    "merchant_description": "Fitness coaching studio specializing in 45-minute circuit-based classes including Hyper (hypertrophy with strict form), HIIT, and Hybrid Strength & Conditioning for all fitness levels.",
+    "key_services": "Hyper (hypertrophy) classes, High-Intensity Interval Training (HIIT), Hybrid Strength & Conditioning"
   },
   {
     "deal_title": "Adventure Awaits with Wateriders' Sunset, Moonlight, Guided Kayak Tours & Rentals in the Heart of Downtown Chicago",
@@ -506,7 +560,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/wateriders-kayak-tours-kingsbury-location?redemptionLocationId=b1441702-19cf-b06a-9052-013a911ace18"
+    "url": "https://www.groupon.com/deals/wateriders-kayak-tours-kingsbury-location?redemptionLocationId=b1441702-19cf-b06a-9052-013a911ace18",
+    "merchant_description": "Wateriders, founded in 1997, is a locally owned pioneer in urban kayaking offering guided sunset and moonlight tours plus rentals on the Chicago River. The 29-year-old company reveals Chicago's history and architecture through professional-led adventures, earning a 4.8-star rating.",
+    "key_services": "Sunset Paddle Tours, Moonlight Paddle Tours, Kayak Rentals"
   },
   {
     "deal_title": "Discover Frank Lloyd Wright's Vision: Iconic Home, Studio, and Architectural Masterpieces in Chicago, IL",
@@ -525,7 +581,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/gl-frank-lloyd-wright-trust?redemptionLocationId=99cfc882-4780-b06a-747e-013a913ce7e4"
+    "url": "https://www.groupon.com/deals/gl-frank-lloyd-wright-trust?redemptionLocationId=99cfc882-4780-b06a-747e-013a913ce7e4",
+    "merchant_description": "The Frank Lloyd Wright Trust provides guided tours of Frank Lloyd Wright's Prairie style architectural masterpieces in the Chicago area, including his personal Home and Studio. These World Heritage-inscribed sites showcase the revolutionary vision that transformed modern American architecture.",
+    "key_services": "Guided interior tours of Frank Lloyd Wright Home and Studio, Robie House, Unity Temple"
   },
   {
     "deal_title": "Discover Chicago's Rich Tapestry: Dive into History at Chicago History Museum! Save Up to 46% on Admission for Up to Six",
@@ -544,7 +602,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/chicago-history-museum-1-10?redemptionLocationId=c82687e7-6189-b7e3-dbce-015d16cff612"
+    "url": "https://www.groupon.com/deals/chicago-history-museum-1-10?redemptionLocationId=c82687e7-6189-b7e3-dbce-015d16cff612",
+    "merchant_description": "Chicago History Museum brings the city's defining moments to life through interactive galleries and multi-sensory experiences. Over 20 million items in permanent exhibitions like 'Chicago: Crossroads of America' and 'Sensing Chicago' showcase the city's transformation from frontier settlement to global powerhouse.",
+    "key_services": "Interactive exhibitions, multi-sensory experiences, film presentations"
   },
   {
     "deal_title": "Create a Personalized Perfume That Reflects Your Energy - Up to 41% Off at Lovely Intentions",
@@ -563,7 +623,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/lovely-intentions-2?redemptionLocationId=73cb6d87-2cd3-4d35-bac9-58eb8a266d9f"
+    "url": "https://www.groupon.com/deals/lovely-intentions-2?redemptionLocationId=73cb6d87-2cd3-4d35-bac9-58eb8a266d9f",
+    "merchant_description": "Mindfulness-focused perfume studio where participants design custom scents through guided fragrance blending, infused with crystals and botanicals, and enhanced with personal intention-setting.",
+    "key_services": "Personalized scent design, crystal & botanical infusion, intention labeling"
   },
   {
     "deal_title": "Flyover in Chicago Tickets – Immersive Flight Experience Deals for Believe Chicago & Canadian Rockies",
@@ -582,7 +644,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/gl-flyover-chicago-navy-pier?redemptionLocationId=f67146fa-0008-b536-236d-018d243d7af5"
+    "url": "https://www.groupon.com/deals/gl-flyover-chicago-navy-pier?redemptionLocationId=f67146fa-0008-b536-236d-018d243d7af5",
+    "merchant_description": "An immersive flying theater at Navy Pier that uses motion seats, wind, mist, and scent effects to transport guests over Chicago's iconic landmarks and hidden gems.",
+    "key_services": "Motion-enabled flying theater, multisensory effects, cinematic landmark tours"
   },
   {
     "deal_title": "General Admission to 360 Chicago Observation Deck",
@@ -601,7 +665,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/gl-360-chicago-observation-deck-formerly-john-hancock-observatory?redemptionLocationId=0d6956f9-673d-b06a-747e-014547739f24"
+    "url": "https://www.groupon.com/deals/gl-360-chicago-observation-deck-formerly-john-hancock-observatory?redemptionLocationId=0d6956f9-673d-b06a-747e-014547739f24",
+    "merchant_description": "High-altitude observation deck located 1,030 feet above the Magnificent Mile on the 94th floor, offering panoramic views of the Chicago skyline and Lake Michigan that extend across four states. Features interactive exhibits and CloudBar, Chicago's highest bar.",
+    "key_services": "Observation deck with panoramic city views, Cloud Bar access, TILT experience"
   },
   {
     "deal_title": "Early Access or General-Admission at The Field Museum",
@@ -620,7 +686,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/gl-field-museum-25?redemptionLocationId=f5a312fb-65eb-b06a-768a-013ae35dd1a7"
+    "url": "https://www.groupon.com/deals/gl-field-museum-25?redemptionLocationId=f5a312fb-65eb-b06a-768a-013ae35dd1a7",
+    "merchant_description": "Home to iconic exhibits like SUE the T. rex and Maximo the Titanosaur, the Field Museum features world-renowned displays of ancient Egyptian artifacts, dazzling gemstones, and rich biodiversity across multiple halls.",
+    "key_services": "Dinosaur exhibits, Ancient Egyptian artifacts, Gemstone displays"
   },
   {
     "deal_title": "Immerse in Spine-Tingling History: Admission for One, Two, or Four at Medieval Torture Museum. Save Up to 26%",
@@ -639,7 +707,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/medieval-torture-collection-chicago-chicago-medieval-torture-audio-guide-ghost-hunting?redemptionLocationId=a57cf957-75f7-b099-c72b-017bac44a351"
+    "url": "https://www.groupon.com/deals/medieval-torture-collection-chicago-chicago-medieval-torture-audio-guide-ghost-hunting?redemptionLocationId=a57cf957-75f7-b099-c72b-017bac44a351",
+    "merchant_description": "One of the largest interactive torture museums in the USA, featuring a 6,000 square foot exhibition of historical punishment and execution devices with wax sculptures and immersive audio guide.",
+    "key_services": "Audio-guided torture and execution device exhibition, wax sculptures depicting executioners and victims, ghost hunting experience app"
   },
   {
     "deal_title": "Chicago Seadog Lakefront Speedboat Cruise with City Cruises",
@@ -658,7 +728,9 @@
     ],
     "category": "things+to+do",
     "city": "Chicago",
-    "url": "https://www.groupon.com/deals/gl-chicago-seadog-speedboat-tour-city-experiences?redemptionLocationId=b1cd16fb-1cbb-b4f3-b550-0180d858a33f"
+    "url": "https://www.groupon.com/deals/gl-chicago-seadog-speedboat-tour-city-experiences?redemptionLocationId=b1cd16fb-1cbb-b4f3-b550-0180d858a33f",
+    "merchant_description": "Seadog Lakefront offers Lake Michigan's most iconic speedboat tours with panoramic Chicago views, featuring daily speedboat rides and fireworks cruises from Navy Pier.",
+    "key_services": "Speedboat Tours, Fireworks Cruises, Chicago sightseeing tours"
   },
   {
     "deal_title": "Single or Couples Deep-Tissue or Swedish Massage with Hot Stones at Renew Body SPA (Up to 52% Off)",
@@ -677,7 +749,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/renew-body-spa-inc?redemptionLocationId=cf33cbf8-200d-b099-c72b-016be827be13"
+    "url": "https://www.groupon.com/deals/renew-body-spa-inc?redemptionLocationId=cf33cbf8-200d-b099-c72b-016be827be13",
+    "merchant_description": "Women-owned Renew Body Spa Center is a welcoming sanctuary specializing in expert therapeutic massage enhanced with hot stones in the heart of New York.",
+    "key_services": "Swedish Massage with Hot Stones, Deep-Tissue Massage with Hot Stones, Couples Massage"
   },
   {
     "deal_title": "General Admission for Full-Day Korean-Style Jjimjilbang Spa w/ Complimentary Amenities - Up to 41% Off",
@@ -696,7 +770,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/the-spa-club-3?redemptionLocationId=a7c29df9-0008-ba48-8804-018721a36a35"
+    "url": "https://www.groupon.com/deals/the-spa-club-3?redemptionLocationId=a7c29df9-0008-ba48-8804-018721a36a35",
+    "merchant_description": "Premium Korean-style jjimjilbang spa in NYC combining traditional wellness practices with modern technology across 15,000 sq. ft. of specialty facilities.",
+    "key_services": "Red Clay Room, Himalayan Salt Room, Recovery Rooms"
   },
   {
     "deal_title": "Indulge in a Body Scrub and Foot Reflexology or Scalp Massage Options at Sun And Sky Spa Salon (Up To 47% Off)",
@@ -715,7 +791,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/sun-and-sky-spa-salon-1?redemptionLocationId=a69a1542-75f7-b099-c72b-017c05275940"
+    "url": "https://www.groupon.com/deals/sun-and-sky-spa-salon-1?redemptionLocationId=a69a1542-75f7-b099-c72b-017c05275940",
+    "merchant_description": "Prime Downtown Brooklyn spa combining luxury with accessibility, featuring experienced therapists with over a decade of expertise and couples' treatment options.",
+    "key_services": "Foot Reflexology Treatment, Body Scrub, Scalp Massage"
   },
   {
     "deal_title": "Single or Couple: 60-Min Deluxe or 90-Min Signature Body Massage, Hot Stone & More at Kingdom Spa (Upto 55% Off)",
@@ -734,7 +812,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/kingdom-spa?redemptionLocationId=3351c1a4-000a-bab3-251e-019c2a6fb22f"
+    "url": "https://www.groupon.com/deals/kingdom-spa?redemptionLocationId=3351c1a4-000a-bab3-251e-019c2a6fb22f",
+    "merchant_description": "Kingdom Spa specializes in customized body massages using hot stones and premium oils, designed for individuals and couples seeking relaxation and wellness in a serene environment.",
+    "key_services": "Body massage with hot stones, essential oil treatments, couples massage"
   },
   {
     "deal_title": "Enjoy a Serene Escape with a Spa Pass for One (Valid Monday–Thursday) at Island Spa and Sauna",
@@ -753,7 +833,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/island-spa-sauna-10?redemptionLocationId=07423ff7-758e-b06a-9053-014cf1c60962"
+    "url": "https://www.groupon.com/deals/island-spa-sauna-10?redemptionLocationId=07423ff7-758e-b06a-9053-014cf1c60962",
+    "merchant_description": "Island Spa & Sauna is a modern Korean spa in Edison, NJ, featuring five distinctive saunas—including specialty thermal rooms and igloo-style clay domes—offering therapeutic heat treatments rooted in cultural wellness tradition.",
+    "key_services": "Salt Room thermal therapy, igloo-style clay sauna domes, Korean bathing area"
   },
   {
     "deal_title": "Get One or Two Aromatherapy Massages or Massage & Hot Stones for Two at Green Aura Spa (Up to 55%Off)",
@@ -772,7 +854,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/green-aura-spa?redemptionLocationId=607c46f8-75f7-b099-c72b-017b558bb0e7"
+    "url": "https://www.groupon.com/deals/green-aura-spa?redemptionLocationId=607c46f8-75f7-b099-c72b-017b558bb0e7",
+    "merchant_description": "Green Aura Aesthetics Spa specializes in aromatherapy massage designed to promote deep relaxation and mental clarity through the therapeutic use of high-quality essential oils.",
+    "key_services": "Aromatherapy Massage, Hot Stone Massage"
   },
   {
     "deal_title": "General Admission to King Spa & Sauna NJ – Daily or Monthly Membership Admission Packages with Uniform & Locker Included",
@@ -791,7 +875,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/king-spa-sauna-6?redemptionLocationId=085a5dfb-039e-b06a-9298-013a8fce9ae9"
+    "url": "https://www.groupon.com/deals/king-spa-sauna-6?redemptionLocationId=085a5dfb-039e-b06a-9298-013a8fce9ae9",
+    "merchant_description": "Long considered a hidden gem of Palisades Park, this 40,000 sq. ft. multilevel Korean spa specializes in traditional wellness and healing therapies using natural minerals, crystals, and rare materials.",
+    "key_services": "Bulhanjeungmak traditional dry sauna, Gold and Amethyst healing rooms, mineral and clay therapy chambers"
   },
   {
     "deal_title": "Wildflower Spa: Flushing Offers 60 or 90-minute Body & Foot Combo Massage For Solo or Couple (Up to 47% Off)",
@@ -810,7 +896,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/wildflower-spa-flushing-ny-1?redemptionLocationId=e40368ff-000a-b2e1-614d-019b9f2de3c7"
+    "url": "https://www.groupon.com/deals/wildflower-spa-flushing-ny-1?redemptionLocationId=e40368ff-000a-b2e1-614d-019b9f2de3c7",
+    "merchant_description": "Wildflower Spa: Flushing is a personalized urban sanctuary staffed by expert, certified therapists. They specialize in rejuvenating body and foot combo massages designed to melt away tension and restore wellness.",
+    "key_services": "Body & foot combo massage, Swedish massage, deep tissue massage"
   },
   {
     "deal_title": "Get One or Two Full-Body Lymphatic Massage Sessions at Wildflower Spa (Up to 65% Off)",
@@ -829,7 +917,9 @@
     ],
     "category": "spa",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/wildflower-spa-1-1?redemptionLocationId=07948e03-0008-b047-04b4-018f07bafa60"
+    "url": "https://www.groupon.com/deals/wildflower-spa-1-1?redemptionLocationId=07948e03-0008-b047-04b4-018f07bafa60",
+    "merchant_description": "Wildflower Spa offers an escape into tranquility with personalized lymphatic massage across Manhattan and Flushing locations.",
+    "key_services": "Full-body lymphatic massage"
   },
   {
     "deal_title": "Savor a NY Times-Praised 15-Course Omakase Dinner for 2, 4 or 6 with Drinks or $50 Dining Credit (Up to 37% Off)",
@@ -848,7 +938,9 @@
     ],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/shirokuro?redemptionLocationId=0bc51bfb-000a-bbd2-450e-0197a0908cdc"
+    "url": "https://www.groupon.com/deals/shirokuro?redemptionLocationId=0bc51bfb-000a-bbd2-450e-0197a0908cdc",
+    "merchant_description": "Artistic Japanese omakase by Master Sushi Chef Hiroji Sawatari (trained at 2 Michelin-starred Sushi Yasuda), set in a hand-drawn illustration atmosphere. Seasonal ingredients, sustainable sourcing, and curated menus create an unforgettable high-end dining experience.",
+    "key_services": "15-Course Omakase Dinner, Premium Cocktails & Sake, Flexible Dining Credit"
   },
   {
     "deal_title": "Seafood Boil Feast For Two with Cocktails at Shaking Crab Williamsburg (Up to 52% off)",
@@ -867,7 +959,9 @@
     ],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/shaking-crab-16?redemptionLocationId=73e2b0c1-75f7-b099-c72b-017d6a250bb2"
+    "url": "https://www.groupon.com/deals/shaking-crab-16?redemptionLocationId=73e2b0c1-75f7-b099-c72b-017d6a250bb2",
+    "merchant_description": "Authentic Cajun seafood boil restaurant known for steaming shellfish drenched in bold, buttery spices. Community-focused spot with lively vibes where the experience—#SHAKINGTIME—is about shelling, feasting, and celebrating together.",
+    "key_services": "The Be Shellfish Cajun Boil (Crawfish, Mussels, Head-On Shrimp), Signature House Cocktails, Seafood sides"
   },
   {
     "deal_title": "Three-Course Mexican Dinner with Cocktails at Gonzalez y Gonzalez! Save up to 54%",
@@ -886,7 +980,9 @@
     ],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/gonzalez-y-gonzalez-2?redemptionLocationId=56d859ff-5df1-b06a-768a-013a914caffb"
+    "url": "https://www.groupon.com/deals/gonzalez-y-gonzalez-2?redemptionLocationId=56d859ff-5df1-b06a-768a-013a914caffb",
+    "merchant_description": "Iconic Mexican restaurant and entertainment venue in NYC since 1989, known for its vibrant atmosphere with live salsa bands and complimentary salsa dance classes.",
+    "key_services": "Live salsa bands, free salsa dance classes, table-side guacamole"
   },
   {
     "deal_title": "Exquisite Dinner for Two or Four; Valid Wednesday, Thursday, & Sunday at Le Jardin Bistro NYC (Up to 46% Off)",
@@ -905,7 +1001,9 @@
     ],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/le-jardin-bistro-nyc-3?redemptionLocationId=636d16a5-0013-bbf4-3d15-0191ebf02e17"
+    "url": "https://www.groupon.com/deals/le-jardin-bistro-nyc-3?redemptionLocationId=636d16a5-0013-bbf4-3d15-0191ebf02e17",
+    "merchant_description": "Le Jardin Bistro is a garden-inspired French bistro in NYC, recognized by The New York Times and Thrillist for meticulously crafted authentic French cuisine.",
+    "key_services": "French tasting dinners, specialty cocktails"
   },
   {
     "deal_title": "Dinner for Two or Four with Vibrant Caribbean Cuisine, Cocktails, Wines or Beers in Brooklyn (Up to 48% Off)",
@@ -920,7 +1018,9 @@
     ],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/blindenpete?redemptionLocationId=f849b7ff-000a-bd0f-4454-0197a090c819"
+    "url": "https://www.groupon.com/deals/blindenpete?redemptionLocationId=f849b7ff-000a-bd0f-4454-0197a090c819",
+    "merchant_description": "Brooklyn Caribbean restaurant known for vibrant, authentic island cuisine served in a warm, welcoming atmosphere.",
+    "key_services": "Caribbean cuisine, cocktails and wines"
   },
   {
     "deal_title": "Steak Dinner with Wine, Cocktail Brunch or up to $150 in Gift Cards at Talia's Steakhouse",
@@ -939,7 +1039,9 @@
     ],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/talia-s-steakhouse-10?redemptionLocationId=b54277fb-0508-b06a-9053-0152ebfe9913"
+    "url": "https://www.groupon.com/deals/talia-s-steakhouse-10?redemptionLocationId=b54277fb-0508-b06a-9053-0152ebfe9913",
+    "merchant_description": "Established 23 years ago on Manhattan's Upper West Side, Talia's is a premier glatt kosher steakhouse that uniquely blends classic American and Middle Eastern cuisines. Renowned as a vibrant community gathering place, the restaurant delivers candlelit elegance and live musical entertainment.",
+    "key_services": "Glatt kosher steakhouse, live music performances, prix-fixe menus"
   },
   {
     "deal_title": "$20–$100 Dining Credit for Food & Drinks at LA-TAZA Cafe",
@@ -952,7 +1054,9 @@
     "reviews": [],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/la-taza-cafe?redemptionLocationId=c6b238fa-2776-bfd9-37c8-0173f82bea78"
+    "url": "https://www.groupon.com/deals/la-taza-cafe?redemptionLocationId=c6b238fa-2776-bfd9-37c8-0173f82bea78",
+    "merchant_description": "La Taza Café specializes in authentic Latin cuisine from Mexico and the Caribbean, crafted from traditional recipes and paired with artisanal locally-sourced coffee.",
+    "key_services": "Mexican and Caribbean cuisine, locally-sourced artisan coffee, signature empanadas"
   },
   {
     "deal_title": "Explore 60/90-Min AYCE Tacos & Drinks Dinner, Bottomless Brunch for 2, & More at H&H Cantina - Up to 58% Off",
@@ -971,7 +1075,9 @@
     ],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/h-h-cantina?redemptionLocationId=54bed604-0009-b57d-b6da-019a8fc74129"
+    "url": "https://www.groupon.com/deals/h-h-cantina?redemptionLocationId=54bed604-0009-b57d-b6da-019a8fc74129",
+    "merchant_description": "A modern Mexican lounge in East Village that reimagines the classic cantina with expert craft cocktails featuring curated spirits and authentic ingredients. The artisanal experience extends to innovative small plates designed for sharing, creating a celebration of contemporary Mexican hospitality.",
+    "key_services": "Craft cocktails with authentic Mexican ingredients, unlimited tacos & margaritas, bottomless brunch"
   },
   {
     "deal_title": "Dive into Mexiterranean Grill's 90-Minute Bottomless Brunch for Two or Four (Up To 51% Off)",
@@ -990,7 +1096,9 @@
     ],
     "category": "restaurant",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/mexiterranean-grill?redemptionLocationId=a27382fc-4ec6-bac5-abc4-017387ca5c1a"
+    "url": "https://www.groupon.com/deals/mexiterranean-grill?redemptionLocationId=a27382fc-4ec6-bac5-abc4-017387ca5c1a",
+    "merchant_description": "Fusion restaurant blending Mexican and Mediterranean cuisines in a casual, laid-back atmosphere with locally-sourced ingredients.",
+    "key_services": "Bottomless brunch, Carne Asada Burritos, Falafel Pitas"
   },
   {
     "deal_title": "Boost fitness and strength with 5 or 7 kickboxing classes at Brooklyn Martial Arts, featuring up to 65% off",
@@ -1009,7 +1117,9 @@
     ],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/brooklyn-martial-arts-5?redemptionLocationId=cc3fa5fe-5df1-b06a-768a-013a8fde79b0"
+    "url": "https://www.groupon.com/deals/brooklyn-martial-arts-5?redemptionLocationId=cc3fa5fe-5df1-b06a-768a-013a8fde79b0",
+    "merchant_description": "Brooklyn Martial Arts, led by Master Peter Lawson, combines comprehensive martial arts training with a strong community focus on values like patience and respect, all in state-of-the-art facilities.",
+    "key_services": "High-energy kickboxing classes, comprehensive martial arts training, self-defense instruction"
   },
   {
     "deal_title": "Push Your Limits w/ High-Intensity Interval Training & Weightlifting at Tabata Ultimate Fitness (Up to 56% Off)",
@@ -1028,7 +1138,9 @@
     ],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/tabata-ultimate-fitness-inc?redemptionLocationId=465ba9f6-200d-b099-c72b-016e1461179a"
+    "url": "https://www.groupon.com/deals/tabata-ultimate-fitness-inc?redemptionLocationId=465ba9f6-200d-b099-c72b-016e1461179a",
+    "merchant_description": "Tabata fitness studio blending HIIT and weightlifting for full-body training. Expert trainers provide personalized guidance in an energetic, community-focused environment.",
+    "key_services": "Tabata classes, HIIT and weightlifting training, expert coaching"
   },
   {
     "deal_title": "Discover Diverse Yoga and Dance Classes at Soul Work Studio: 3, 5, or Unlimited Monthly Yoga classes",
@@ -1041,7 +1153,9 @@
     "reviews": [],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/soul-work-studio-1?redemptionLocationId=5596eefd-1b49-bed3-9b7d-016c1a75529c"
+    "url": "https://www.groupon.com/deals/soul-work-studio-1?redemptionLocationId=5596eefd-1b49-bed3-9b7d-016c1a75529c",
+    "merchant_description": "Soul Work Studio is a neighborhood 'spiritual bodega' offering authentic yoga and cultural dance classes for all levels in a beginner-friendly setting.",
+    "key_services": "Belly dance, Congolese dance, Prenatal yoga"
   },
   {
     "deal_title": "Doodle Yoga: Gentle Yoga & Playful Goldendoodles in SoHo",
@@ -1054,7 +1168,9 @@
     "reviews": [],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/doodle-yoga-wellness-1?redemptionLocationId=24d45e30-000a-bbee-fc54-019eb9f5a2c3"
+    "url": "https://www.groupon.com/deals/doodle-yoga-wellness-1?redemptionLocationId=24d45e30-000a-bbee-fc54-019eb9f5a2c3",
+    "merchant_description": "Doodle Yoga Wellness combines beginner-friendly yoga with hypoallergenic Goldendoodle interaction in a calming SoHo studio, offering a unique wellness experience that reduces stress through playful puppy engagement.",
+    "key_services": "Gentle guided yoga, Goldendoodle interaction"
   },
   {
     "deal_title": "Explore up to 70% off with Goshin-Ryu Martial Arts & Fitness Studio's versatile 10 or 5 Class Pass options for a fitness boost",
@@ -1073,7 +1189,9 @@
     ],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/goshin-ryu-martial-arts-fitness-studio-4?redemptionLocationId=a7251e50-5129-b06a-747f-014a42b87490"
+    "url": "https://www.groupon.com/deals/goshin-ryu-martial-arts-fitness-studio-4?redemptionLocationId=a7251e50-5129-b06a-747f-014a42b87490",
+    "merchant_description": "Goshin-Ryu Martial Arts & Fitness Studio combines martial arts with high-energy fitness in a supportive, community-driven environment. Classes in cardio kickboxing, Zumba, and HIIT empower participants to train alongside fellow enthusiasts.",
+    "key_services": "Cardio kickboxing, Zumba, HIIT"
   },
   {
     "deal_title": "Find Your Flow: Flexible Yoga Class Passes and Unlimited Access at The Atrium Space",
@@ -1086,7 +1204,9 @@
     "reviews": [],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/the-atrium-space?redemptionLocationId=b931b63d-45dd-4e0e-8977-0d3ee39b391f"
+    "url": "https://www.groupon.com/deals/the-atrium-space?redemptionLocationId=b931b63d-45dd-4e0e-8977-0d3ee39b391f",
+    "merchant_description": "Community-focused yoga sanctuary offering expertly-led classes across diverse styles (Yin, Flow, Pranayama, Meditation, Prenatal Yoga) for all experience levels.",
+    "key_services": "Yin Yoga, Prenatal Yoga, Flow classes"
   },
   {
     "deal_title": "Uplift Your Wellness Journey: Unwind and Strengthen with Pilates or Reformer Classes at Elevate BKLYN",
@@ -1101,7 +1221,9 @@
     ],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/pilates-bklyn-2-1?redemptionLocationId=2bb53ef9-000a-b254-9e21-019bb81459d8"
+    "url": "https://www.groupon.com/deals/pilates-bklyn-2-1?redemptionLocationId=2bb53ef9-000a-b254-9e21-019bb81459d8",
+    "merchant_description": "Elevate BKLYN is a premier, inclusive wellness sanctuary specializing in expertly guided Reformer and Pilates classes, featuring a luxurious space that blends industrial elegance with soft, modern design.",
+    "key_services": "Reformer classes, Pilates classes, Unlimited monthly group access"
   },
   {
     "deal_title": "Refresh yourself at Kay Beauty Spa Lounge w/ Colon Hydrotherapy, Massage, and Detox Options (Up to 68% Off)",
@@ -1120,7 +1242,9 @@
     ],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/kay-beauty-spa-lounge-nail-bar-4?redemptionLocationId=3589d3b2-65e7-b06a-9299-0150d9837346"
+    "url": "https://www.groupon.com/deals/kay-beauty-spa-lounge-nail-bar-4?redemptionLocationId=3589d3b2-65e7-b06a-9299-0150d9837346",
+    "merchant_description": "Serene Brooklyn wellness spa known for specialized Cryoskin body contouring and an exclusive in-house hair care line.",
+    "key_services": "Colon-hydrotherapy, Cryoskin body contouring, Ionic Foot Detox"
   },
   {
     "deal_title": "5 or 7Adult MMA Classes at Brooklyn Martial Arts (Up to 89% Off)",
@@ -1139,7 +1263,9 @@
     ],
     "category": "fitness",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/brooklyn-martial-arts-renzo-gracie-brooklyn-2?redemptionLocationId=cc3fa5fe-5df1-b06a-768a-013a8fde79b0"
+    "url": "https://www.groupon.com/deals/brooklyn-martial-arts-renzo-gracie-brooklyn-2?redemptionLocationId=cc3fa5fe-5df1-b06a-768a-013a8fde79b0",
+    "merchant_description": null,
+    "key_services": "Group MMA classes, Brazilian jiu-jitsu, Self-defense training"
   },
   {
     "deal_title": "Mercer Labs Ticket Deals — NYC Art & Technology Museum with Immersive Exhibits",
@@ -1158,7 +1284,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/gl-mercer-labs-museum-of-art-and-technology-moat-15?redemptionLocationId=6f155cfa-0008-b776-ef2d-018ccb8624a5"
+    "url": "https://www.groupon.com/deals/gl-mercer-labs-museum-of-art-and-technology-moat-15?redemptionLocationId=6f155cfa-0008-b776-ef2d-018ccb8624a5",
+    "merchant_description": "A 36,000 sq. ft. Museum of Art and Technology featuring 15 immersive, artist-led exhibition spaces where installations fuse art, sound, and cutting-edge technology in boundary-pushing, interactive experiences.",
+    "key_services": "Interactive installations, sound-based experiences, digital environments"
   },
   {
     "deal_title": "3-Hour Adventure Park Pass at Area 53 – Zip Lines, Rock Climbing, Roller Skating & More for Up to 10",
@@ -1177,7 +1305,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/area-53-8?redemptionLocationId=a32101fc-200d-b099-c72b-016b9ec65141"
+    "url": "https://www.groupon.com/deals/area-53-8?redemptionLocationId=a32101fc-200d-b099-c72b-016b9ec65141",
+    "merchant_description": "NYC's largest indoor adventure park in Williamsburg warehouse. Zip lines, ropes course, rock climbing, roller skating—all under one roof, year-round, weather-protected.",
+    "key_services": "Zip lines, high-rise ropes course, roller skating with live DJ"
   },
   {
     "deal_title": "Ferox Ninja Park Open Play Deals & Discounts – Solo or Group Passes",
@@ -1196,7 +1326,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/ferox-athletics-3?redemptionLocationId=1cceaefb-20a7-b1fa-d5e8-018090c3667e"
+    "url": "https://www.groupon.com/deals/ferox-athletics-3?redemptionLocationId=1cceaefb-20a7-b1fa-d5e8-018090c3667e",
+    "merchant_description": "East Coast's largest professional ninja training facility with 40,000 sq ft of dynamic challenges. Ninja training for all skill levels with specialized rigs for beginners and advanced athletes.",
+    "key_services": "Professional ninja rigs, towering warped walls, dynamic parkour course"
   },
   {
     "deal_title": "AMC Black Ticket Deals & Snack Combos – Save Up to 35% on Movie Passes",
@@ -1215,7 +1347,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/amc-theaters-black-tickets-7-24?redemptionLocationId=3e8bb7fc-0008-b8d4-918f-0190c20df2ab"
+    "url": "https://www.groupon.com/deals/amc-theaters-black-tickets-7-24?redemptionLocationId=3e8bb7fc-0008-b8d4-918f-0190c20df2ab",
+    "merchant_description": "AMC Theatres delivers premium movie experiences with stunning IMAX, Dolby Cinema, and AMC Prime visuals paired with luxurious heated recliners. The nation's #1 movie theatre popcorn seller, AMC pops fresh daily with signature flavors and the oversized MegaBag™.",
+    "key_services": "IMAX & Dolby Cinema formats, Luxury heated recliners, Fresh daily Perfectly Popcorn™"
   },
   {
     "deal_title": "Paintball Sessions for Adrenaline-Packed Fun at Area 53",
@@ -1234,7 +1368,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/area-53-9?redemptionLocationId=a32101fc-200d-b099-c72b-016b9ec65141"
+    "url": "https://www.groupon.com/deals/area-53-9?redemptionLocationId=a32101fc-200d-b099-c72b-016b9ec65141",
+    "merchant_description": "Area 53 is a tactical warfare venue built around a 20,000-square-foot dual-level paintball arena with real-life hazards and strategic height advantages. Caters to all skill levels with laser tag and ropes courses, perfect for team-building and group adventures.",
+    "key_services": "Dual-level paintball arena, laser tag, ropes course"
   },
   {
     "deal_title": "Explore Interactive Exhibits with Admission to the Liberty Science Center - No Booking Required",
@@ -1253,7 +1389,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/liberty-science-center-13?redemptionLocationId=052a4df2-5df1-b06a-768a-013a9119a2af"
+    "url": "https://www.groupon.com/deals/liberty-science-center-13?redemptionLocationId=052a4df2-5df1-b06a-768a-013a9119a2af",
+    "merchant_description": "Liberty Science Center is an interactive 300,000-square-foot learning center inspiring future scientists through hands-on exhibits, 110+ live animals, and the Western Hemisphere's largest planetarium.",
+    "key_services": "Dino Dig Adventure, Touch Tunnel, Jennifer Chalsty Planetarium"
   },
   {
     "deal_title": "Save 35% on Regal Movie Ticket Deals — Premiere & Premium Format Discounts — Plus Snack Savings!",
@@ -1272,7 +1410,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/regal-cinemas-premiere-ticket-2023?redemptionLocationId=38fd0d80-0009-bc7d-962c-01825ee2ebd9"
+    "url": "https://www.groupon.com/deals/regal-cinemas-premiere-ticket-2023?redemptionLocationId=38fd0d80-0009-bc7d-962c-01825ee2ebd9",
+    "merchant_description": "National movie theater chain with 400+ locations offering premium formats (IMAX, 4DX, RPX, ScreenX) alongside standard 2D screenings.",
+    "key_services": "Premium format screenings (IMAX, 4DX, RPX, ScreenX), standard 2D tickets, discounted popcorn and snacks"
   },
   {
     "deal_title": "Get set to groove at The Red Pavilion’s Dazzling Experiences: Cabaret or Jazz, Drinks & Snacks (Up to 37% off)",
@@ -1291,7 +1431,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/the-red-pavillion?redemptionLocationId=be6022ff-0011-b54f-2c42-0187bea35924"
+    "url": "https://www.groupon.com/deals/the-red-pavillion?redemptionLocationId=be6022ff-0011-b54f-2c42-0187bea35924",
+    "merchant_description": "The Red Pavilion is a neon-lit cabaret venue and jazz club celebrating Asian cultural artistry through immersive performances. After dark, it transforms into a destination for breathtaking aerial acts, burlesque, live jazz, and other avant-garde entertainment.",
+    "key_services": "Cabaret shows, live jazz performances, aerial acts, burlesque, cirque"
   },
   {
     "deal_title": "Admission Tickets to Brooklyn Tequila Festival - Up to 55% Off",
@@ -1310,7 +1452,9 @@
     ],
     "category": "things+to+do",
     "city": "New York",
-    "url": "https://www.groupon.com/deals/gl-arsenal-productions-llc-24?redemptionLocationId=59059451-1b49-bed3-9b7d-016b70821837"
+    "url": "https://www.groupon.com/deals/gl-arsenal-productions-llc-24?redemptionLocationId=59059451-1b49-bed3-9b7d-016b70821837",
+    "merchant_description": "High-energy spirits festival at Brooklyn Navy Yard featuring over 100 tequilas, mezcals, and craft spirits with live music and a vibrant social tasting atmosphere.",
+    "key_services": "Tequila and mezcal tastings, craft spirit discovery, live music entertainment"
   },
   {
     "deal_title": "One Regular Massage with $5 Gift Card for a Return Visit at Massage Revolution (Up to 63% Off)",
@@ -1329,7 +1473,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/massage-revolution-7?redemptionLocationId=6364e3d5-56cd-b06a-768b-015121664e13"
+    "url": "https://www.groupon.com/deals/massage-revolution-7?redemptionLocationId=6364e3d5-56cd-b06a-768b-015121664e13",
+    "merchant_description": "Licensed, award-winning massage therapists specializing in pain relief and holistic care. Recognized for treating sports injuries and back pain, with extended hours (9am-10pm) and 4.7-star ratings from 2,600+ clients.",
+    "key_services": "sports massage, reflexology, pregnancy massage"
   },
   {
     "deal_title": "Enjoy a 45 or 60 Minute Therapeutic Body Massage Package. Save Up to 55%",
@@ -1348,7 +1494,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/foot-spa-39?redemptionLocationId=8bfee6c0-6050-b4f3-b550-0179163a726b"
+    "url": "https://www.groupon.com/deals/foot-spa-39?redemptionLocationId=8bfee6c0-6050-b4f3-b550-0179163a726b",
+    "merchant_description": "Dream Foot Spa specializes in therapeutic massage experiences tailored to individual needs, offering deep-tissue, Swedish, and VIP custom options enhanced with essential oils and hot stones.",
+    "key_services": "Therapeutic deep-tissue massage, VIP custom massage with hot stones and essential oils, Swedish massage"
   },
   {
     "deal_title": "51% Off Foot Reflexology with Foot Bath, Herbal Shoulder Therapy, or 60-Min Full Body Massage at Zen Foot Spa",
@@ -1367,7 +1515,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/zen-foot-spa-4?redemptionLocationId=d58b98b7-0008-b838-9c31-0187d2ddfd16"
+    "url": "https://www.groupon.com/deals/zen-foot-spa-4?redemptionLocationId=d58b98b7-0008-b838-9c31-0187d2ddfd16",
+    "merchant_description": "Zen Foot Spa is a peaceful escape offering specialized reflexology and therapeutic massage treatments designed to relieve stress, improve circulation, and promote overall wellness.",
+    "key_services": "Foot reflexology, herbal shoulder therapy, hot stone massage"
   },
   {
     "deal_title": "Find Tranquility with 60 or 90-Minute Thai, Swedish, or Combo of Both Massages at 37% Off at Mali Thai Massage",
@@ -1386,7 +1536,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/mali-thai-massage-3-1?redemptionLocationId=18944165-1c10-b099-c72b-016323e518fd"
+    "url": "https://www.groupon.com/deals/mali-thai-massage-3-1?redemptionLocationId=18944165-1c10-b099-c72b-016323e518fd",
+    "merchant_description": "Mali Thai Massage specializes in authentic Thai massage, an ancient healing practice combining deep tissue pressure, acupressure, and assisted stretching along the body's energy lines (Sen).",
+    "key_services": "Traditional Thai massage (60-90 min), acupressure and assisted stretching, athletic recovery and chronic pain relief"
   },
   {
     "deal_title": "✨ 90-Min Scalp & Face Spa + K Glow Facial (Up to 32% Off)",
@@ -1405,7 +1557,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/yv-spa-beauty-wellness-2?redemptionLocationId=59ee7ea5-0009-be37-56c7-019079f17d83"
+    "url": "https://www.groupon.com/deals/yv-spa-beauty-wellness-2?redemptionLocationId=59ee7ea5-0009-be37-56c7-019079f17d83",
+    "merchant_description": "YV Spa specializes in the Head Spa Experience, combining deep scalp detoxification with Korean facial techniques in a tranquil setting where expert treatments refresh both scalp health and skin radiance.",
+    "key_services": "Essential Oil Deep Detox Scalp Spa, Korean Mini Facial, PRP Exosome Hair Growth Treatment"
   },
   {
     "deal_title": "Discover Jason Ferine Physical Therapy's Infrared Sauna Sessions up to 37% off for ultimate relaxation and wellness.",
@@ -1424,7 +1578,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/jason-ferine-physical-therapy-inc?redemptionLocationId=0593cff9-35bf-bfd9-37c8-01677f5392d4"
+    "url": "https://www.groupon.com/deals/jason-ferine-physical-therapy-inc?redemptionLocationId=0593cff9-35bf-bfd9-37c8-01677f5392d4",
+    "merchant_description": null,
+    "key_services": "Infrared sauna sessions"
   },
   {
     "deal_title": "60-Minute Swedish (Single or Couples) and Combo Massage with Hot Stones & More at Awe Spa (Up to 39% Off)",
@@ -1443,7 +1599,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/awe-spa-1-7?redemptionLocationId=df239370-039e-b06a-9298-013a8ffbff43"
+    "url": "https://www.groupon.com/deals/awe-spa-1-7?redemptionLocationId=df239370-039e-b06a-9298-013a8ffbff43",
+    "merchant_description": "Luxury spa specializing in authentic Thai massage—a rare specialization—combined with Swedish, deep tissue, and modern wellness options including hot stone, aromatherapy, and CBD oil treatments.",
+    "key_services": "Thai massage, 4 Hands massage, hot stone and aromatherapy treatments"
   },
   {
     "deal_title": "Luxury Head Spa Treatments for 1 or 2 with Massage on Neck and Scalp + Mini-Facial (Up to 40% Off) at A+ Spa",
@@ -1462,7 +1620,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/a-plus-spa-15?redemptionLocationId=9821c1fe-000a-b3c7-4c4a-019767d8d8b2"
+    "url": "https://www.groupon.com/deals/a-plus-spa-15?redemptionLocationId=9821c1fe-000a-b3c7-4c4a-019767d8d8b2",
+    "merchant_description": "A+ Spa specializes in expert head spa treatments in a serene environment, using high-quality products and innovative techniques delivered by trained professionals. Fully wheelchair accessible and committed to community wellness.",
+    "key_services": "Scalp analysis with microscope, Hair steaming, Mini-facial"
   },
   {
     "deal_title": "Relax Yourself with a 60 or 90 Minute Couples Massage at Fairfax Healing Spa (up to 36%Off)",
@@ -1481,7 +1641,9 @@
     ],
     "category": "spa",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/bb-zong-spa-and-wellness-2?redemptionLocationId=feb55053-000a-be9e-1732-019c9abe88c7"
+    "url": "https://www.groupon.com/deals/bb-zong-spa-and-wellness-2?redemptionLocationId=feb55053-000a-be9e-1732-019c9abe88c7",
+    "merchant_description": "Fairfax Healing Spa & Wellness specializes in couples massages designed for shared relaxation and connection, offering services tailored for partners to de-stress together.",
+    "key_services": "60-minute couples massage, 90-minute couples massage"
   },
   {
     "deal_title": "Savor with $25, $50, $75 or $100 Towards Food and Drink at Sobar (Up to 33%Off)",
@@ -1500,7 +1662,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/sobar-19954881?redemptionLocationId=a241a4a6-000a-b880-2687-019717af3211"
+    "url": "https://www.groupon.com/deals/sobar-19954881?redemptionLocationId=a241a4a6-000a-b880-2687-019717af3211",
+    "merchant_description": "SOBAR LA is an authentic Japanese restaurant in Culver City specializing in handcrafted juwari soba noodles made from 100% organic buckwheat flour, paired with premium curated sake selections that honor Japanese culinary tradition.",
+    "key_services": "Handcrafted soba noodles, curated sake pairings, premium sake tasting events"
   },
   {
     "deal_title": "Up to 28% Off on Burger Restaurant at Fatburger Venice Beach",
@@ -1519,7 +1683,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/fatburger-venice-beach?redemptionLocationId=1dcfeca5-19cf-b06a-9052-013a914ff8f0"
+    "url": "https://www.groupon.com/deals/fatburger-venice-beach?redemptionLocationId=1dcfeca5-19cf-b06a-9052-013a914ff8f0",
+    "merchant_description": "Fatburger Venice specializes in fresh-never-frozen lean beef burgers paired with hand-scooped milkshakes and homemade sides, delivering bold flavors and generous portions for big appetites.",
+    "key_services": "Fresh-never-frozen lean beef burgers, hand-scooped milkshakes, build-your-own-burger experience"
   },
   {
     "deal_title": "Four Piece Chicken Meal at Honey's Kettle Fried Chicken (Up to 47% Off)",
@@ -1538,7 +1704,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/honey-s-kettle-fried-chicken-3?redemptionLocationId=b19a8e62-14da-b06a-9298-013ae394a2aa"
+    "url": "https://www.groupon.com/deals/honey-s-kettle-fried-chicken-3?redemptionLocationId=b19a8e62-14da-b06a-9298-013ae394a2aa",
+    "merchant_description": "25-year LA institution specializing in Southern comfort food, led by Chef Vinny since 2000. Signature kettle-fried chicken uses a distinctive colonial cooking technique that sets them apart.",
+    "key_services": "Kettle-fried chicken, Pancakes with fried chicken, Jumbo kettle-fried chicken strips"
   },
   {
     "deal_title": "Discover the Taste of Fried Chicken at Culver City's Vibrant Flagship: $15 or $30 Fried Chicken and More",
@@ -1557,7 +1725,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/honey-s-kettle-fried-chicken-1-3?redemptionLocationId=b19a8e62-14da-b06a-9298-013ae394a2aa"
+    "url": "https://www.groupon.com/deals/honey-s-kettle-fried-chicken-1-3?redemptionLocationId=b19a8e62-14da-b06a-9298-013ae394a2aa",
+    "merchant_description": "Honey's Kettle Fried Chicken is a 25-year Los Angeles institution established by Chef Vinny, celebrated for award-winning hand-dipped fried chicken and traditional kettle cooking. Recognized by LA Magazine as a top fried chicken destination.",
+    "key_services": "Hand-dipped kettle fried chicken, signature Ice-Shaker Lemonade, homemade biscuits"
   },
   {
     "deal_title": "Experience Jaipur Cuisine Of India's Northern Indian Dining For Two, Valid Mon-Thurs, with up to 42% off",
@@ -1576,7 +1746,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/jaipur-cuisine-of-india-2-2?redemptionLocationId=260eccfc-14da-b06a-9298-013ae3de9be0"
+    "url": "https://www.groupon.com/deals/jaipur-cuisine-of-india-2-2?redemptionLocationId=260eccfc-14da-b06a-9298-013ae3de9be0",
+    "merchant_description": "Jaipur Cuisine Of India offers authentic Northern Indian cuisine with over 15 years of international expertise. The cozy pink and gold setting with garden-party charm creates an exceptional dining atmosphere.",
+    "key_services": "Curries, Biryanis"
   },
   {
     "deal_title": "Seaside on the Pier: Fresh Seafood, Burgers, Pizza & Coastal Favorites with $50 or $100 Toward Food & Drinks",
@@ -1595,7 +1767,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/n-seaside-on-the-pier-25?redemptionLocationId=71fe73fa-0008-b878-ee4a-018d3293ae02"
+    "url": "https://www.groupon.com/deals/n-seaside-on-the-pier-25?redemptionLocationId=71fe73fa-0008-b878-ee4a-018d3293ae02",
+    "merchant_description": "Perched on the iconic Santa Monica Pier, Seaside on the Pier combines coastal sophistication with laid-back beach vibes, serving fresh seafood, gourmet burgers, and hand-tossed pizzas with unobstructed Pacific views.",
+    "key_services": "Lobster Roll, Blackened Mahi Tacos, Seafood Pasta"
   },
   {
     "deal_title": "Enjoy Oaxacan Cuisine With $25, $50, $75 or $100 Food and Drink Options (Up to 33% Off)",
@@ -1614,7 +1788,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/los-compadres-de-oaxaca-restaurant?redemptionLocationId=5f95faf8-000a-b817-8d54-019717bca301"
+    "url": "https://www.groupon.com/deals/los-compadres-de-oaxaca-restaurant?redemptionLocationId=5f95faf8-000a-b817-8d54-019717bca301",
+    "merchant_description": "Los Compadres De Oaxaca Restaurant serves authentic Oaxacan cuisine crafted from scratch using fresh ingredients and traditional recipes. Signature dishes like papa sorpresa offer unique flavors not found elsewhere.",
+    "key_services": "Authentic Oaxacan cuisine, online ordering, traditional recipes"
   },
   {
     "deal_title": "Savor a 3-Course Dinner or Weekend Brunch at Black Angus Steakhouse | Multiple Locations - Up to 13% Off",
@@ -1633,7 +1809,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/black-angus-steakhouse?redemptionLocationId=630f52fb-4780-b06a-747e-013a91500433"
+    "url": "https://www.groupon.com/deals/black-angus-steakhouse?redemptionLocationId=630f52fb-4780-b06a-747e-013a91500433",
+    "merchant_description": "Steakhouse perfecting premium beef since 1964, renowned for Certified Angus Beef and USDA Choice Steaks aged 21 days and hand-cut daily.",
+    "key_services": "21-day aged Certified Angus Beef, hand-cut USDA Choice Steaks, sustainably raised North Atlantic salmon"
   },
   {
     "deal_title": "Savor Historic Diner Dishes: $20 or $40 Voucher for Food and Drink at Mel's Drive-In. Save Up to 38%",
@@ -1652,7 +1830,9 @@
     ],
     "category": "restaurant",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/mel-s-drive-in-los-angeles-and-san-francisco-2?redemptionLocationId=dc8b4ffa-7e1f-bac5-abc4-01695a42fe60"
+    "url": "https://www.groupon.com/deals/mel-s-drive-in-los-angeles-and-san-francisco-2?redemptionLocationId=dc8b4ffa-7e1f-bac5-abc4-01695a42fe60",
+    "merchant_description": "Historic drive-in diner featured in American Graffiti and Hollywood landmark known for home-style comfort food and nostalgic carhop service that captures 1950s charm.",
+    "key_services": "Burgers, Breakfast plates, Shakes and desserts"
   },
   {
     "deal_title": "Tone and Strengthen with Specialized Two or Four Reformer Classes at White House Pilates at Up to 52% Off",
@@ -1671,7 +1851,9 @@
     ],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/white-house-pilates-all-location-offer-2-2?redemptionLocationId=da4e20fd-1787-bfd9-37c8-01708c56c427"
+    "url": "https://www.groupon.com/deals/white-house-pilates-all-location-offer-2-2?redemptionLocationId=da4e20fd-1787-bfd9-37c8-01708c56c427",
+    "merchant_description": "White House Pilates carries on Joseph Pilates' legacy with seasoned instructors and tradition-based methods. They offer private sessions and small group classes using reformers, towers, and mat-based movements.",
+    "key_services": "Reformer group classes, Private Pilates sessions, Tower resistance training"
   },
   {
     "deal_title": "Get Fit and Feel Fabulous: 3 or 6 Pole Dance or Fitness Classes at The Secret Pole Dance Studio - Up to 50% Off",
@@ -1690,7 +1872,9 @@
     ],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/the-secret-pole-dance-studio-7?redemptionLocationId=fe2b2866-039e-b06a-9298-013a8fe1b8e9"
+    "url": "https://www.groupon.com/deals/the-secret-pole-dance-studio-7?redemptionLocationId=fe2b2866-039e-b06a-9298-013a8fe1b8e9",
+    "merchant_description": "The Secret Pole Dance Studio offers empowering pole fitness and dance classes in a non-judgmental, inclusive environment designed to boost confidence and self-expression.",
+    "key_services": "Pole dance fitness classes, Bootylicious workouts"
   },
   {
     "deal_title": "Rejuvenate Your Mind and Body: 5 Yoga Classes or One Month of Unlimited Classes at Veda Yoga Center. Save Up to 54% Off",
@@ -1709,7 +1893,9 @@
     ],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/veda-yoga-2?redemptionLocationId=c90083fa-7ac3-b06a-747f-01485ef446ad"
+    "url": "https://www.groupon.com/deals/veda-yoga-2?redemptionLocationId=c90083fa-7ac3-b06a-747f-01485ef446ad",
+    "merchant_description": "Veda Yoga is a welcoming studio led by experienced instructors offering classes for all skill levels. Distinguished by state-of-the-art infrared-heated hot yoga sessions and eco-friendly operations.",
+    "key_services": "Infrared-heated hot yoga, in-studio yoga classes for all levels"
   },
   {
     "deal_title": "Romance And Dance Pole Fitness (Inglewood) offers up to 75% off on 2, 5, or 10 pole dance classes with professional instructors",
@@ -1728,7 +1914,9 @@
     ],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/romance-and-dance-pole-fitness-inglewood?redemptionLocationId=29ab7ca2-0008-b4ac-1222-0183d2fdc9e6"
+    "url": "https://www.groupon.com/deals/romance-and-dance-pole-fitness-inglewood?redemptionLocationId=29ab7ca2-0008-b4ac-1222-0183d2fdc9e6",
+    "merchant_description": "Romance And Dance operates the largest pole dancing studio with custom pink poles and expert instructors in an inclusive environment. Beyond pole classes, they offer twerk, flexibility training, and Nude Sip N' Paint events.",
+    "key_services": "Pole Dance Classes, Nude Sip N' Paint, Twerk"
   },
   {
     "deal_title": "Logic Fitness Studios offers $35 for $135 in services, with top-tier training up to 74% off",
@@ -1747,7 +1935,9 @@
     ],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/logic-fitness-studios-1?redemptionLocationId=5646f7fe-5ce1-b06a-747f-014de138966f"
+    "url": "https://www.groupon.com/deals/logic-fitness-studios-1?redemptionLocationId=5646f7fe-5ce1-b06a-747f-014de138966f",
+    "merchant_description": "Logic Fitness Studios offers premium personal training with experienced trainers who create tailored sessions for individual fitness needs.",
+    "key_services": "Personalized personal training, One-on-one fitness coaching"
   },
   {
     "deal_title": "Experience the thrill at 2020 Martial Arts with a variety of classes including Boxing and Muay Thai, up to 74% off",
@@ -1766,7 +1956,9 @@
     ],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/2020-martial-arts?redemptionLocationId=0b146afb-0009-bc7d-962c-01827b0bdf7c"
+    "url": "https://www.groupon.com/deals/2020-martial-arts?redemptionLocationId=0b146afb-0009-bc7d-962c-01827b0bdf7c",
+    "merchant_description": "Expert-led boxing and Muay Thai gym in Culver City. Known for inclusive instruction from professional coaches, tailored to all skill levels, with a strong supportive community atmosphere.",
+    "key_services": "Mitt work, bag work, Muay Thai classes"
   },
   {
     "deal_title": "Boost Your Routine: Unlimited Strength Training or 5 Fitness Classes",
@@ -1779,7 +1971,9 @@
     "reviews": [],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/friendly-fitness?redemptionLocationId=ded7c89a-442c-46df-9429-a08c336020cc"
+    "url": "https://www.groupon.com/deals/friendly-fitness?redemptionLocationId=ded7c89a-442c-46df-9429-a08c336020cc",
+    "merchant_description": "Friendly Fitness offers expertly guided strength training classes rooted in real strength training principles, with a focus on teaching proper techniques in a supportive, community-centric environment.",
+    "key_services": "Small group strength training, progress tracking, specialty classes"
   },
   {
     "deal_title": "Achieve Your Fitness Goals with 3 or 5 Personalized One-on-One Training Sessions at Friendly Fitness",
@@ -1792,7 +1986,9 @@
     "reviews": [],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/friendly-fitness-1?redemptionLocationId=ded7c89a-442c-46df-9429-a08c336020cc"
+    "url": "https://www.groupon.com/deals/friendly-fitness-1?redemptionLocationId=ded7c89a-442c-46df-9429-a08c336020cc",
+    "merchant_description": "Friendly Fitness specializes in personalized one-on-one training with certified professional trainers who develop custom workout plans tailored to your individual fitness goals.",
+    "key_services": "Personalized workout plans, One-on-one training, Flexible scheduling"
   },
   {
     "deal_title": "Transform Your Health! Chiropractic Consult, X-ray, Treatments & Massage at Goodlife Chiropractic- Up to 74% Off",
@@ -1811,7 +2007,9 @@
     ],
     "category": "fitness",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/goodlife-chiropractic-7?redemptionLocationId=e5730887-03dd-bcaa-016d-015c3acc4cfd"
+    "url": "https://www.groupon.com/deals/goodlife-chiropractic-7?redemptionLocationId=e5730887-03dd-bcaa-016d-015c3acc4cfd",
+    "merchant_description": "South Bay's favorite chiropractic office since 2011, recognized for holistic, personalized wellness approach with expert care that addresses pain without medication or invasive procedures.",
+    "key_services": "Chiropractic treatment with X-rays, one-hour therapeutic massage, specialized pain management"
   },
   {
     "deal_title": "Marina del Rey Premier Brunch & Dinner Cruise Deals",
@@ -1830,7 +2028,9 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/gl-mdr-premier-dining-city-experiences?redemptionLocationId=48582270-1cbb-b4f3-b550-0180ddac1c38"
+    "url": "https://www.groupon.com/deals/gl-mdr-premier-dining-city-experiences?redemptionLocationId=48582270-1cbb-b4f3-b550-0180ddac1c38",
+    "merchant_description": "Marina del Rey Premier operates upscale brunch and dinner cruises featuring chef-prepared gourmet menus, cocktails, and live entertainment on scenic harbor waters.",
+    "key_services": "Bottomless Mimosa Brunch Cruise, Plated Dinner Cruise, Live and DJ Entertainment"
   },
   {
     "deal_title": "AMC Black Ticket Deals & Snack Combos – Save Up to 35% on Movie Passes",
@@ -1849,7 +2049,9 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/amc-theaters-black-tickets-7-24?redemptionLocationId=6f1147fb-0008-b1e0-6ad1-0190c20da29a"
+    "url": "https://www.groupon.com/deals/amc-theaters-black-tickets-7-24?redemptionLocationId=6f1147fb-0008-b1e0-6ad1-0190c20da29a",
+    "merchant_description": "AMC is America's #1 movie theater chain, known for premium IMAX and Dolby Cinema experiences, fresh-popped gourmet popcorn, and luxurious heated recliners.",
+    "key_services": "IMAX & Dolby Cinema, Fresh Perfectly Popcorn™, Heated recliners"
   },
   {
     "deal_title": "1 Acting Class for Kids, 1 for Teens & 1 for Adults – 3-in-1 Performing Deal at The Actors Circle(Up To 60% Off)",
@@ -1868,7 +2070,9 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/the-actors-circle-5?redemptionLocationId=0d3eb3c7-1cbb-b4f3-b550-0180b8edf403"
+    "url": "https://www.groupon.com/deals/the-actors-circle-5?redemptionLocationId=0d3eb3c7-1cbb-b4f3-b550-0180b8edf403",
+    "merchant_description": "The Actors Circle is an engaging community blending improvisation and scripted work, with notable alumni like Joseph Gordon-Levitt and students spanning ages 5 to 100. They specialize in film and television techniques while fostering intergenerational mentorship and creative growth.",
+    "key_services": "Improvisation and scripted acting, Film and television techniques, Acting classes for children, teenagers, and adults"
   },
   {
     "deal_title": "Paint Nite Classes — 4.7 Stars & 65K+ Reviews | In-Person or Virtual | No Experience Needed",
@@ -1887,7 +2091,9 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/paint-nite-2023"
+    "url": "https://www.groupon.com/deals/paint-nite-2023",
+    "merchant_description": "Paint Nite brings step-by-step guided painting experiences at bars and restaurants led by talented artists, offering access to 36,000+ designs for all skill levels. With 4.7 stars from 65,000+ verified buyers and 400,000+ events hosted, it's one of Groupon's top-rated creative experiences.",
+    "key_services": "Guided in-person painting classes at bars and restaurants, virtual painting classes, step-by-step instruction from local artists"
   },
   {
     "deal_title": "Unlock a World of Entertainment: Save on Cinemark Movie Club Memberships with Monthly Tickets & Concessions",
@@ -1906,7 +2112,9 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/cinemark-movie-pass-membership-2021?redemptionLocationId=0349eefd-1787-bfd9-37c8-017014aa8e56"
+    "url": "https://www.groupon.com/deals/cinemark-movie-pass-membership-2021?redemptionLocationId=0349eefd-1787-bfd9-37c8-017014aa8e56",
+    "merchant_description": null,
+    "key_services": "Monthly free movie tickets, Concession discounts, Rewards program"
   },
   {
     "deal_title": "Experience a Flipped Perspective with Admission to the Upside Down House in Hollywood (Up to 23% Off)",
@@ -1925,7 +2133,9 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/upside-down-house-hollywood?redemptionLocationId=ad9612f9-000a-be62-92e0-019e4d4ce2db"
+    "url": "https://www.groupon.com/deals/upside-down-house-hollywood?redemptionLocationId=ad9612f9-000a-be62-92e0-019e4d4ce2db",
+    "merchant_description": "Hollywood's most photo-worthy attraction, the Upside Down House features seven meticulously designed inverted rooms offering gravity-defying experiences. Visitors walk on walls, dance on ceilings, and capture unique moments in this interactive attraction suited for all ages.",
+    "key_services": "Inverted room exploration, gravity-defying interactive experiences, photo-friendly gallery"
   },
   {
     "deal_title": "Enjoy four 30-min weekly beginner ice-skating or hockey lessons at Toyota Sports Performance Center with up to 57% off",
@@ -1944,7 +2154,9 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/toyota-sports-performance-center?redemptionLocationId=45abeff9-5df1-b06a-768a-013a8fcfe1e7"
+    "url": "https://www.groupon.com/deals/toyota-sports-performance-center?redemptionLocationId=45abeff9-5df1-b06a-768a-013a8fcfe1e7",
+    "merchant_description": "Official training center for the LA Kings with elite programs led by top-tier coaches and former professional athletes. State-of-the-art facility featuring multiple ice rinks serving all ages and skill levels.",
+    "key_services": "Ice-skating instruction, hockey lessons, elite professional coaching"
   },
   {
     "deal_title": "Unleash Adventure: Explore Say Cheez LA's Interactive Playground & Arcade for Kids!",
@@ -1963,7 +2175,9 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/say-cheez-la?redemptionLocationId=d1a598e0-0012-b334-8ee3-018b8dc3e30c"
+    "url": "https://www.groupon.com/deals/say-cheez-la?redemptionLocationId=d1a598e0-0012-b334-8ee3-018b8dc3e30c",
+    "merchant_description": "Say Cheez LA is an indoor adventure hub for kids aged two to eleven, featuring an interactive three-tier playground and games designed to spark creativity. The venue sets itself apart with cutting-edge virtual reality experiences and immersive activities.",
+    "key_services": "Virtual reality experiences, interactive three-tier playground, arcade games"
   },
   {
     "deal_title": "Step into a World of 3D Illusions and Interactive Exhibits at Museum of Illusions in Hollywood (Up to 23% Off)",
@@ -1982,6 +2196,8 @@
     ],
     "category": "things+to+do",
     "city": "Los Angeles",
-    "url": "https://www.groupon.com/deals/museum-of-illusions-hollywood?redemptionLocationId=ad9612f9-000a-be62-92e0-019e4d4ce2db"
+    "url": "https://www.groupon.com/deals/museum-of-illusions-hollywood?redemptionLocationId=ad9612f9-000a-be62-92e0-019e4d4ce2db",
+    "merchant_description": "Hollywood's upgraded Museum of Illusions features immersive 3D illusions and interactive exhibits crafted by world-class artists. Experience mind-bending adventures and unique photo opportunities designed for all ages.",
+    "key_services": "Immersive 3D illusions, Interactive exhibits, Photo experiences"
   }
 ]
