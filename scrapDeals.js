@@ -26,7 +26,7 @@ async function waitForSettle(page, timeout = 2000) {
     await new Promise(r => setTimeout(r, 500));
 }
 
-async function getDealLinks(page, category, city) {
+async function getDealLinks(page, category, city, totalLinks=5) {
     const url = `https://www.groupon.com/search?query=${encodeURIComponent(category)}&detectedLocation=${city.location}`;
     console.log(`  Fetching links: ${url}`);
     await page.goto(url, { waitUntil: 'domcontentloaded' });
@@ -48,7 +48,7 @@ async function getDealLinks(page, category, city) {
                 .filter(Boolean);
         });
         newLinks.forEach(l => links.add(l));
-        if (links.size >= 15) break;
+        if (links.size >= totalLinks) break;
     }
 
     return [...links];
@@ -56,26 +56,45 @@ async function getDealLinks(page, category, city) {
 
 async function scrapeDeal(page, url) {
     await page.goto(url, { waitUntil: 'domcontentloaded' });
+
+    await page.waitForSelector('[data-testid="featured-deal-content"]', { timeout: 10000 });
+    await page.waitForFunction(
+        () => !document.querySelector('[data-testid="featured-deal-content"] .animate-pulse'),
+        { timeout: 15000 }
+    );
+    await page.waitForFunction(
+        () => document.querySelector('[data-testid="deal-title"]') !== null,
+        { timeout: 15000 }
+    );
     await waitForSettle(page);
 
     return page.evaluate(() => {
-        const content = document.querySelector('[data-testid="featured-deal-content"]');
-        if (!content) return null;
+        const deal = document.querySelector('[data-testid="featured-deal"]');
+        if (!deal) return null;
 
-        const titles = Array.from(content.querySelectorAll('[title]'))
-            .map(a => a.title).filter(t => t);
+        const merchantEl = document.querySelector('#merchant');
+        let merchant_name = null;
+        let merchant_info = null;
+        let company_website = null;
 
-        const fullContent = content.querySelector('[data-content-type="html"]')?.innerText
-                         || content.querySelector('[data-bhw="DealWriteUp"]')?.innerText
-                         || null;
+        if (merchantEl) {
+            const lines = merchantEl.innerText.split('\n').map(l => l.trim()).filter(Boolean);
+            if (lines[0]?.startsWith('About ')) {
+                merchant_name = lines[0].replace('About ', '');
+            }
+            const content = lines.slice(1).filter(l => l !== 'Company Website').join('\n');
+            merchant_info = content || null;
+            company_website = merchantEl.querySelector('a[href]')?.href || null;
+        }
 
         return {
-            deal_title:    titles[0] || null,
-            merchant_name: titles[1] || null,
-            location:      titles[2] || null,
-            merchant_info: content.querySelector('[id="merchant"]')?.innerText || null,
-            highlights:    content.querySelector('[data-bhw="HighlightsSection"]')?.innerText || null,
-            full_content:  fullContent,
+            deal_title:    document.querySelector('[data-testid="deal-title"]')?.innerText || null,
+            merchant_name,
+            location:      document.querySelector('[data-testid="dealLocationsList"]')?.innerText || null,
+            merchant_info,
+            company_website,
+            highlights:    deal.querySelector('[data-bhw="HighlightsSection"]')?.innerText || null,
+            full_content:  deal.querySelector('[data-bhw="DealWriteUp"]')?.innerText || null,
             reviews:       Array.from(document.querySelectorAll('[data-testid="customer-review"]'))
                                .map(c => c.innerText)
         };
@@ -101,7 +120,6 @@ async function run() {
                 try {
                     console.log(`    Scraping: ${url}`);
                     const deal = await scrapeDeal(newPage, truncatedURL);
-                    newBrowser.close();
                     if (deal && deal.deal_title) {
                         allDeals.push({
                             ...deal,
@@ -114,6 +132,8 @@ async function run() {
                     await new Promise(r => setTimeout(r, 1500));
                 } catch (e) {
                     console.log(`    ✗ Failed: ${e.message}`);
+                } finally {
+                    await newBrowser.close();
                 }
             }
         }
