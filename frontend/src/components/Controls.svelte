@@ -21,7 +21,6 @@
 <header>
   <div class="logo">
     <img src="/src/assets/groupon-logo.svg" alt="Groupon" height="28" />
-    <span class="logo-text">Agent</span>
   </div>
 
   <div class="mode-group">

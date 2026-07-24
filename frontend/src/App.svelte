@@ -60,28 +60,38 @@
   }
 
   async function handleSend(text) {
-    const negativePattern = /sucks|terrible|awful|hate|scam|worst|refund|complaint|issue|broken|fraud|ripoff/i
-
     if (mode === 'mention_reply') {
       addMessage(text, 'incoming', 'Custom mention')
-      await delay(600)
+      addPill('Processing...', 'routing')
 
-      if (negativePattern.test(text)) {
-        addPill('Guard: escalating to human', 'escalate')
+      let result
+      try {
+        const res = await fetch('/api/mention', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, username: 'user' })
+        })
+        result = await res.json()
+      } catch (e) {
+        addPill('API error', 'fail')
+        return
+      }
+
+      messages = messages.filter(m => !(m.type === 'pill' && m.text === 'Processing...'))
+
+      if (result.status === 'posted') {
+        addPill(`Route: ${result.route}`, 'pass')
+        addMessage(result.reply, 'outgoing', 'Agent · mention reply')
+      } else if (result.status === 'escalated') {
+        addPill('Escalated to human review', 'escalate')
         reviewItems = [...reviewItems, {
           id: nextId++,
           input: text,
-          reason: 'Negative sentiment or complaint detected — requires human response',
-          suggestion: "We hear you. Please DM us your order details and we'll make this right."
+          reason: result.reason,
+          suggestion: ''
         }]
-      } else {
-        addPill('Guard passed', 'pass')
-        await delay(800)
-        addPill('Review passed', 'pass')
-        addMessage(
-          'Check out our latest local deals on Groupon — something good is near you.',
-          'outgoing', 'Agent · mention reply'
-        )
+      } else if (result.status === 'paused') {
+        addPill('Kill switch active', 'fail')
       }
     }
 

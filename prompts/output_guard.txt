@@ -63,7 +63,9 @@ Review the draft post across ALL of the following dimensions:
    - Respond to or engage with a complaint or criticism rather than redirecting to human support
    - Defend Groupon against criticism rather than redirecting to human support
    - Say anything negative about any person, brand, or group
- 
+
+ A short, warm acknowledgment that confirms the person was heard and that a human is looking into it — with no explanation, defense, or resolution attempted — is NOT a charter violation. This is the expected and correct behavior for a complaint. The violation is engaging with the substance, not acknowledging that a complaint exists.
+
 Based on your classification, determine the action:
 - "publish": post is safe to publish as-is
 - "route_to_human": post contains a borderline issue that requires human judgment before publishing

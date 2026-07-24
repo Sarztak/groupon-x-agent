@@ -14,7 +14,7 @@ def generate_conversational_reply(
     mention_text: str,
     username: str,
     deal_copy: str | None = None,
-    backend: str = "api",
+    backend: str = "cli",
     model: str = "claude-sonnet-4-6",
     prompts_dir: Path = PROMPTS_DIR,
 ) -> dict | None:

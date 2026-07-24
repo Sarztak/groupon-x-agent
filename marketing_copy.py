@@ -49,10 +49,10 @@ def load_context(references_dir: Path, extra_files: list) -> str:
 
 
 
-def call_model(system: str, user: str, model: str, backend: str = "api") -> str | None:
+def call_model(system: str, user: str, model: str, backend: str = "cli") -> str | None:
     if backend == "cli":
         result = subprocess.run(
-            ["claude", "-p", user, "--system", system, "--model", model],
+            ["claude", "-p", user, "--system-prompt", system, "--model", model],
             capture_output=True, text=True
         )
         return result.stdout.strip() if result.returncode == 0 else None
@@ -75,7 +75,7 @@ def call_model(system: str, user: str, model: str, backend: str = "api") -> str 
 
 
 def generate_copy(
-    agent_input: dict, references_dir: Path, model="claude-haiku-4-5", backend="api"
+    agent_input: dict, references_dir: Path, model="claude-haiku-4-5", backend="cli"
 ) -> list[dict] | None:
     context = load_context(references_dir, WRITE_ONLY)
     write_prompt = (references_dir / ".." / "copywriter.txt").read_text()
@@ -98,7 +98,7 @@ def generate_copy(
 
 
 def review_copy(
-    results: list[dict], references_dir: Path, model="claude-haiku-4-5", backend="api"
+    results: list[dict], references_dir: Path, model="claude-haiku-4-5", backend="cli"
 ) -> list[dict] | None:
     context = load_context(references_dir, REVIEW_ONLY)
     reviewer_prompt = (references_dir / ".." / "copy_reviewer.txt").read_text()
@@ -147,7 +147,7 @@ def build_agent_input(deal, segment, variations=1):
         "variations": variations
     }
 
-def generate_and_review(agent_input: dict, references_dir: Path, max_attempts=3, backend="api", model="claude-haiku-4-5"):
+def generate_and_review(agent_input: dict, references_dir: Path, max_attempts=3, backend="cli", model="claude-haiku-4-5"):
     import logging
     log = logging.getLogger(__name__)
     reviewed = []
@@ -189,7 +189,7 @@ if __name__ == "__main__":
     log.info("Agent input built: %s", json.dumps(agent_input, indent=2))
 
     log.info("Running generate_and_review (backend=api)...")
-    result = generate_and_review(agent_input, references_dir, backend="api", model="claude-sonnet-4-6")
+    result = generate_and_review(agent_input, references_dir, backend="cli", model="claude-sonnet-4-6")
 
     log.info("Status: %s", result["status"])
     for i, item in enumerate(result.get("results") or [], 1):

@@ -32,7 +32,7 @@ with open("prompts/output_guard.txt", "r") as f:
 MODEL = "claude-sonnet-4-6"
 
 
-def guard_input(user_message: str, backend: str = "api") -> dict | None:
+def guard_input(user_message: str, backend: str = "cli") -> dict | None:
     raw = call_model(
         system=INPUT_GUARD_PROMPT,
         user=f"<message>{user_message}</message>",
@@ -53,7 +53,7 @@ def guard_input(user_message: str, backend: str = "api") -> dict | None:
     return result
 
 
-def guard_output(draft_post: str, backend: str = "api") -> dict | None:
+def guard_output(draft_post: str, backend: str = "cli") -> dict | None:
     raw = call_model(
         system=OUTPUT_GUARD_PROMPT,
         user=draft_post,
@@ -89,7 +89,7 @@ def is_killed() -> bool:
     return os.path.exists("KILL_SWITCH")
 
 
-def process_mention(tweet_text: str, agent_draft: str, backend: str = "api") -> dict:
+def process_mention(tweet_text: str, agent_draft: str, backend: str = "cli") -> dict:
     if is_killed():
         log.warning("Kill switch active")
         return {"action": "block", "reason": "Kill switch active"}

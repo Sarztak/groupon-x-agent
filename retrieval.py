@@ -35,7 +35,7 @@ def retrieve_deal(
     trigger_text: str,
     catalog_path: Path,
     prompts_dir: Path,
-    backend: str = "api",
+    backend: str = "cli",
     model: str = "claude-haiku-4-5",
 ) -> dict | None:
     system = (prompts_dir / "retrival.txt").read_text()
@@ -94,7 +94,7 @@ if __name__ == "__main__":
         trigger_text=mention["text"],
         catalog_path=catalog_path,
         prompts_dir=prompts_dir,
-        backend="api",
+        backend="cli",
     )
     if deal:
         log.info("Full deal: %s — %s", deal["merchant_name"], deal["deal_title"])
@@ -111,7 +111,7 @@ if __name__ == "__main__":
         trigger_text=trend["name"],
         catalog_path=catalog_path,
         prompts_dir=prompts_dir,
-        backend="api",
+        backend="cli",
     )
     if deal:
         log.info("Full deal: %s — %s", deal["merchant_name"], deal["deal_title"])
