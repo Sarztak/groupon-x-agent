@@ -1,0 +1,57 @@
+import logging
+from pathlib import Path
+from router import handle_mention
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
+log = logging.getLogger(__name__)
+
+CATALOG_PATH   = Path("./deals_catalog.json").resolve()
+PROMPTS_DIR    = Path("./prompts").resolve()
+REFERENCES_DIR = Path("./prompts/references").resolve()
+
+TESTS = [
+    {
+        "label": "profane complaint",
+        "message": "@Groupon your app is absolute garbage, fix this sh*t now",
+        "username": "angry_user",
+    },
+    {
+        "label": "competitor mention",
+        "message": "@Groupon why should I use you when Honey gives me better deals automatically?",
+        "username": "deal_seeker",
+    },
+    {
+        "label": "deal request",
+        "message": "@Groupon any good spa deals in Chicago this weekend?",
+        "username": "sarah_chicago",
+    },
+    {
+        "label": "positive feedback",
+        "message": "@Groupon just got back from the spa deal I booked last week. Best decision I made all month.",
+        "username": "marcus_la",
+    },
+]
+
+if __name__ == "__main__":
+    for test in TESTS:
+        print(f"\n{'='*60}")
+        print(f"TEST: {test['label'].upper()}")
+        print(f"From: @{test['username']}")
+        print(f"Message: {test['message']}")
+        print("-" * 60)
+
+        result = handle_mention(
+            test["message"],
+            test["username"],
+            CATALOG_PATH,
+            PROMPTS_DIR,
+            REFERENCES_DIR,
+        )
+
+        print(f"Status: {result['status']}")
+        if "reply" in result:
+            print(f"Reply:  {result['reply']}")
+        if "reason" in result:
+            print(f"Reason: {result['reason']}")
+        if "route" in result:
+            print(f"Route:  {result['route']}")
