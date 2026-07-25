@@ -25,7 +25,7 @@
   $: placeholder = mode === 'deal_drop'
     ? 'No input needed for deal drops'
     : mode === 'trend_hook'
-    ? 'Type a custom trend...'
+    ? 'No input needed — trends are auto-selected'
     : 'Type a custom mention...'
 </script>
 
@@ -55,9 +55,9 @@
       bind:value={input}
       {placeholder}
       on:keydown={handleKey}
-      disabled={mode === 'deal_drop'}
+      disabled={mode === 'deal_drop' || mode === 'trend_hook'}
     />
-    <button on:click={handleSend} disabled={mode === 'deal_drop'}>Send</button>
+    <button on:click={handleSend} disabled={mode === 'deal_drop' || mode === 'trend_hook'}>Send</button>
   </div>
 </div>
 

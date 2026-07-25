@@ -1,0 +1,122 @@
+[
+  {
+    "name": "#SelfCareSunday",
+    "query": "#SelfCareSunday",
+    "tweet_volume": 85000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#DateNight",
+    "query": "#DateNight",
+    "tweet_volume": 42000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#ChicagoEats",
+    "query": "#ChicagoEats",
+    "tweet_volume": 12000,
+    "location": "Chicago"
+  },
+  {
+    "name": "#NYCThingsToDo",
+    "query": "#NYCThingsToDo",
+    "tweet_volume": 31000,
+    "location": "New York"
+  },
+  {
+    "name": "#WellnessWednesday",
+    "query": "#WellnessWednesday",
+    "tweet_volume": 67000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#LAFoodie",
+    "query": "#LAFoodie",
+    "tweet_volume": 18000,
+    "location": "Los Angeles"
+  },
+  {
+    "name": "#MondayMotivation",
+    "query": "#MondayMotivation",
+    "tweet_volume": 120000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#SpaDay",
+    "query": "#SpaDay",
+    "tweet_volume": 29000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#WeekendVibes",
+    "query": "#WeekendVibes",
+    "tweet_volume": 54000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#ChicagoRestaurants",
+    "query": "#ChicagoRestaurants",
+    "tweet_volume": 8500,
+    "location": "Chicago"
+  },
+  {
+    "name": "#FitnessFriday",
+    "query": "#FitnessFriday",
+    "tweet_volume": 38000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#NYCFoodie",
+    "query": "#NYCFoodie",
+    "tweet_volume": 22000,
+    "location": "New York"
+  },
+  {
+    "name": "#TreatYourself",
+    "query": "#TreatYourself",
+    "tweet_volume": 47000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#LAWeekend",
+    "query": "#LAWeekend",
+    "tweet_volume": 15000,
+    "location": "Los Angeles"
+  },
+  {
+    "name": "#GirlsNightOut",
+    "query": "#GirlsNightOut",
+    "tweet_volume": 33000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#EscapeTheCity",
+    "query": "#EscapeTheCity",
+    "tweet_volume": 19000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#ChicagoSummer",
+    "query": "#ChicagoSummer",
+    "tweet_volume": 11000,
+    "location": "Chicago"
+  },
+  {
+    "name": "#NYCDate",
+    "query": "#NYCDate",
+    "tweet_volume": 14000,
+    "location": "New York"
+  },
+  {
+    "name": "#ActiveLifestyle",
+    "query": "#ActiveLifestyle",
+    "tweet_volume": 25000,
+    "location": "Worldwide"
+  },
+  {
+    "name": "#LocalExperiences",
+    "query": "#LocalExperiences",
+    "tweet_volume": 9000,
+    "location": "Worldwide"
+  }
+]

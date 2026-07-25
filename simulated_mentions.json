@@ -1,0 +1,162 @@
+[
+  {
+    "tweet_id": "1001",
+    "username": "sarah_chicago",
+    "text": "@Groupon any good spa deals in Chicago this weekend?",
+    "timestamp": "2026-07-22T10:15:00Z",
+    "location": "Chicago",
+    "type": "deal_request"
+  },
+  {
+    "tweet_id": "1002",
+    "username": "marcus_la",
+    "text": "@Groupon just got back from the spa deal I booked last week. Best decision I made all month.",
+    "timestamp": "2026-07-22T12:00:00Z",
+    "location": "Los Angeles",
+    "type": "positive_feedback"
+  },
+  {
+    "tweet_id": "1003",
+    "username": "foodie_nyc",
+    "text": "@Groupon the restaurant voucher I bought expired before I could use it and I never got a refund",
+    "timestamp": "2026-07-22T11:30:00Z",
+    "location": "New York",
+    "type": "complaint"
+  },
+  {
+    "tweet_id": "1004",
+    "username": "fitlife_chicago",
+    "text": "@Groupon do you have fitness class deals in Chicago?",
+    "timestamp": "2026-07-22T13:20:00Z",
+    "location": "Chicago",
+    "type": "deal_request"
+  },
+  {
+    "tweet_id": "1005",
+    "username": "just_browsing_nyc",
+    "text": "@Groupon still the best way to try new places in NYC without breaking the bank",
+    "timestamp": "2026-07-22T14:00:00Z",
+    "location": "New York",
+    "type": "positive_feedback"
+  },
+  {
+    "tweet_id": "1006",
+    "username": "confused_user",
+    "text": "@Groupon how do I apply a voucher code? The merchant says they don't accept it",
+    "timestamp": "2026-07-22T14:45:00Z",
+    "location": "Los Angeles",
+    "type": "support_request"
+  },
+  {
+    "tweet_id": "1007",
+    "username": "relaxation_seeker",
+    "text": "@Groupon I need a massage, any deals near Chicago?",
+    "timestamp": "2026-07-22T15:10:00Z",
+    "location": "Chicago",
+    "type": "deal_request"
+  },
+  {
+    "tweet_id": "1008",
+    "username": "brunch_enthusiast",
+    "text": "@Groupon took my mom out for her birthday using a deal from you. She loved it. Thank you.",
+    "timestamp": "2026-07-22T15:45:00Z",
+    "location": "New York",
+    "type": "positive_feedback"
+  },
+  {
+    "tweet_id": "1009",
+    "username": "unhappy_customer",
+    "text": "@Groupon the merchant listed on your site is permanently closed. This is the third time this has happened to me.",
+    "timestamp": "2026-07-22T16:00:00Z",
+    "location": "Los Angeles",
+    "type": "complaint"
+  },
+  {
+    "tweet_id": "1010",
+    "username": "wellness_jen",
+    "text": "@Groupon any yoga deals in Chicago?",
+    "timestamp": "2026-07-22T16:30:00Z",
+    "location": "Chicago",
+    "type": "deal_request"
+  },
+  {
+    "tweet_id": "1011",
+    "username": "just_sharing",
+    "text": "@Groupon did an escape room in NYC through Groupon last weekend with my team. Absolutely recommend.",
+    "timestamp": "2026-07-22T17:00:00Z",
+    "location": "New York",
+    "type": "positive_feedback"
+  },
+  {
+    "tweet_id": "1012",
+    "username": "refund_issue",
+    "text": "@Groupon I've been waiting 3 weeks for my refund. Nobody is responding to my emails.",
+    "timestamp": "2026-07-22T17:30:00Z",
+    "location": "Los Angeles",
+    "type": "complaint"
+  },
+  {
+    "tweet_id": "1013",
+    "username": "chi_town_eats",
+    "text": "@Groupon looking for restaurant deals in Chicago for a group dinner",
+    "timestamp": "2026-07-22T18:00:00Z",
+    "location": "Chicago",
+    "type": "deal_request"
+  },
+  {
+    "tweet_id": "1014",
+    "username": "random_observation",
+    "text": "@Groupon remember when Groupon was everywhere? Wild how much has changed.",
+    "timestamp": "2026-07-22T18:30:00Z",
+    "location": "New York",
+    "type": "general_comment"
+  },
+  {
+    "tweet_id": "1015",
+    "username": "active_la_guy",
+    "text": "@Groupon any gym or fitness deals in LA?",
+    "timestamp": "2026-07-22T19:00:00Z",
+    "location": "Los Angeles",
+    "type": "deal_request"
+  },
+  {
+    "tweet_id": "1016",
+    "username": "sharing_experience",
+    "text": "@Groupon booked a cooking class in Chicago through you last month. One of the best nights I've had this year.",
+    "timestamp": "2026-07-22T19:30:00Z",
+    "location": "Chicago",
+    "type": "positive_feedback"
+  },
+  {
+    "tweet_id": "1017",
+    "username": "girls_trip_nyc",
+    "text": "@Groupon planning a girls weekend in New York, any spa and dinner deals?",
+    "timestamp": "2026-07-22T20:00:00Z",
+    "location": "New York",
+    "type": "deal_request"
+  },
+  {
+    "tweet_id": "1018",
+    "username": "just_venting",
+    "text": "@Groupon the merchant refused to honor my voucher and said Groupon never told them about it",
+    "timestamp": "2026-07-22T20:30:00Z",
+    "location": "Los Angeles",
+    "type": "complaint"
+  },
+  {
+    "tweet_id": "1019",
+    "username": "casual_mention",
+    "text": "planning my birthday next week, thinking of using @Groupon to find something fun in Chicago",
+    "timestamp": "2026-07-22T21:00:00Z",
+    "location": "Chicago",
+    "type": "general_comment"
+  },
+  {
+    "tweet_id": "1020",
+    "username": "nyc_night_owl",
+    "text": "@Groupon just booked an escape room in NYC for this weekend. Cannot wait.",
+    "timestamp": "2026-07-22T21:30:00Z",
+    "location": "New York",
+    "type": "positive_feedback"
+  }
+]

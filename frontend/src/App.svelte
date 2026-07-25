@@ -26,36 +26,48 @@
   async function handleRun() {
     if (mode === 'deal_drop') {
       addPill('Deal drop triggered', 'routing')
-      await delay(1000)
-      addPill('Review passed', 'pass')
-      addMessage(
-        'Pittsburgh, your shoulders called. Honor Your Body Wellness has been waiting. Up to 52% off personalized therapeutic massages — deep tissue, Swedish, or couples. Book on Groupon.',
-        'outgoing', 'Agent · deal drop'
-      )
+
+      let result
+      try {
+        const res = await fetch('/api/deal_drop', { method: 'POST' })
+        result = await res.json()
+      } catch (e) {
+        addPill('API error', 'fail')
+        return
+      }
+
+      if (result.status === 'posted') {
+        addPill('Review passed', 'pass')
+        addMessage(result.copy, 'outgoing', `Agent · deal drop · ${result.deal?.merchant_name ?? ''}`)
+      } else {
+        addPill('Failed — escalated', 'fail')
+      }
     }
 
     else if (mode === 'trend_hook') {
-      addMessage('#SelfCareSunday is trending · 85,000 tweets', 'incoming', 'Trend signal')
-      await delay(900)
-      addPill('Matched: King Spa Chicago', 'routing')
-      await delay(900)
-      addPill('Review passed', 'pass')
-      addMessage(
-        "It's Sunday. King Spa Chicago has heated pools, sauna rooms, and a plunge. Open 24/7. All-day admission on Groupon.",
-        'outgoing', 'Agent · trend hook'
-      )
+      addPill('Trend signal triggered', 'routing')
+
+      let result
+      try {
+        const res = await fetch('/api/trend_drop', { method: 'POST' })
+        result = await res.json()
+      } catch (e) {
+        addPill('API error', 'fail')
+        return
+      }
+
+      if (result.status === 'posted') {
+        addMessage(`${result.trend} is trending`, 'incoming', 'Trend signal')
+        addPill('Deal matched', 'pass')
+        addMessage(result.copy, 'outgoing', `Agent · trend hook · ${result.deal?.merchant_name ?? ''}`)
+      } else if (result.status === 'no_match') {
+        addMessage(`${result.trend} is trending`, 'incoming', 'Trend signal')
+        addPill('No matching deal found', 'escalate')
+      }
     }
 
     else if (mode === 'mention_reply') {
-      addMessage('@Groupon any good spa deals in Chicago this weekend?', 'incoming', '@sarah_chicago')
-      await delay(700)
-      addPill('Guard passed', 'pass')
-      await delay(800)
-      addPill('Review passed', 'pass')
-      addMessage(
-        '@sarah_chicago King Spa Chicago — heated pools, sauna rooms, scrubs. All day, any time. On Groupon right now.',
-        'outgoing', 'Agent · mention reply'
-      )
+      addPill('Type a mention in the input below', 'routing')
     }
   }
 
@@ -106,15 +118,30 @@
     }
 
     else if (mode === 'trend_hook') {
-      addMessage(text + ' is trending', 'incoming', 'Custom trend')
-      await delay(600)
+      addMessage(text + ' is trending', 'incoming', 'Trend signal')
       addPill('Matching deal...', 'routing')
-      await delay(900)
-      addPill('Review passed', 'pass')
-      addMessage(
-        'Something worth leaving the house for is happening in your city. Find it on Groupon.',
-        'outgoing', 'Agent · trend hook'
-      )
+
+      let result
+      try {
+        const res = await fetch('/api/trend', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ trend: text })
+        })
+        result = await res.json()
+      } catch (e) {
+        addPill('API error', 'fail')
+        return
+      }
+
+      messages = messages.filter(m => !(m.type === 'pill' && m.text === 'Matching deal...'))
+
+      if (result.status === 'posted') {
+        addPill('Deal matched', 'pass')
+        addMessage(result.copy, 'outgoing', `Agent · trend hook · ${result.deal?.merchant_name ?? ''}`)
+      } else if (result.status === 'no_match') {
+        addPill('No matching deal found', 'escalate')
+      }
     }
   }
 
