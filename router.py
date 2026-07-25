@@ -29,14 +29,14 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
     if not guard_report:
         log.error("Input guard failed for @%s — escalating", username)
         queue_for_human_review(message, username, {}, {})
-        return {"status": "escalated", "reason": "Input guard failed"}
+        return {"status": "escalated", "reason": "Input guard failed", "guard_report": {}}
     log.info("Guard report: hard_block=%s flags=%s", guard_report.get("hard_block"), guard_report.get("flags"))
 
     decision = orchestrate(message, username, guard_report)
     if not decision:
         log.error("Orchestrator returned None — escalating")
         queue_for_human_review(message, username, guard_report, {})
-        return {"status": "escalated", "reason": "Orchestrator failed"}
+        return {"status": "escalated", "reason": "Orchestrator failed", "guard_report": guard_report}
 
     route = decision["route"]
     log.info("Route: %s | engage_with: %s", route, decision.get("engage_with"))
@@ -44,6 +44,8 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
 
     if route in ("blocked_reply", "off_topic"):
         reply_text = FIXED_REPLIES[route]
+        log.info("Fixed reply for route %s — skipping output guard", route)
+        return {"status": "posted", "reply": reply_text, "route": route, "guard_report": guard_report}
 
     elif route == "deal_request":
         deal = retrieve_deal(
@@ -54,7 +56,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         )
         if not deal:
             queue_for_human_review(message, username, guard_report, decision)
-            return {"status": "escalated", "reason": "No confident deal match found"}
+            return {"status": "escalated", "reason": "No confident deal match found", "guard_report": guard_report}
 
         agent_input = build_agent_input(deal, segment="spontaneous_locals", variations=1)
         deal_info = agent_input["deal"]
@@ -62,7 +64,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
 
         if result["status"] != "pass":
             queue_for_human_review(message, username, guard_report, decision)
-            return {"status": "escalated", "reason": "Deal copy failed review"}
+            return {"status": "escalated", "reason": "Deal copy failed review", "guard_report": guard_report}
 
         deal_copy = result["results"][0]["copy"]
         reply = generate_conversational_reply(
@@ -71,7 +73,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         if not reply:
             log.error("Conversational agent returned None for deal_reply — escalating")
             queue_for_human_review(message, username, guard_report, decision)
-            return {"status": "escalated", "reason": "Conversational agent failed (deal_reply)"}
+            return {"status": "escalated", "reason": "Conversational agent failed (deal_reply)", "guard_report": guard_report}
         reply_text = reply["reply"]
 
     elif route == "acknowledge":
@@ -81,7 +83,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         if not reply:
             log.error("Conversational agent returned None for acknowledge — escalating")
             queue_for_human_review(message, username, guard_report, decision)
-            return {"status": "escalated", "reason": "Conversational agent failed (acknowledge)"}
+            return {"status": "escalated", "reason": "Conversational agent failed (acknowledge)", "guard_report": guard_report}
         reply_text = reply["reply"]
         queue_for_human_review(message, username, guard_report, decision)
 
@@ -92,27 +94,27 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         if not reply:
             log.error("Conversational agent returned None for positive_response — escalating")
             queue_for_human_review(message, username, guard_report, decision)
-            return {"status": "escalated", "reason": "Conversational agent failed (positive_response)"}
+            return {"status": "escalated", "reason": "Conversational agent failed (positive_response)", "guard_report": guard_report}
         reply_text = reply["reply"]
 
     else:
         queue_for_human_review(message, username, guard_report, decision)
-        return {"status": "escalated", "reason": f"Unrecognized route: {route}"}
+        return {"status": "escalated", "reason": f"Unrecognized route: {route}", "guard_report": guard_report}
 
     guard_payload = json.dumps({"draft": reply_text, "deal_info": deal_info})
     output_check = guard_output(guard_payload)
     if not output_check:
         log.error("Output guard failed — escalating")
         queue_for_human_review(message, username, guard_report, decision)
-        return {"status": "escalated", "reason": "Output guard failed"}
+        return {"status": "escalated", "reason": "Output guard failed", "guard_report": guard_report}
     log.info("Output guard action: %s", output_check.get("action"))
     if output_check["action"] != "publish":
         log.warning("Output guard blocked reply — escalating")
         queue_for_human_review(message, username, guard_report, decision)
-        return {"status": "escalated", "reason": "Output guard blocked reply"}
+        return {"status": "escalated", "reason": "Output guard blocked reply", "guard_report": guard_report}
 
     log.info("Reply posted for @%s: %s", username, reply_text)
-    return {"status": "posted", "reply": reply_text, "route": route}
+    return {"status": "posted", "reply": reply_text, "route": route, "guard_report": guard_report}
 
 
 def queue_for_human_review(message, username, guard_report, decision):

@@ -82,12 +82,22 @@
       if (result.status === 'posted') {
         addPill(`Route: ${result.route}`, 'pass')
         addMessage(result.reply, 'outgoing', 'Agent · mention reply')
+        if (result.route === 'acknowledge') {
+          reviewItems = [...reviewItems, {
+            id: nextId++,
+            input: text,
+            reason: 'Complaint acknowledged — queued for human follow-up',
+            guardReport: result.guard_report || {},
+            suggestion: ''
+          }]
+        }
       } else if (result.status === 'escalated') {
         addPill('Escalated to human review', 'escalate')
         reviewItems = [...reviewItems, {
           id: nextId++,
           input: text,
           reason: result.reason,
+          guardReport: result.guard_report || {},
           suggestion: ''
         }]
       } else if (result.status === 'paused') {

@@ -28,6 +28,27 @@
             <div class="content">{item.reason}</div>
           </div>
 
+          {#if item.guardReport?.assessment}
+            <div class="section">
+              <div class="label">Guard assessment</div>
+              <div class="content">{item.guardReport.assessment}</div>
+            </div>
+          {/if}
+
+          {#if item.guardReport?.flags}
+            {@const activeFlags = Object.entries(item.guardReport.flags).filter(([, v]) => v).map(([k]) => k)}
+            {#if activeFlags.length > 0}
+              <div class="section">
+                <div class="label">Flags</div>
+                <div class="flags">
+                  {#each activeFlags as flag}
+                    <span class="flag">{flag.replace(/_/g, ' ')}</span>
+                  {/each}
+                </div>
+              </div>
+            {/if}
+          {/if}
+
           <div class="section">
             <div class="label">Suggested response</div>
             <div class="content">{item.suggestion}</div>
@@ -125,6 +146,18 @@
     border-radius: 8px;
     padding: 8px 10px;
     line-height: 1.5;
+  }
+
+  .flags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+  .flag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: #3a1a1a;
+    color: #f4212e;
+    border: 1px solid #f4212e44;
+    text-transform: capitalize;
   }
 
   .actions { display: flex; gap: 6px; }

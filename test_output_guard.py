@@ -51,6 +51,12 @@ CASES = [
         "deal_info": None,
         "expected_action": "publish",
     },
+    {
+        "name": "blocked_reply_fixed",
+        "draft": f"Not something I can help with, but if you're looking for something to do — check out today's local deals on Groupon. https://www.groupon.com/",
+        "deal_info": None,
+        "expected_action": "publish",
+    },
 ]
 
 if __name__ == "__main__":
