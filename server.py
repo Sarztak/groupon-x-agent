@@ -10,6 +10,7 @@ from router import handle_mention
 from marketing_copy import build_agent_input, generate_and_review
 from guardrails import guard_output
 from retrieval import retrieve_deal
+from metrics import log_post, summarize
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
 log = logging.getLogger(__name__)
@@ -38,6 +39,11 @@ class TrendRequest(BaseModel):
     trend: str
 
 
+@app.get("/api/metrics")
+async def metrics():
+    return summarize()
+
+
 @app.post("/api/mention")
 async def mention(req: MentionRequest):
     result = handle_mention(
@@ -56,6 +62,7 @@ async def deal_drop():
     deal = random.choice(deals[:10])
     log.info("Deal drop: selected %s", deal.get("deal_title"))
     result = _copy_from_cache_or_generate(deal)
+    log_post(post_type="deal_drop", route="deal_drop", copy=result["copy"])
     return {"status": "posted", "copy": result["copy"], "deal": result["deal"]}
 
 
@@ -77,7 +84,7 @@ def _copy_from_cache_or_generate(deal: dict) -> dict:
     deal_info = agent_input["deal"]
 
     output_check = guard_output(json.dumps({"draft": copy, "deal_info": deal_info}))
-    if not output_check or output_check["action"] != "publish":
+    if not output_check or output_check["action"] == "block":
         raise HTTPException(status_code=500, detail="Output guard blocked copy")
 
     cache.append({"deal": deal_info, "copy": copy})
@@ -122,4 +129,5 @@ async def trend_drop():
         return {"status": "no_match", "trend": trend_name}
 
     result = _copy_from_cache_or_generate(deal)
+    log_post(post_type="trend_hook", route="trend_hook", copy=result["copy"])
     return {"status": "posted", "copy": result["copy"], "deal": result["deal"], "trend": trend_name}

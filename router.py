@@ -6,6 +6,7 @@ from guardrails import guard_input, guard_output, is_killed
 from retrieval import retrieve_deal
 from orchestrator import orchestrate
 from conversational import generate_conversational_reply
+from metrics import log_post
 
 log = logging.getLogger(__name__)
 
@@ -53,6 +54,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
     if route in ("blocked_reply", "off_topic"):
         reply_text = FIXED_REPLIES[route]
         log.info("Fixed reply for route %s — skipping output guard", route)
+        log_post(post_type="mention_reply", route=route, copy=reply_text)
         return {"status": "posted", "reply": reply_text, "route": route, "guard_report": guard_report}
 
     elif route == "deal_request":
@@ -122,6 +124,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         return {"status": "escalated", "reason": "Output guard blocked reply", "guard_report": guard_report}
 
     log.info("Reply posted for @%s: %s", username, reply_text)
+    log_post(post_type="mention_reply", route=route, copy=reply_text)
     return {"status": "posted", "reply": reply_text, "route": route, "guard_report": guard_report}
 
 
