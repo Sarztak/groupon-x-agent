@@ -57,14 +57,32 @@ CASES = [
         "deal_info": None,
         "expected_action": "publish",
     },
+    {
+        "name": "sensitive_topic_in_draft",
+        "draft": "After yesterday's tragedy downtown, treat yourself to some self-care — spa deals on Groupon.",
+        "deal_info": None,
+        "expected_action": "block",
+    },
 ]
 
 if __name__ == "__main__":
+    import sys
+    args = sys.argv[1:]
+    model_override = next((a.split("=")[1] for a in args if a.startswith("--model=")), None)
+    filter_name = next((a for a in args if not a.startswith("--")), None)
+    if filter_name:
+        filter_name = filter_name.lower()
+    cases_to_run = [c for c in CASES if filter_name in c["name"].lower()] if filter_name else CASES
+
+    if model_override:
+        log.info("Using model override: %s", model_override)
+
     passed = 0
     failed = 0
-    for case in CASES:
+    for case in cases_to_run:
         payload = json.dumps({"draft": case["draft"], "deal_info": case["deal_info"]})
-        result = guard_output(payload)
+        kwargs = {"model": model_override} if model_override else {}
+        result = guard_output(payload, **kwargs)
         action = result.get("action") if result else "ERROR"
         flags = result.get("flags", {}) if result else {}
         reason = result.get("reason", "") if result else "null returned"

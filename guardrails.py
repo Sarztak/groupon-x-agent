@@ -32,11 +32,11 @@ with open("prompts/output_guard.txt", "r") as f:
 MODEL = "claude-sonnet-4-6"
 
 
-def guard_input(user_message: str, backend: str = "cli") -> dict | None:
+def guard_input(user_message: str, backend: str = "cli", model: str = MODEL) -> dict | None:
     raw = call_model(
         system=INPUT_GUARD_PROMPT,
         user=f"<message>{user_message}</message>",
-        model=MODEL,
+        model=model,
         backend=backend,
     )
     if not raw:
@@ -53,11 +53,11 @@ def guard_input(user_message: str, backend: str = "cli") -> dict | None:
     return result
 
 
-def guard_output(draft_post: str, backend: str = "cli") -> dict | None:
+def guard_output(draft_post: str, backend: str = "cli", model: str = MODEL) -> dict | None:
     raw = call_model(
         system=OUTPUT_GUARD_PROMPT,
         user=draft_post,
-        model=MODEL,
+        model=model,
         backend=backend,
     )
     if not raw:

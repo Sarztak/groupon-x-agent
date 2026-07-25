@@ -14,7 +14,8 @@ GROUPON_HOME_LINK = "https://www.groupon.com/"
 
 FIXED_REPLIES = {
     "blocked_reply": f"Not something I can help with, but if you're looking for something to do — check out today's local deals on Groupon. {GROUPON_HOME_LINK}",
-    "off_topic": f"For how Groupon works, check out {GROUPON_HELP_LINK} — or if you're just looking for something to do, see what's near you at {GROUPON_HOME_LINK}"
+    "off_topic": f"For how Groupon works, check out {GROUPON_HELP_LINK} — or if you're just looking for something to do, see what's near you at {GROUPON_HOME_LINK}",
+    "sensitive_block": "That's not something we're able to weigh in on.",
 }
 
 
@@ -31,6 +32,13 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         queue_for_human_review(message, username, {}, {})
         return {"status": "escalated", "reason": "Input guard failed", "guard_report": {}}
     log.info("Guard report: hard_block=%s flags=%s", guard_report.get("hard_block"), guard_report.get("flags"))
+
+    if guard_report.get("hard_block"):
+        if guard_report.get("flags", {}).get("sensitive_news"):
+            log.info("Hard block + sensitive_news — sending sensitive_block")
+            return {"status": "posted", "reply": FIXED_REPLIES["sensitive_block"], "route": "sensitive_block", "guard_report": guard_report}
+        log.info("Hard block — skipping orchestrator, sending blocked_reply")
+        return {"status": "posted", "reply": FIXED_REPLIES["blocked_reply"], "route": "blocked_reply", "guard_report": guard_report}
 
     decision = orchestrate(message, username, guard_report)
     if not decision:
@@ -68,7 +76,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
 
         deal_copy = result["results"][0]["copy"]
         reply = generate_conversational_reply(
-            mode="deal_reply", mention_text=message, username=username, deal_copy=deal_copy
+            mode="deal_reply", mention_text=decision["engage_with"], username=username, deal_copy=deal_copy
         )
         if not reply:
             log.error("Conversational agent returned None for deal_reply — escalating")
