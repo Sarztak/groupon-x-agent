@@ -53,25 +53,32 @@ def call_model(system: str, user: str, model: str, backend: str = "cli") -> str 
     if backend == "cli":
         import sys, os, tempfile
         if sys.platform == "win32":
-            # cmd.exe has an 8191-char arg limit and mangles special chars in large prompts.
-            # Write both to temp files and expand via PowerShell variables instead.
-            sys_f = tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8')
-            usr_f = tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8')
+            # cmd.exe has an 8191-char arg limit; PS 5.1 word-splits variables in native calls.
+            # Fix: write prompts to temp files, invoke via a .ps1 script using array splatting
+            # (@a) so each element is passed as a discrete arg with no word-splitting.
+            sys_f = tempfile.NamedTemporaryFile(mode='w', suffix='_sys.txt', delete=False, encoding='utf-8')
+            usr_f = tempfile.NamedTemporaryFile(mode='w', suffix='_usr.txt', delete=False, encoding='utf-8')
+            ps1_f = tempfile.NamedTemporaryFile(mode='w', suffix='.ps1',    delete=False, encoding='utf-8')
             sys_f.write(system); sys_f.close()
             usr_f.write(user);   usr_f.close()
+            ps1_f.write(
+                f"$s = Get-Content -Raw -LiteralPath '{sys_f.name}'\n"
+                f"$u = Get-Content -Raw -LiteralPath '{usr_f.name}'\n"
+                f"$s = $s -replace '\"', '\\\"'\n"
+                f"$u = $u -replace '\"', '\\\"'\n"
+                f"$a = @('-p', $u, '--system-prompt', $s, '--model', '{model}')\n"
+                f"& claude @a\n"
+            )
+            ps1_f.close()
             try:
-                ps = (
-                    f"$s = Get-Content -Raw -LiteralPath '{sys_f.name}'; "
-                    f"$u = Get-Content -Raw -LiteralPath '{usr_f.name}'; "
-                    f"claude -p $u --system-prompt $s --model {model}"
-                )
                 result = subprocess.run(
-                    ["powershell", "-NoProfile", "-Command", ps],
+                    ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", ps1_f.name],
                     capture_output=True, text=True, encoding='utf-8',
                 )
             finally:
                 os.unlink(sys_f.name)
                 os.unlink(usr_f.name)
+                os.unlink(ps1_f.name)
         else:
             result = subprocess.run(
                 ["claude", "-p", user, "--system-prompt", system, "--model", model],
