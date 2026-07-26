@@ -7,9 +7,25 @@
 
   let now = Date.now()
   let ticker
+  let killActive = false
 
-  onMount(() => { ticker = setInterval(() => { now = Date.now() }, 30000) })
+  onMount(async () => {
+    ticker = setInterval(() => { now = Date.now() }, 30000)
+    const res = await fetch('/api/kill_switch')
+    const data = await res.json()
+    killActive = data.active
+  })
   onDestroy(() => clearInterval(ticker))
+
+  async function toggleKill() {
+    const res = await fetch('/api/kill_switch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ active: !killActive })
+    })
+    const data = await res.json()
+    killActive = data.active
+  }
 
   function fmtAge(mins) {
     if (mins < 1)  return 'just now'
@@ -24,6 +40,9 @@
     {#if items.length > 0}
       <span class="badge">{items.length}</span>
     {/if}
+    <button class="kill-btn {killActive ? 'kill-active' : ''}" on:click={toggleKill}>
+      {killActive ? '⏹ Paused' : '▶ Live'}
+    </button>
   </div>
 
   <div class="body">
@@ -106,6 +125,27 @@
     font-weight: 600;
     color: #e7e9ea;
   }
+
+  .kill-btn {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #00b87a44;
+    background: #1a3a2a;
+    color: #00b87a;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+  }
+
+  .kill-btn.kill-active {
+    border-color: #f4212e44;
+    background: #3a1a1a;
+    color: #f4212e;
+  }
+
+  .kill-btn:hover { opacity: 0.85; }
 
   .badge {
     font-size: 11px;

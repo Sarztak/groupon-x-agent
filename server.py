@@ -44,8 +44,28 @@ class TrendRequest(BaseModel):
 class CustomDealRequest(BaseModel):
     url: str
 
+class KillSwitchRequest(BaseModel):
+    active: bool
+
 
 TWO_WEEK_DIR    = Path("./two_week_plan").resolve()
+
+
+KILL_SWITCH_PATH = Path("./KILL_SWITCH").resolve()
+
+
+@app.get("/api/kill_switch")
+async def get_kill_switch():
+    return {"active": KILL_SWITCH_PATH.exists()}
+
+
+@app.post("/api/kill_switch")
+async def set_kill_switch(req: KillSwitchRequest):
+    if req.active:
+        KILL_SWITCH_PATH.touch()
+    else:
+        KILL_SWITCH_PATH.unlink(missing_ok=True)
+    return {"active": KILL_SWITCH_PATH.exists()}
 
 
 @app.get("/api/metrics")
