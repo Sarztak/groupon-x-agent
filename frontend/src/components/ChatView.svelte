@@ -29,10 +29,17 @@
     ? 'No input needed — trends are auto-selected'
     : 'Type a custom mention...'
 
-  function splitUrl(text) {
-    const m = text.match(/(https?:\/\/\S+)/)
-    if (!m) return { copy: text, url: null }
-    return { copy: text.slice(0, m.index).trimEnd(), url: m[1] }
+  function parseSegments(text) {
+    const parts = []
+    const re = /(https?:\/\/\S+)/g
+    let last = 0, m
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) parts.push({ type: 'text', value: text.slice(last, m.index) })
+      parts.push({ type: m[1].includes('/deals/') ? 'deal_url' : 'url', value: m[1] })
+      last = m.index + m[1].length
+    }
+    if (last < text.length) parts.push({ type: 'text', value: text.slice(last) })
+    return parts
   }
 </script>
 
@@ -53,16 +60,22 @@
       {#if msg.type === 'pill'}
         <div class="pill {msg.variant}">{msg.text}</div>
       {:else}
-        {@const { copy, url } = splitUrl(msg.text)}
+        {@const segs = parseSegments(msg.text)}
         <div class="msg {msg.direction}">
           {#if msg.meta}
             <div class="meta">{msg.meta}</div>
           {/if}
           <div class="bubble">
-            {copy}
-            {#if url}
-              <a class="deal-link" href={url} target="_blank" rel="noopener noreferrer">View deal →</a>
-            {/if}
+            {#each segs as seg}
+              {#if seg.type === 'text'}
+                {seg.value}
+              {:else if seg.type === 'deal_url'}
+                <a class="deal-link inline-deal" href={seg.value} target="_blank" rel="noopener noreferrer">View deal →</a>
+              {:else}
+                {@const label = (() => { try { const u = new URL(seg.value); return (u.pathname && u.pathname !== '/') ? u.pathname.replace(/^\//, '') : u.hostname.replace('www.', '') } catch { return 'groupon.com' } })()}
+                <a class="inline-link" href={seg.value} target="_blank" rel="noopener noreferrer">{label}</a>
+              {/if}
+            {/each}
           </div>
         </div>
       {/if}
@@ -169,6 +182,12 @@
     opacity: 0.85;
   }
 
+  .deal-link.inline-deal {
+    display: inline;
+    margin-top: 0;
+    font-size: inherit;
+  }
+
   .msg.outgoing .deal-link {
     color: rgba(255,255,255,0.9);
     border-top: 1px solid rgba(255,255,255,0.2);
@@ -182,6 +201,14 @@
   }
 
   .deal-link:hover { opacity: 1; text-decoration: underline; }
+
+  .inline-link {
+    color: #1d9bf0;
+    text-decoration: underline;
+    font-size: inherit;
+  }
+
+  .msg.outgoing .inline-link { color: rgba(255,255,255,0.85); }
 
   .msg.incoming .bubble {
     background: #1d1f23;
