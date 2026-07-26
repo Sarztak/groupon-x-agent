@@ -62,11 +62,9 @@ def call_model(system: str, user: str, model: str, backend: str = "cli") -> str 
             sys_f.write(system); sys_f.close()
             usr_f.write(user);   usr_f.close()
             ps1_f.write(
-                f"$s = Get-Content -Raw -LiteralPath '{sys_f.name}'\n"
                 f"$u = Get-Content -Raw -LiteralPath '{usr_f.name}'\n"
-                f"$s = $s -replace '\"', '\\\"'\n"
                 f"$u = $u -replace '\"', '\\\"'\n"
-                f"$a = @('-p', $u, '--system-prompt', $s, '--model', '{model}')\n"
+                f"$a = @('-p', $u, '--system-prompt-file', '{sys_f.name}', '--model', '{model}')\n"
                 f"& claude @a\n"
             )
             ps1_f.close()
