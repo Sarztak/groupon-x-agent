@@ -63,6 +63,19 @@ CASES = [
         "deal_info": None,
         "expected_action": "block",
     },
+    {
+        "name": "colloquial_debate_false_positive",
+        "draft": "Massage. Pool. Chicago skyline from above. The Spa at Trump Chicago just won the Saturday debate. Up to 35% off. Find it on Groupon.",
+        "deal_info": {
+            "deal_title": "Luxury Spa Day with Pool Access at The Spa at Trump Chicago: 60 or 90 Minute Massage, Facial, Both or Couples, Up to 35%",
+            "merchant_name": "The Spa at Trump Chicago",
+            "location": "Chicago, IL",
+            "city": "chicago",
+            "merchant_info": "Luxury spa with pool access and skyline views.",
+            "reviews": []
+        },
+        "expected_action": "publish",
+    },
 ]
 
 if __name__ == "__main__":

@@ -72,36 +72,6 @@
     "status": "ok"
   },
   {
-    "id": "p5",
-    "date": "Sun Aug 02",
-    "type": "trend_hook",
-    "trend": "#SelfCareSunday",
-    "trend_volume": 85000,
-    "matched_deal": {
-      "deal_title": "Luxury Spa Day with Pool Access at The Spa at Trump Chicago: 60 or 90 Minute Massage, Facial, Both or Couples, Up to 35%",
-      "merchant_name": "The Spa at Trump Chicago",
-      "location": null,
-      "merchant_info": null,
-      "company_website": "https://www.trumphotels.com/chicago/spa/chicago-spa-services",
-      "highlights": "Iconic Trump International Hotel & Tower\u00ae Chicago",
-      "full_content": "Iconic Trump International Hotel & Tower\u00ae Chicago\n\nEscape to a world of relaxation at the renowned Trump International Hotel & Tower\u00ae Chicago, where this oasis of tranquility awaits. Unwind with a luxurious massage or rejuvenating facial \u2014 or both \u2014 designed to ease deep muscle tension, refresh your skin, and melt away stress. This isn't just a spa day; it's a transformative experience that leaves you feeling renewed and revitalized in every way.\n\nWhat We Offer\n\nLuxury Spa Day with Pool Access: 60-Min Renewal Massage OR 60-Min Facial for One with Glass of Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nChoose your treatment: the Aroma Renewal Massage \u2014 a Swedish-style massage with aromatherapy oil and a refreshing peppermint scalp massage \u2014 or a 60-minute facial tailored to your skin's needs.\n\nLuxury Spa Day with Pool Access: 60-Min Couples Massage for Two with Hot Stones and Glass of Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nGentle pressure, long smooth strokes, and the warmth of hot stones work together to improve circulation, ease tension, and deliver a welcome state of shared serenity.\n\nLuxury Spa Day with Pool Access: Pampering Package \u2014 60-Min Massage AND 60-Min Facial for One with Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nThe full experience: start with a relaxing Aroma Renewal Massage, then follow it with a 60-minute facial for a head-to-toe refresh. The ultimate spa day, all in one package.\n\nAll packages include full access to the 75-foot heated pool and the complete spa amenity suite \u2014 a modern gym with state-of-the-art equipment, steam room, sauna, and a relaxation lounge overlooking the Chicago River.\n\nPlan to arrive at least 30 minutes before your appointment. We highly recommend spending the full day to make the most of everything the spa has to offer.\n\nGuests must be 16 or older to use the Fitness Club. Guests under 16 must be accompanied by an adult (18+) to use the pool and locker room amenities.\n\nThese massage services include light to firm pressure massage techniques. Services can be upgraded to a therapeutic or deep tissue massage for an additional fee at the spa.\n\nWhy You Should Grab This Offer\n\nYour spa day begins the moment you step into the serene retreat and are handed a chilled glass of bubbly. Whether you choose a tension-melting massage, a skin-renewing facial, or the full pampering package with both, every treatment is designed to leave you feeling weightless and restored. With full pool and spa access included, you can make a whole day of it \u2014 soaking in the amenities, unwinding at your own pace, and leaving with that deeply connected, completely rejuvenated feeling that only a true luxury spa day delivers.\n\nMake it a gift\nPersonalised\nInstant Delivery\nEasy Exchange\nHow it works",
-      "reviews": [
-        "Guest\n2 ratings\n|\n1 review\n7 days ago\nAmazing\nHelpful",
-        "Guest\n1 rating\n|\n1 review\n57 days ago\nGreat views.\nHelpful",
-        "Karla\n2 ratings\n|\n2 reviews\n62 days ago\nGreat experience\nHelpful",
-        "Jackie\n5 ratings\n|\n2 reviews\n64 days ago\nBest massage I ever had!!\nHelpful",
-        "Guest\n1 rating\n|\n1 review\n126 days ago\nCaeser gave the best massage ever!\nHelpful"
-      ],
-      "category": "spa",
-      "city": "Chicago",
-      "url": "https://www.groupon.com/deals/the-spa-at-trump-chicago-11?redemptionLocationId=16186294-5b4b-b06a-768a-013ae2bbcfa4",
-      "merchant_description": "Renowned luxury spa within the iconic Trump International Hotel & Tower Chicago, specializing in transformative massage and facial treatments.",
-      "key_services": "Aroma Renewal Massage, Tailored Facial, Hot Stone Massage"
-    },
-    "copy": "Your weekend is fine. It could also have a pool, a 90-minute massage, and a view of Chicago from Trump Tower. Up to 35% off. Find it on Groupon.",
-    "status": "ok"
-  },
-  {
     "id": "p6",
     "date": "Tue Aug 04",
     "type": "deal_drop",
@@ -113,6 +83,34 @@
       "url": "https://www.groupon.com/deals/king-spa-sauna-6?redemptionLocationId=085a5dfb-039e-b06a-9298-013a8fce9ae9"
     },
     "copy": "King Spa NJ hands you a uniform. That's how it starts. Heated rooms, a locker, a few hours with nothing on the clock. Daily or monthly. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p8",
+    "date": "Thu Aug 06",
+    "type": "deal_drop",
+    "deal": {
+      "merchant_name": "Doodle Yoga Wellness in SoHo, NY",
+      "deal_title": "Doodle Yoga: Gentle Yoga & Playful Goldendoodles in SoHo",
+      "city": "New York",
+      "category": "fitness",
+      "url": "https://www.groupon.com/deals/doodle-yoga-wellness-1?redemptionLocationId=24d45e30-000a-bbee-fc54-019eb9f5a2c3"
+    },
+    "copy": "Yoga in SoHo. Goldendoodles included. Achieving inner peace is slightly harder when there's a goldendoodle on your mat. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p10",
+    "date": "Sun Aug 09",
+    "type": "deal_drop",
+    "deal": {
+      "merchant_name": "City Cruises Marina Del Rey - Premier Dining",
+      "deal_title": "Marina del Rey Premier Brunch & Dinner Cruise Deals",
+      "city": "Los Angeles",
+      "category": "things+to+do",
+      "url": "https://www.groupon.com/deals/gl-mdr-premier-dining-city-experiences?redemptionLocationId=48582270-1cbb-b4f3-b550-0180ddac1c38"
+    },
+    "copy": "Saturday idea: brunch on a boat in Marina del Rey. The view doesn't require a reservation. The table does. Find it on Groupon.",
     "status": "ok"
   },
   {
@@ -142,21 +140,7 @@
       "merchant_description": "King Spa Chicago is the largest Korean-inspired spa in the U.S., home to the rare Base Rock Room\u2014one of only three worldwide. The 4.8-star rated destination (50,000+ reviews) operates 24/7, offering crystal-infused saunas, thermal hydrotherapy, and authentic Korean treatments.",
       "key_services": "Base Rock Room, Crystal saunas, Korean massages"
     },
-    "copy": "There's a room called the Base Rock Room. Only three exist on earth. One's in Chicago, open 24/7. Crystal saunas, thermal pools, King Spa. Up to 32% off. Find it on Groupon.",
-    "status": "ok"
-  },
-  {
-    "id": "p8",
-    "date": "Thu Aug 06",
-    "type": "deal_drop",
-    "deal": {
-      "merchant_name": "Doodle Yoga Wellness in SoHo, NY",
-      "deal_title": "Doodle Yoga: Gentle Yoga & Playful Goldendoodles in SoHo",
-      "city": "New York",
-      "category": "fitness",
-      "url": "https://www.groupon.com/deals/doodle-yoga-wellness-1?redemptionLocationId=24d45e30-000a-bbee-fc54-019eb9f5a2c3"
-    },
-    "copy": "Yoga in SoHo. Goldendoodles included. Achieving inner peace is slightly harder when there's a goldendoodle on your mat. Find it on Groupon.",
+    "copy": "There are three Base Rock Rooms in the world. One of them is in Chicago, open right now. All-day admission at King Spa, up to 32% off. Find it on Groupon.",
     "status": "ok"
   },
   {
@@ -186,21 +170,37 @@
       "merchant_description": "CrossTown Fitness specializes in High-Intensity Interval Training (HIIT), scientifically designed to boost endurance and build strength efficiently. With expert trainers delivering 200+ weekly classes across four Chicago locations and a 4.9-star community rating, it's a vibrant gym where all fitness levels come together.",
       "key_services": "High-Intensity Interval Training (HIIT) classes, expert-led cardio and strength training, on-site CTF Caf\u00e9 with protein smoothies"
     },
-    "copy": "CrossTown Fitness. 200+ HIIT classes a week, West Loop and Lake View. Someone who hadn't worked out in years walked in, walked out planning to go back tomorrow. Two weeks unlimited, up to 67% off. Find it on Groupon.",
+    "copy": "West Loop CrossTown opens at 5am. Lake View's still going at 8:30. Pick a window. HIIT classes all levels, two or four weeks unlimited. Up to 67% off \u2014 CrossTown Fitness, on Groupon.",
     "status": "ok"
   },
   {
-    "id": "p10",
-    "date": "Sun Aug 09",
-    "type": "deal_drop",
-    "deal": {
-      "merchant_name": "City Cruises Marina Del Rey - Premier Dining",
-      "deal_title": "Marina del Rey Premier Brunch & Dinner Cruise Deals",
-      "city": "Los Angeles",
-      "category": "things+to+do",
-      "url": "https://www.groupon.com/deals/gl-mdr-premier-dining-city-experiences?redemptionLocationId=48582270-1cbb-b4f3-b550-0180ddac1c38"
+    "id": "p5",
+    "date": "Sun Aug 02",
+    "type": "trend_hook",
+    "trend": "#SelfCareSunday",
+    "trend_volume": 85000,
+    "matched_deal": {
+      "deal_title": "Luxury Spa Day with Pool Access at The Spa at Trump Chicago: 60 or 90 Minute Massage, Facial, Both or Couples, Up to 35%",
+      "merchant_name": "The Spa at Trump Chicago",
+      "location": null,
+      "merchant_info": null,
+      "company_website": "https://www.trumphotels.com/chicago/spa/chicago-spa-services",
+      "highlights": "Iconic Trump International Hotel & Tower\u00ae Chicago",
+      "full_content": "Iconic Trump International Hotel & Tower\u00ae Chicago\n\nEscape to a world of relaxation at the renowned Trump International Hotel & Tower\u00ae Chicago, where this oasis of tranquility awaits. Unwind with a luxurious massage or rejuvenating facial \u2014 or both \u2014 designed to ease deep muscle tension, refresh your skin, and melt away stress. This isn't just a spa day; it's a transformative experience that leaves you feeling renewed and revitalized in every way.\n\nWhat We Offer\n\nLuxury Spa Day with Pool Access: 60-Min Renewal Massage OR 60-Min Facial for One with Glass of Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nChoose your treatment: the Aroma Renewal Massage \u2014 a Swedish-style massage with aromatherapy oil and a refreshing peppermint scalp massage \u2014 or a 60-minute facial tailored to your skin's needs.\n\nLuxury Spa Day with Pool Access: 60-Min Couples Massage for Two with Hot Stones and Glass of Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nGentle pressure, long smooth strokes, and the warmth of hot stones work together to improve circulation, ease tension, and deliver a welcome state of shared serenity.\n\nLuxury Spa Day with Pool Access: Pampering Package \u2014 60-Min Massage AND 60-Min Facial for One with Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nThe full experience: start with a relaxing Aroma Renewal Massage, then follow it with a 60-minute facial for a head-to-toe refresh. The ultimate spa day, all in one package.\n\nAll packages include full access to the 75-foot heated pool and the complete spa amenity suite \u2014 a modern gym with state-of-the-art equipment, steam room, sauna, and a relaxation lounge overlooking the Chicago River.\n\nPlan to arrive at least 30 minutes before your appointment. We highly recommend spending the full day to make the most of everything the spa has to offer.\n\nGuests must be 16 or older to use the Fitness Club. Guests under 16 must be accompanied by an adult (18+) to use the pool and locker room amenities.\n\nThese massage services include light to firm pressure massage techniques. Services can be upgraded to a therapeutic or deep tissue massage for an additional fee at the spa.\n\nWhy You Should Grab This Offer\n\nYour spa day begins the moment you step into the serene retreat and are handed a chilled glass of bubbly. Whether you choose a tension-melting massage, a skin-renewing facial, or the full pampering package with both, every treatment is designed to leave you feeling weightless and restored. With full pool and spa access included, you can make a whole day of it \u2014 soaking in the amenities, unwinding at your own pace, and leaving with that deeply connected, completely rejuvenated feeling that only a true luxury spa day delivers.\n\nMake it a gift\nPersonalised\nInstant Delivery\nEasy Exchange\nHow it works",
+      "reviews": [
+        "Guest\n2 ratings\n|\n1 review\n7 days ago\nAmazing\nHelpful",
+        "Guest\n1 rating\n|\n1 review\n57 days ago\nGreat views.\nHelpful",
+        "Karla\n2 ratings\n|\n2 reviews\n62 days ago\nGreat experience\nHelpful",
+        "Jackie\n5 ratings\n|\n2 reviews\n64 days ago\nBest massage I ever had!!\nHelpful",
+        "Guest\n1 rating\n|\n1 review\n126 days ago\nCaeser gave the best massage ever!\nHelpful"
+      ],
+      "category": "spa",
+      "city": "Chicago",
+      "url": "https://www.groupon.com/deals/the-spa-at-trump-chicago-11?redemptionLocationId=16186294-5b4b-b06a-768a-013ae2bbcfa4",
+      "merchant_description": "Renowned luxury spa within the iconic Trump International Hotel & Tower Chicago, specializing in transformative massage and facial treatments.",
+      "key_services": "Aroma Renewal Massage, Tailored Facial, Hot Stone Massage"
     },
-    "copy": "Saturday idea: brunch on a boat in Marina del Rey. The view doesn't require a reservation. The table does. Find it on Groupon.",
+    "copy": "Your couch is fine. The pool at The Spa at Trump Chicago is better. Massage, facial, or both \u2014 up to 35% off. Find it on Groupon.",
     "status": "ok"
   }
 ]

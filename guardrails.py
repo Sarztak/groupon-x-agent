@@ -25,8 +25,8 @@ with open("prompts/input_guard.txt", "r") as f:
 
 with open("prompts/output_guard.txt", "r") as f:
     OUTPUT_GUARD_PROMPT = f.read().format(
-        COMPETITOR_LIST=COMPETITOR_LIST,
-        SENSITIVE_TOPICS=SENSITIVE_TOPICS
+        competitor_list=COMPETITOR_LIST,
+        sensitive_topics=SENSITIVE_TOPICS
     )
 
 MODEL = "claude-sonnet-4-6"
