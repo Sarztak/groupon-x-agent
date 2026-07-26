@@ -75,14 +75,30 @@ def call_model(system: str, user: str, model: str, backend: str = "cli") -> str 
 
 
 def generate_copy(
-    agent_input: dict, references_dir: Path, model="claude-haiku-4-5", backend="cli"
+    agent_input: dict, references_dir: Path, model="claude-haiku-4-5", backend="cli",
+    revision_feedback: list[dict] | None = None,
 ) -> list[dict] | None:
     context = load_context(references_dir, WRITE_ONLY)
     write_prompt = (references_dir / ".." / "copywriter.txt").read_text()
 
+    if revision_feedback:
+        feedback_block = "\n\n".join(
+            f'Prior draft: "{f["copy"]}"\n'
+            f'Failures:\n' + "\n".join(f"  - {fail}" for fail in f.get("failures", [])) + "\n"
+            f'Instruction: {f["feedback"]}'
+            for f in revision_feedback
+        )
+        user = (
+            "Previous attempt failed review. Rewrite addressing this feedback "
+            "before generating new copy:\n\n"
+            f"{feedback_block}\n\n---\n\n{json.dumps(agent_input)}"
+        )
+    else:
+        user = json.dumps(agent_input)
+
     text = call_model(
         system=f"{write_prompt}\n\n{context}",
-        user=json.dumps(agent_input),
+        user=user,
         model=model,
         backend=backend,
     )
@@ -92,6 +108,13 @@ def generate_copy(
     try:
         return json.loads(text)
     except json.JSONDecodeError:
+        import re
+        match = re.search(r'\[.*\]', text, re.DOTALL)
+        if match:
+            try:
+                return json.loads(match.group())
+            except json.JSONDecodeError:
+                pass
         import logging
         logging.getLogger(__name__).warning("generate_copy JSON parse failed. Raw:\n%s", text)
         return None
@@ -151,9 +174,11 @@ def generate_and_review(agent_input: dict, references_dir: Path, max_attempts=3,
     import logging
     log = logging.getLogger(__name__)
     reviewed = []
+    feedback: list[dict] | None = None
     for attempt in range(1, max_attempts + 1):
         log.info("Attempt %d/%d", attempt, max_attempts)
-        results = generate_copy(agent_input, references_dir, model=model, backend=backend)
+        results = generate_copy(agent_input, references_dir, model=model, backend=backend,
+                                revision_feedback=feedback)
         if not results:
             log.warning("generate_copy returned nothing — skipping")
             continue
@@ -169,6 +194,14 @@ def generate_and_review(agent_input: dict, references_dir: Path, max_attempts=3,
         log.info("Verdicts: %s", verdicts)
         if all(v == "pass" for v in verdicts):
             return {"status": "pass", "results": reviewed}
+
+        feedback = [
+            {"copy": r.get("copy"), "failures": r.get("failures", []), "feedback": r.get("feedback_for_rewrite")}
+            for r in reviewed
+            if r.get("verdict") != "pass" and r.get("feedback_for_rewrite")
+        ]
+        if feedback:
+            log.info("Feeding reviewer feedback into next attempt")
         log.info("Not all passed — retrying")
 
     return {"status": "escalate", "results": reviewed}

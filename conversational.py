@@ -17,15 +17,24 @@ def generate_conversational_reply(
     backend: str = "cli",
     model: str = "claude-sonnet-4-6",
     prompts_dir: Path = PROMPTS_DIR,
+    revision_feedback: str | None = None,
 ) -> dict | None:
     system = (prompts_dir / "conversational_voice.txt").read_text()
 
-    user = json.dumps({
+    payload = json.dumps({
         "mode": mode,
         "mention_text": mention_text,
         "username": username,
         "deal_copy": deal_copy,
     })
+
+    if revision_feedback:
+        user = (
+            f"Previous attempt was rejected. Rewrite addressing this feedback:\n\n"
+            f"{revision_feedback}\n\n---\n\n{payload}"
+        )
+    else:
+        user = payload
 
     raw = call_model(system=system, user=user, model=model, backend=backend)
     if not raw:

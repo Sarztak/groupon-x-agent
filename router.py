@@ -77,39 +77,25 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
             return {"status": "escalated", "reason": "Deal copy failed review", "guard_report": guard_report}
 
         deal_copy = result["results"][0]["copy"]
-        reply = generate_conversational_reply(
-            mode="deal_reply", mention_text=decision["engage_with"], username=username, deal_copy=deal_copy
-        )
-        if not reply:
-            log.error("Conversational agent returned None for deal_reply — escalating")
-            queue_for_human_review(message, username, guard_report, decision)
-            return {"status": "escalated", "reason": "Conversational agent failed (deal_reply)", "guard_report": guard_report}
-        reply_text = reply["reply"]
+        conv_params = dict(mode="deal_reply", mention_text=decision["engage_with"], username=username, deal_copy=deal_copy)
 
     elif route == "acknowledge":
-        reply = generate_conversational_reply(
-            mode="acknowledge", mention_text=message, username=username
-        )
-        if not reply:
-            log.error("Conversational agent returned None for acknowledge — escalating")
-            queue_for_human_review(message, username, guard_report, decision)
-            return {"status": "escalated", "reason": "Conversational agent failed (acknowledge)", "guard_report": guard_report}
-        reply_text = reply["reply"]
+        conv_params = dict(mode="acknowledge", mention_text=message, username=username)
         queue_for_human_review(message, username, guard_report, decision)
 
     elif route == "positive_response":
-        reply = generate_conversational_reply(
-            mode="positive_response", mention_text=message, username=username
-        )
-        if not reply:
-            log.error("Conversational agent returned None for positive_response — escalating")
-            queue_for_human_review(message, username, guard_report, decision)
-            return {"status": "escalated", "reason": "Conversational agent failed (positive_response)", "guard_report": guard_report}
-        reply_text = reply["reply"]
+        conv_params = dict(mode="positive_response", mention_text=message, username=username)
 
     else:
         queue_for_human_review(message, username, guard_report, decision)
         return {"status": "escalated", "reason": f"Unrecognized route: {route}", "guard_report": guard_report}
+
+    reply = generate_conversational_reply(**conv_params)
+    if not reply:
+        log.error("Conversational agent returned None — escalating")
+        queue_for_human_review(message, username, guard_report, decision)
+        return {"status": "escalated", "reason": "Conversational agent failed", "guard_report": guard_report}
+    reply_text = reply["reply"]
 
     guard_payload = json.dumps({"draft": reply_text, "deal_info": deal_info})
     output_check = guard_output(guard_payload)
