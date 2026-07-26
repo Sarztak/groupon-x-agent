@@ -1,0 +1,74 @@
+[
+  {
+    "id": "r1",
+    "tweet_id": "1001",
+    "username": "sarah_chicago",
+    "text": "@Groupon any good spa deals in Chicago this weekend?",
+    "route_hint": "deal_request",
+    "route": "deal_request",
+    "reply": "@sarah_chicago King Spa has a Base Rock Room \u2014 one of only three in the world. Open 24/7, so this weekend has a plan. Up to 32% off on Groupon.",
+    "guard_report": {
+      "hard_block": false,
+      "flags": {
+        "prompt_injection": false,
+        "toxic_or_abusive": false,
+        "profanity": false,
+        "nsfw": false,
+        "pii": false,
+        "off_topic": false,
+        "competitor_mention": false,
+        "sensitive_news": false
+      },
+      "assessment": "Straightforward, on-topic request. User asks Groupon for spa deals in Chicago over the weekend. No flags triggered. Genuine, answerable query \u2014 agent can respond with relevant local spa offers."
+    },
+    "status": "ok"
+  },
+  {
+    "id": "r2",
+    "tweet_id": "1003",
+    "username": "foodie_nyc",
+    "text": "@Groupon the restaurant voucher I bought expired before I could use it and I never got a refund",
+    "route_hint": "acknowledge",
+    "route": "acknowledge",
+    "reply": "@foodie_nyc That's frustrating, and we want to make sure it gets sorted \u2014 someone from our team is taking a look at this for you.",
+    "guard_report": {
+      "hard_block": false,
+      "flags": {
+        "prompt_injection": false,
+        "toxic_or_abusive": false,
+        "profanity": false,
+        "nsfw": false,
+        "pii": false,
+        "off_topic": false,
+        "competitor_mention": false,
+        "sensitive_news": false
+      },
+      "assessment": "Straightforward on-topic customer complaint. User purchased a restaurant voucher on Groupon, it expired before use, and no refund was issued. No abusive language, no flags of any kind. Genuine, answerable support request \u2014 warrants engagement with empathy and escalation to refund/resolution process."
+    },
+    "status": "ok"
+  },
+  {
+    "id": "r3",
+    "tweet_id": "1002",
+    "username": "marcus_la",
+    "text": "@Groupon just got back from the spa deal I booked last week. Best decision I made all month.",
+    "route_hint": "positive_response",
+    "route": "positive_response",
+    "reply": "@marcus_la that post-spa feeling is something else. Really glad that one landed well for you.",
+    "guard_report": {
+      "hard_block": false,
+      "flags": {
+        "prompt_injection": false,
+        "toxic_or_abusive": false,
+        "profanity": false,
+        "nsfw": false,
+        "pii": false,
+        "off_topic": false,
+        "competitor_mention": false,
+        "sensitive_news": false
+      },
+      "assessment": "Straightforward positive customer feedback. User booked a spa deal via Groupon and is expressing satisfaction. No request, complaint, or actionable ask present. No flags triggered. Warrants a brief brand-voice engagement acknowledging the positive experience."
+    },
+    "status": "ok"
+  }
+]

@@ -20,12 +20,13 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
-    allow_methods=["POST"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
 CATALOG_PATH      = Path("./deals_catalog.json").resolve()
 TRENDS_PATH       = Path("./simulated_trends.json").resolve()
+MENTIONS_PATH     = Path("./simulated_mentions.json").resolve()
 DEAL_DROP_CACHE   = Path("./deal_drop_cache.json").resolve()
 PROMPTS_DIR       = Path("./prompts").resolve()
 REFERENCES_DIR    = Path("./prompts/references").resolve()
@@ -39,9 +40,30 @@ class TrendRequest(BaseModel):
     trend: str
 
 
+TWO_WEEK_DIR    = Path("./two_week_plan").resolve()
+
+
 @app.get("/api/metrics")
 async def metrics():
     return summarize()
+
+
+@app.get("/api/random_mention")
+async def random_mention():
+    mentions = json.loads(MENTIONS_PATH.read_text())
+    mention = random.choice(mentions)
+    return {"username": mention["username"], "text": mention["text"]}
+
+
+@app.get("/api/two_week_plan")
+async def two_week_plan():
+    posts_path   = TWO_WEEK_DIR / "posts.json"
+    replies_path = TWO_WEEK_DIR / "replies.json"
+    if not posts_path.exists() or not replies_path.exists():
+        return {"generated": False, "posts": [], "replies": []}
+    posts   = json.loads(posts_path.read_text())
+    replies = json.loads(replies_path.read_text())
+    return {"generated": True, "posts": posts, "replies": replies}
 
 
 @app.post("/api/mention")

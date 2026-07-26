@@ -4,6 +4,7 @@
   export let messages = []
   export let mode
   export let onSend
+  export let onLoadHistory = null
 
   let input = ''
   let viewport
@@ -32,7 +33,14 @@
 <div class="chat">
   <div class="messages" bind:this={viewport}>
     {#if messages.length === 0}
-      <div class="empty">Select a mode and click Run to start</div>
+      <div class="empty">
+        <div class="empty-inner">
+          <div class="empty-text">Select a mode and click Run to start</div>
+          {#if onLoadHistory}
+            <button class="load-history-btn" on:click={onLoadHistory}>Load demo history</button>
+          {/if}
+        </div>
+      </div>
     {/if}
 
     {#each messages as msg}
@@ -84,10 +92,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 3rem;
+  }
+
+  .empty-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .empty-text {
     color: #71767b;
     font-size: 14px;
     text-align: center;
-    padding: 3rem;
+  }
+
+  .load-history-btn {
+    font-size: 12px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid #2f3336;
+    background: transparent;
+    color: #71767b;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .load-history-btn:hover {
+    color: #e7e9ea;
+    border-color: #4b5563;
+    background: transparent;
   }
 
   .msg {

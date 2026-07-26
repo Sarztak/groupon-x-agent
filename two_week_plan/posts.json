@@ -1,0 +1,206 @@
+[
+  {
+    "id": "p1",
+    "date": "Mon Jul 27",
+    "type": "deal_drop",
+    "deal": {
+      "merchant_name": "The Spa at LondonHouse Chicago",
+      "deal_title": "The LondonHouse Chicago on the River up to 41% Off Luxury Massage and Facial Treatments",
+      "city": "Chicago",
+      "category": "spa",
+      "url": "https://www.groupon.com/deals/the-spa-at-london-house-chicago?redemptionLocationId=442cf2fb-3edb-b478-8ad4-01596b9607f7"
+    },
+    "copy": "Hot stone. Chicago River outside. 41% off at The Spa at LondonHouse. Book this before Saturday plans itself. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p2",
+    "date": "Tue Jul 28",
+    "type": "deal_drop",
+    "deal": {
+      "merchant_name": "Geja's Cafe",
+      "deal_title": "$100 Dining Credit at Geja's Cafe",
+      "city": "Chicago",
+      "category": "restaurant",
+      "url": "https://www.groupon.com/deals/gejas-cafe-8?redemptionLocationId=905eaef4-0c21-b06a-9053-014e17bdd675"
+    },
+    "copy": "Dinner and a show, except both things are fondue. $100 dining credit at Geja's Cafe. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p3",
+    "date": "Thu Jul 30",
+    "type": "deal_drop",
+    "deal": {
+      "merchant_name": "City Cruises - Chicago Seadog Lakefront",
+      "deal_title": "Chicago Seadog Lakefront Speedboat Cruise with City Cruises",
+      "city": "Chicago",
+      "category": "things+to+do",
+      "url": "https://www.groupon.com/deals/gl-chicago-seadog-speedboat-tour-city-experiences?redemptionLocationId=b1cd16fb-1cbb-b4f3-b550-0180d858a33f"
+    },
+    "copy": "Your view of Chicago's skyline is good. Chicago's skyline from a Seadog speedboat while Lake Michigan ruins your hair is better. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p4",
+    "date": "Sat Aug 01",
+    "type": "trend_hook",
+    "trend": "#ChicagoEats",
+    "trend_volume": 12000,
+    "matched_deal": {
+      "deal_title": "Savor Argentina in Chicago: Experience an Authentic Atmosphere at Artango Bar and Steakhouse",
+      "merchant_name": "Artango Bar And Steakhouse",
+      "location": null,
+      "merchant_info": null,
+      "company_website": "http://artangosteakhouse.com/",
+      "highlights": "Experience Buenos Aires' Golden Age at Artango Bar and Steakhouse, where the rich cultural heritage of Argentina comes alive. Set amidst a tableau of Art Nouveau and Neo-classical architecture and d\u00e9cor are Argentina's exciting tastes, lively music, and dancing.",
+      "full_content": "Experience Buenos Aires' Golden Age at Artango Bar and Steakhouse, where the rich cultural heritage of Argentina comes alive. Set amidst a tableau of Art Nouveau and Neo-classical architecture and d\u00e9cor are Argentina's exciting tastes, lively music, and dancing.\n\nArtango: A Journey Through Argentine Flavor and Culture\n\nAt Artango Bar & Steakhouse, indulge in a rustic, flavorful menu filled with authentic Argentine dishes, including expertly prepared imported steaks that honor ancestral cooking techniques. Pair your meal with Prohibition-era cocktails and a curated selection of both classic and rare European and Argentine wines. Dining at Artango is more than just a meal\u2014it's an immersive journey into the heart of Buenos Aires\u2019 Golden Age.\n\nWhat We Offer\n$50 credit toward any dine\u2011in food & drink (use it for shared starters, original cocktails, or craft wine!)\n\nOR\n\nA curated set\u2011menu option for two featuring:\n\n\u2022 2 house-made empanadas\n\n\u2022 2 New York strip steaks with Mash Potatoes\n\n\u2022decadent flan for dessert\n\nCuisine: Argentine Steakhouse\n\nClick here to see the full menu\n\nAdvanced bookings are highly recommended. Enjoy!\n\nWhy You Should Grab The Offer\n\nNestled in the heart of Lincoln Square, Artango Bar & Steakhouse offers a vibrant celebration of authentic Argentine culture. Every dish is crafted using time-honored techniques, bringing the bold flavors of Buenos Aires to your plate. The rich Art Nouveau d\u00e9cor and the Prohibition-era cocktails set the stage for a memorable dining experience. With a thoughtfully curated wine list featuring European and Argentine selections, Artango combines culinary excellence with an unforgettable atmosphere.\n\nBut the experience doesn\u2019t stop with just the food.\n\nArtango comes alive with weekly events that celebrate Argentine music, dance, and culture. From Tango classes and performances to live music featuring local and international artists, there's always something exciting happening. Whether you're here for a romantic evening or a fun night out with friends, Artango promises an experience as dynamic as the culture it celebrates.\n\nCheck out the calendar of upcoming events to plan your perfect night out.\n\nPerfect For *Romantic date nights *Memorable dinners with friends *Gift\u2011givers wanting a unique experience\n\nIt's more than just a meal\u2014it's a multi-sensory journey that brings the spirit of Argentina to life.\n\nMake it a gift\nPersonalised\nInstant Delivery\nEasy Exchange\nHow it works",
+      "reviews": [
+        "Guest\n2 ratings\n|\n2 reviews\n42 days ago\nFood Service staff All excellent\nHelpful",
+        "Sabrina\n1 rating\n|\n1 review\n81 days ago\nGreat spot with tasty authentic food!\nHelpful",
+        "Jonathon\n2 ratings\n|\n2 reviews\n42 days ago\nLove this place. The server was not happy when we presented the Groupon but gave us great service anyway (rare for Groupon deals). We ended up tipping extra on top of the Gratuity because everything was so nice. We will be going back soon and supporting this establishment in the future.\nRead More\nHelpful (1)",
+        "Guest\n5 ratings\n|\n3 reviews\n103 days ago\nWe had an amazing experience celebrating our anniversary at Artango!!! If you have not yet tried their delicious steaks and tasty cocktails, in the warm atmosphere with the BEST service you must come give it a try!\nRead More\nHelpful",
+        "Nick\n1 rating\n|\n1 review\n134 days ago\nI had been meaning to try this restaurant dominant after work yesterday. It was lovely! Great food, service, and atmosphere. I will be returning and can\u2019t wait!\nHelpful"
+      ],
+      "category": "restaurant",
+      "city": "Chicago",
+      "url": "https://www.groupon.com/deals/artango-bar-and-steakhouse?redemptionLocationId=23d85ef8-3cd6-b06a-9299-015283e069c4",
+      "merchant_description": "Authentic Argentine steakhouse celebrating Buenos Aires' Golden Age with expertly prepared imported steaks, Art Nouveau d\u00e9cor, Prohibition-era cocktails, and weekly tango performances and live music.",
+      "key_services": "Imported steaks with ancestral cooking techniques, Prohibition-era cocktails, Tango performances and classes"
+    },
+    "copy": "Artango has live tango. Also imported Argentine steaks, Art Nouveau d\u00e9cor, and Prohibition-era cocktails \u2014 in case the tango wasn't enough. Chicago. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p5",
+    "date": "Sun Aug 02",
+    "type": "trend_hook",
+    "trend": "#SelfCareSunday",
+    "trend_volume": 85000,
+    "matched_deal": {
+      "deal_title": "Luxury Spa Day with Pool Access at The Spa at Trump Chicago: 60 or 90 Minute Massage, Facial, Both or Couples, Up to 35%",
+      "merchant_name": "The Spa at Trump Chicago",
+      "location": null,
+      "merchant_info": null,
+      "company_website": "https://www.trumphotels.com/chicago/spa/chicago-spa-services",
+      "highlights": "Iconic Trump International Hotel & Tower\u00ae Chicago",
+      "full_content": "Iconic Trump International Hotel & Tower\u00ae Chicago\n\nEscape to a world of relaxation at the renowned Trump International Hotel & Tower\u00ae Chicago, where this oasis of tranquility awaits. Unwind with a luxurious massage or rejuvenating facial \u2014 or both \u2014 designed to ease deep muscle tension, refresh your skin, and melt away stress. This isn't just a spa day; it's a transformative experience that leaves you feeling renewed and revitalized in every way.\n\nWhat We Offer\n\nLuxury Spa Day with Pool Access: 60-Min Renewal Massage OR 60-Min Facial for One with Glass of Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nChoose your treatment: the Aroma Renewal Massage \u2014 a Swedish-style massage with aromatherapy oil and a refreshing peppermint scalp massage \u2014 or a 60-minute facial tailored to your skin's needs.\n\nLuxury Spa Day with Pool Access: 60-Min Couples Massage for Two with Hot Stones and Glass of Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nGentle pressure, long smooth strokes, and the warmth of hot stones work together to improve circulation, ease tension, and deliver a welcome state of shared serenity.\n\nLuxury Spa Day with Pool Access: Pampering Package \u2014 60-Min Massage AND 60-Min Facial for One with Bubbly; Valid Mon\u2013Thurs (Excludes Holidays)\n\nThe full experience: start with a relaxing Aroma Renewal Massage, then follow it with a 60-minute facial for a head-to-toe refresh. The ultimate spa day, all in one package.\n\nAll packages include full access to the 75-foot heated pool and the complete spa amenity suite \u2014 a modern gym with state-of-the-art equipment, steam room, sauna, and a relaxation lounge overlooking the Chicago River.\n\nPlan to arrive at least 30 minutes before your appointment. We highly recommend spending the full day to make the most of everything the spa has to offer.\n\nGuests must be 16 or older to use the Fitness Club. Guests under 16 must be accompanied by an adult (18+) to use the pool and locker room amenities.\n\nThese massage services include light to firm pressure massage techniques. Services can be upgraded to a therapeutic or deep tissue massage for an additional fee at the spa.\n\nWhy You Should Grab This Offer\n\nYour spa day begins the moment you step into the serene retreat and are handed a chilled glass of bubbly. Whether you choose a tension-melting massage, a skin-renewing facial, or the full pampering package with both, every treatment is designed to leave you feeling weightless and restored. With full pool and spa access included, you can make a whole day of it \u2014 soaking in the amenities, unwinding at your own pace, and leaving with that deeply connected, completely rejuvenated feeling that only a true luxury spa day delivers.\n\nMake it a gift\nPersonalised\nInstant Delivery\nEasy Exchange\nHow it works",
+      "reviews": [
+        "Guest\n2 ratings\n|\n1 review\n7 days ago\nAmazing\nHelpful",
+        "Guest\n1 rating\n|\n1 review\n57 days ago\nGreat views.\nHelpful",
+        "Karla\n2 ratings\n|\n2 reviews\n62 days ago\nGreat experience\nHelpful",
+        "Jackie\n5 ratings\n|\n2 reviews\n64 days ago\nBest massage I ever had!!\nHelpful",
+        "Guest\n1 rating\n|\n1 review\n126 days ago\nCaeser gave the best massage ever!\nHelpful"
+      ],
+      "category": "spa",
+      "city": "Chicago",
+      "url": "https://www.groupon.com/deals/the-spa-at-trump-chicago-11?redemptionLocationId=16186294-5b4b-b06a-768a-013ae2bbcfa4",
+      "merchant_description": "Renowned luxury spa within the iconic Trump International Hotel & Tower Chicago, specializing in transformative massage and facial treatments.",
+      "key_services": "Aroma Renewal Massage, Tailored Facial, Hot Stone Massage"
+    },
+    "copy": "Your weekend is fine. It could also have a pool, a 90-minute massage, and a view of Chicago from Trump Tower. Up to 35% off. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p6",
+    "date": "Tue Aug 04",
+    "type": "deal_drop",
+    "deal": {
+      "merchant_name": "King Spa & Sauna NJ",
+      "deal_title": "General Admission to King Spa & Sauna NJ \u2013 Daily or Monthly Membership Admission Packages with Uniform & Locker Included",
+      "city": "New York",
+      "category": "spa",
+      "url": "https://www.groupon.com/deals/king-spa-sauna-6?redemptionLocationId=085a5dfb-039e-b06a-9298-013a8fce9ae9"
+    },
+    "copy": "King Spa NJ hands you a uniform. That's how it starts. Heated rooms, a locker, a few hours with nothing on the clock. Daily or monthly. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p7",
+    "date": "Wed Aug 05",
+    "type": "trend_hook",
+    "trend": "#WellnessWednesday",
+    "trend_volume": 67000,
+    "matched_deal": {
+      "deal_title": "Up to 32%: All-day Spa Admission for One or Two at King Spa Chicago",
+      "merchant_name": "King Spa and Sauna Chicago",
+      "location": null,
+      "merchant_info": null,
+      "company_website": "http://kingspa.com/chicago/",
+      "highlights": "Step into pure relaxation at King Spa Chicago, the largest Korean-inspired spa in the U.S., rated 4.8 stars by over 50,000 guests. Open 24/7, this wellness space offers rejuvenating sauna rooms, thermal pools, and revitalizing treatments.",
+      "full_content": "Step into pure relaxation at King Spa Chicago, the largest Korean-inspired spa in the U.S., rated 4.8 stars by over 50,000 guests. Open 24/7, this wellness space offers rejuvenating sauna rooms, thermal pools, and revitalizing treatments.\n\nWhat To Expect\nAccess to 9 sauna rooms made from crystals, salt, stone, and wood to detox and refresh!\nThermal pools & wet rooms to soothe muscles in healing hot & cold hydrotherapy baths.\nComplimentary spa amenities \u2013 showers, robes, and lockers included!\nFree WiFi & peaceful lounge areas to unwind in comfort.\nExclusive Access to Base Rock Room - One of only three in the world!\nMelt into Siraka mineral stones, with amethyst & coal therapy. (Don't forget to select it!)\nPerfect for Gifting! Treat someone special to the ultimate day of relaxation!\nWhen We Say Relax, We Mean It!\nEach room offers a unique experience to relax - are you ready to discover your favorite?\n\n\n\n\n\nExperience the rare Base Rock Room, detox in crystal-infused saunas, and indulge in authentic Korean massages, body scrubs, and facials\u2014all while sitting amidst reviving ambiance. Stay, relax, and recharge\u2014all in one luxurious escape.\n\nRead More\nPlan Your Visit\nOffer is valid ONLY at the Chicago location\n\nService Hours \u2013 9:30 AM - 11:30 PM (Last appointment at 10:30 PM for Body Scrub, Acupressure & Facial)\n\nSpa & Sauna Hours\n\nThermal Pools & Wet Areas: Closed for cleaning 1 AM - 7 AM\n\nBase Rock Room & Fire Sudatorium:\n\nWeekdays: 10 AM - 12 PM\nWeekends: 10 AM - 1 AM\nWant to extend your zen?\nStay past 2 AM: $20 overnight stay fee\n24+ hours? Additional entrance fee applies\nExtra Comfort: Another spa uniform? Just $1 per set!\nFAQs\nWhat\u2019s the admission price?\nAre kids allowed?\nDo I need an ID to enter?\nWhat\u2019s the shoe policy?\nWhat should I wear?\nHow It Works\nNo reservations needed \u2013 Just walk in whenever you\u2019re ready to relax.\nShow your Groupon voucher \u2013 it\u2019s your ticket to tranquility.\nThat\u2019s it! \u2013 Relax and recharge at your own pace!\n\n\nMake it a gift\nPersonalised\nInstant Delivery\nEasy Exchange\nHow it works",
+      "reviews": [
+        "Ereka\n1 rating\n|\n1 review\n3 days ago\nA great experience will be back soon\nHelpful",
+        "Shillo\n5 ratings\n|\n4 reviews\n3 days ago\nI love coming here to get some self care. It's a good way for me to do my own PT and really tend to my body for a day. Also, fun to bring friends here.\nHelpful",
+        "Joseph\nTop Reviewer\n18 ratings\n|\n17 reviews\n6 days ago\nThis place is amazing! I have never felt more relaxed, rejuvenated and clean. I love water it\u2019s always had a way of making me feel better. Being able to soak in the different temperature hot tubs and steam sauna without being restricted by any clothing was such a wonderful feeling. The King body scrub was also amazing as well. The coed areas are incredible too! I would definitely be returning and I would definitely recommend this to everyone.\nRead More\nHelpful",
+        "Eric\n25 ratings\n|\n2 reviews\n7 days ago\nVery Professional Check in at the front desk. The body scrub in the all nude men area was relaxing with by soaking in the hot tub before the scrub was a nice suggestion also. The common area are very clean and they do offer excellent Korean food and beverages.\nRead More\nHelpful",
+        "Ana\n5 ratings\n|\n1 review\n8 days ago\nVery good\nHelpful"
+      ],
+      "category": "spa",
+      "city": "Chicago",
+      "url": "https://www.groupon.com/deals/king-spa-and-sauna-chicago-35?redemptionLocationId=8b1313fe-5df1-b06a-768a-013a91155c05",
+      "merchant_description": "King Spa Chicago is the largest Korean-inspired spa in the U.S., home to the rare Base Rock Room\u2014one of only three worldwide. The 4.8-star rated destination (50,000+ reviews) operates 24/7, offering crystal-infused saunas, thermal hydrotherapy, and authentic Korean treatments.",
+      "key_services": "Base Rock Room, Crystal saunas, Korean massages"
+    },
+    "copy": "There's a room called the Base Rock Room. Only three exist on earth. One's in Chicago, open 24/7. Crystal saunas, thermal pools, King Spa. Up to 32% off. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p8",
+    "date": "Thu Aug 06",
+    "type": "deal_drop",
+    "deal": {
+      "merchant_name": "Doodle Yoga Wellness in SoHo, NY",
+      "deal_title": "Doodle Yoga: Gentle Yoga & Playful Goldendoodles in SoHo",
+      "city": "New York",
+      "category": "fitness",
+      "url": "https://www.groupon.com/deals/doodle-yoga-wellness-1?redemptionLocationId=24d45e30-000a-bbee-fc54-019eb9f5a2c3"
+    },
+    "copy": "Yoga in SoHo. Goldendoodles included. Achieving inner peace is slightly harder when there's a goldendoodle on your mat. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p9",
+    "date": "Fri Aug 07",
+    "type": "trend_hook",
+    "trend": "#FitnessFriday",
+    "trend_volume": 38000,
+    "matched_deal": {
+      "deal_title": "Rediscover Your Fitness Potential: CrossTown Fitness' 2 or 4 Weeks of Unlimited Fitness Classes- Up to 67% Off)",
+      "merchant_name": "CrossTown Fitness",
+      "location": "West Loop\n2.2 mi\n1031 West Madison Street, Chicago\nClosed\nOpening at 5:00 AM\nLake View\n6.6 mi\n3406 North Lincoln Avenue, Chicago\nOpen\nCloses at 8:30 PM\nCall",
+      "merchant_info": "CrossTown Fitness, Chicago is all about making fitness an exciting and dynamic part of life. With over 200 unique classes each week, they cater to everyone from beginners to seasoned athletes. Their high-intensity interval workouts focus on cardio, stamina, strength, flexibility, speed, and balance. Each session is designed to keep members engaged and continuously challenged.",
+      "company_website": "http://www.crosstownfitness.com/pages/home",
+      "highlights": "Enjoy high-intensity interval workouts that include drills focusing on cardio, stamina, strength, flexibility, speed, and balance",
+      "full_content": "Enjoy high-intensity interval workouts that include drills focusing on cardio, stamina, strength, flexibility, speed, and balance\n\nAre you ready to take your fitness to the next level? Whether you\u2019re a seasoned athlete or just starting your journey, CrossTown Fitness is here to transform the way you think about exercise. Experience a workout that challenges both your body and mind, all within a supportive community that grows stronger together.\n\nWhat We Offer\n\nTwo or Four Weeks of Unlimited Fitness Classes\n\n\n\n\nCrossTown Fitness specializes in High-Intensity Interval Training (HIIT), scientifically proven to boost endurance and build strength efficiently. Each class is uniquely designed to keep your workouts fresh and exciting, ensuring you\u2019re always pushing your limits. Expert trainers craft sessions that seamlessly blend cardiovascular routines, mobility work, and strength training, catering to all fitness levels.\n\nWhy You Should Grab This Offer\n\nCrossTown Fitness is more than just a gym\u2014it\u2019s a top-rated community where all fitness levels come together to push boundaries and achieve their goals. With a 4.9-star rating from over 500 Groupon reviews, you can trust that each visit will challenge and support you in new ways. The expert trainers, with 200+ classes available weekly across four Chicago locations, and the vibrant atmosphere make it a place where you\u2019re not just working out; you\u2019re transforming your fitness journey. After a high-intensity session, refuel at the CTF Caf\u00e9 with protein smoothies and snacks from local vendors, and take advantage of the private lockers and the online shower reservations during peak times for added convenience. This offer is your opportunity to become part of a fitness family that\u2019s committed to helping you succeed.\n\n\n\nMake it a gift\nPersonalised\nInstant Delivery\nEasy Exchange\nHow it works",
+      "reviews": [
+        "Alicia\n4 ratings\n|\n3 reviews\n344 days ago\nThe most welcoming place, the staff are friendly. The workout was exhausting but fun. I haven't exercised in years. I'll be back tomorrow.\nHelpful",
+        "Guest\n1 rating\n|\n1 review\n2 years ago\nCrosstown fitness (Roscoe) has been a turning point for my fitness. Having done next to nothing prior I was astonished how constant my improvements were. Not fast, there are no short cuts, but steady. The coaches are superb as well, there is someone for every type of gym goer. I like especially that they care to amend posture and technique during class, so you won\u2019t injure yourself or miss out on the intended effect. I joined!\nRead More\nHelpful",
+        "rashmi\n12 ratings\n|\n4 reviews\n2 years ago\nAwesome experience\nHelpful",
+        "marina\nTop Reviewer\n19 ratings\n|\n9 reviews\n2 years ago\nJust what I need to get back in shape. Also, most intense people you can be around, which adds to motivation\nHelpful",
+        "Meezak\n4 ratings\n|\n1 review\n3 years ago\nGreat intense fun what I needed in my life and I will be a member as long as I\u2019m in Chicago\nHelpful"
+      ],
+      "category": "fitness",
+      "city": "Chicago",
+      "url": "https://www.groupon.com/deals/crosstown-fitness-chicago-4?redemptionLocationId=82e2bcf8-7e58-b06a-747e-013d5f12a445",
+      "merchant_description": "CrossTown Fitness specializes in High-Intensity Interval Training (HIIT), scientifically designed to boost endurance and build strength efficiently. With expert trainers delivering 200+ weekly classes across four Chicago locations and a 4.9-star community rating, it's a vibrant gym where all fitness levels come together.",
+      "key_services": "High-Intensity Interval Training (HIIT) classes, expert-led cardio and strength training, on-site CTF Caf\u00e9 with protein smoothies"
+    },
+    "copy": "CrossTown Fitness. 200+ HIIT classes a week, West Loop and Lake View. Someone who hadn't worked out in years walked in, walked out planning to go back tomorrow. Two weeks unlimited, up to 67% off. Find it on Groupon.",
+    "status": "ok"
+  },
+  {
+    "id": "p10",
+    "date": "Sun Aug 09",
+    "type": "deal_drop",
+    "deal": {
+      "merchant_name": "City Cruises Marina Del Rey - Premier Dining",
+      "deal_title": "Marina del Rey Premier Brunch & Dinner Cruise Deals",
+      "city": "Los Angeles",
+      "category": "things+to+do",
+      "url": "https://www.groupon.com/deals/gl-mdr-premier-dining-city-experiences?redemptionLocationId=48582270-1cbb-b4f3-b550-0180ddac1c38"
+    },
+    "copy": "Saturday idea: brunch on a boat in Marina del Rey. The view doesn't require a reservation. The table does. Find it on Groupon.",
+    "status": "ok"
+  }
+]

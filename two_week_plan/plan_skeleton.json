@@ -1,0 +1,127 @@
+{
+  "posts": [
+    {
+      "id": "p1",
+      "date": "Mon Jul 27",
+      "type": "deal_drop",
+      "deal": {
+        "merchant_name": "The Spa at LondonHouse Chicago",
+        "deal_title": "The LondonHouse Chicago on the River up to 41% Off Luxury Massage and Facial Treatments",
+        "city": "Chicago",
+        "category": "spa",
+        "url": "https://www.groupon.com/deals/the-spa-at-london-house-chicago?redemptionLocationId=442cf2fb-3edb-b478-8ad4-01596b9607f7"
+      }
+    },
+    {
+      "id": "p2",
+      "date": "Tue Jul 28",
+      "type": "deal_drop",
+      "deal": {
+        "merchant_name": "Geja's Cafe",
+        "deal_title": "$100 Dining Credit at Geja's Cafe",
+        "city": "Chicago",
+        "category": "restaurant",
+        "url": "https://www.groupon.com/deals/gejas-cafe-8?redemptionLocationId=905eaef4-0c21-b06a-9053-014e17bdd675"
+      }
+    },
+    {
+      "id": "p3",
+      "date": "Thu Jul 30",
+      "type": "deal_drop",
+      "deal": {
+        "merchant_name": "City Cruises - Chicago Seadog Lakefront",
+        "deal_title": "Chicago Seadog Lakefront Speedboat Cruise with City Cruises",
+        "city": "Chicago",
+        "category": "things+to+do",
+        "url": "https://www.groupon.com/deals/gl-chicago-seadog-speedboat-tour-city-experiences?redemptionLocationId=b1cd16fb-1cbb-b4f3-b550-0180d858a33f"
+      }
+    },
+    {
+      "id": "p4",
+      "date": "Sat Aug 01",
+      "type": "trend_hook",
+      "trend": "#ChicagoEats",
+      "trend_volume": 12000
+    },
+    {
+      "id": "p5",
+      "date": "Sun Aug 02",
+      "type": "trend_hook",
+      "trend": "#SelfCareSunday",
+      "trend_volume": 85000
+    },
+    {
+      "id": "p6",
+      "date": "Tue Aug 04",
+      "type": "deal_drop",
+      "deal": {
+        "merchant_name": "King Spa & Sauna NJ",
+        "deal_title": "General Admission to King Spa & Sauna NJ \u2013 Daily or Monthly Membership Admission Packages with Uniform & Locker Included",
+        "city": "New York",
+        "category": "spa",
+        "url": "https://www.groupon.com/deals/king-spa-sauna-6?redemptionLocationId=085a5dfb-039e-b06a-9298-013a8fce9ae9"
+      }
+    },
+    {
+      "id": "p7",
+      "date": "Wed Aug 05",
+      "type": "trend_hook",
+      "trend": "#WellnessWednesday",
+      "trend_volume": 67000
+    },
+    {
+      "id": "p8",
+      "date": "Thu Aug 06",
+      "type": "deal_drop",
+      "deal": {
+        "merchant_name": "Doodle Yoga Wellness in SoHo, NY",
+        "deal_title": "Doodle Yoga: Gentle Yoga & Playful Goldendoodles in SoHo",
+        "city": "New York",
+        "category": "fitness",
+        "url": "https://www.groupon.com/deals/doodle-yoga-wellness-1?redemptionLocationId=24d45e30-000a-bbee-fc54-019eb9f5a2c3"
+      }
+    },
+    {
+      "id": "p9",
+      "date": "Fri Aug 07",
+      "type": "trend_hook",
+      "trend": "#FitnessFriday",
+      "trend_volume": 38000
+    },
+    {
+      "id": "p10",
+      "date": "Sun Aug 09",
+      "type": "deal_drop",
+      "deal": {
+        "merchant_name": "City Cruises Marina Del Rey - Premier Dining",
+        "deal_title": "Marina del Rey Premier Brunch & Dinner Cruise Deals",
+        "city": "Los Angeles",
+        "category": "things+to+do",
+        "url": "https://www.groupon.com/deals/gl-mdr-premier-dining-city-experiences?redemptionLocationId=48582270-1cbb-b4f3-b550-0180ddac1c38"
+      }
+    }
+  ],
+  "replies": [
+    {
+      "id": "r1",
+      "tweet_id": "1001",
+      "username": "sarah_chicago",
+      "text": "@Groupon any good spa deals in Chicago this weekend?",
+      "route_hint": "deal_request"
+    },
+    {
+      "id": "r2",
+      "tweet_id": "1003",
+      "username": "foodie_nyc",
+      "text": "@Groupon the restaurant voucher I bought expired before I could use it and I never got a refund",
+      "route_hint": "acknowledge"
+    },
+    {
+      "id": "r3",
+      "tweet_id": "1002",
+      "username": "marcus_la",
+      "text": "@Groupon just got back from the spa deal I booked last week. Best decision I made all month.",
+      "route_hint": "positive_response"
+    }
+  ]
+}

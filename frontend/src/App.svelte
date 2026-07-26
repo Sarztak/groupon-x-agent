@@ -1,7 +1,13 @@
 <script>
+  import NavBar from './components/NavBar.svelte'
   import Controls from './components/Controls.svelte'
   import ChatView from './components/ChatView.svelte'
   import ReviewView from './components/ReviewView.svelte'
+  import ImpactView from './components/ImpactView.svelte'
+  import ArchitectureView from './components/ArchitectureView.svelte'
+  import ContentView from './components/ContentView.svelte'
+
+  let activeTab = 'demo'
 
   let mode = 'deal_drop'
   let segment = 'spontaneous_locals'
@@ -17,10 +23,6 @@
 
   function addPill(text, variant) {
     messages = [...messages, { type: 'pill', text, variant, id: nextId++ }]
-  }
-
-  function delay(ms) {
-    return new Promise(r => setTimeout(r, ms))
   }
 
   async function handleRun() {
@@ -67,13 +69,21 @@
     }
 
     else if (mode === 'mention_reply') {
-      addPill('Type a mention in the input below', 'routing')
+      let mention
+      try {
+        const res = await fetch('/api/random_mention')
+        mention = await res.json()
+      } catch (e) {
+        addPill('API error', 'fail')
+        return
+      }
+      await handleSend(mention.text, mention.username)
     }
   }
 
-  async function handleSend(text) {
+  async function handleSend(text, username = 'user') {
     if (mode === 'mention_reply') {
-      addMessage(text, 'incoming', 'Custom mention')
+      addMessage(text, 'incoming', '@' + username)
       addPill('Processing...', 'routing')
 
       let result
@@ -81,7 +91,7 @@
         const res = await fetch('/api/mention', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: text, username: 'user' })
+          body: JSON.stringify({ message: text, username })
         })
         result = await res.json()
       } catch (e) {
@@ -153,29 +163,73 @@
   function handleDiscard(item) {
     reviewItems = reviewItems.filter(r => r.id !== item.id)
   }
+
+  async function handleLoadHistory() {
+    let data
+    try {
+      const res = await fetch('/api/two_week_plan')
+      data = await res.json()
+    } catch (e) {
+      addPill('Could not load demo history', 'fail')
+      return
+    }
+    if (!data.generated || !data.replies?.length) {
+      addPill('No generated history — run generate_two_week_plan.py first', 'escalate')
+      return
+    }
+    messages = []
+    reviewItems = []
+
+    for (const p of data.posts) {
+      if (p.status !== 'ok') continue
+      const merchant = p.type === 'trend_hook'
+        ? (p.matched_deal?.merchant_name ?? p.trend)
+        : p.deal?.merchant_name ?? ''
+      const trendLabel = p.trend ? ` · ${p.trend}` : ''
+      addPill(`${p.date} · ${p.type.replace('_', ' ')}${trendLabel}`, 'routing')
+      addMessage(p.copy, 'outgoing', `Agent · ${p.type.replace('_', ' ')} · ${merchant}`)
+    }
+
+    for (const r of data.replies) {
+      if (r.status !== 'ok') continue
+      addMessage(r.text, 'incoming', `@${r.username}`)
+      addPill(`Route: ${r.route}`, 'pass')
+      addMessage(r.reply, 'outgoing', 'Agent · mention reply')
+      if (r.route === 'acknowledge') {
+        addPill('Queued for human follow-up', 'escalate')
+        reviewItems = [...reviewItems, {
+          id: nextId++,
+          input: r.text,
+          reason: 'Complaint acknowledged — queued for human follow-up',
+          guardReport: r.guard_report || {},
+          suggestion: r.reply
+        }]
+      }
+    }
+
+    addPill('Demo history loaded', 'pass')
+  }
 </script>
 
 <div class="app">
-  <Controls
-    bind:mode
-    bind:segment
-    bind:variations
-    onRun={handleRun}
-  />
+  <NavBar active={activeTab} onTabChange={(t) => activeTab = t} />
 
-  <div class="body">
-    <ChatView
-      {messages}
-      {mode}
-      onSend={handleSend}
-    />
+  {#if activeTab === 'demo'}
+    <Controls bind:mode bind:segment bind:variations onRun={handleRun} />
+    <div class="body">
+      <ChatView {messages} {mode} onSend={handleSend} onLoadHistory={handleLoadHistory} />
+      <ReviewView items={reviewItems} onApprove={handleApprove} onDiscard={handleDiscard} />
+    </div>
 
-    <ReviewView
-      items={reviewItems}
-      onApprove={handleApprove}
-      onDiscard={handleDiscard}
-    />
-  </div>
+  {:else if activeTab === 'impact'}
+    <ImpactView />
+
+  {:else if activeTab === 'architecture'}
+    <ArchitectureView />
+
+  {:else if activeTab === 'content'}
+    <ContentView />
+  {/if}
 </div>
 
 <style>
