@@ -1,6 +1,7 @@
 import json
 import logging
 import random
+import subprocess
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -40,6 +41,9 @@ class MentionRequest(BaseModel):
 class TrendRequest(BaseModel):
     trend: str
 
+class CustomDealRequest(BaseModel):
+    url: str
+
 
 TWO_WEEK_DIR    = Path("./two_week_plan").resolve()
 
@@ -74,6 +78,41 @@ async def two_week_plan():
             post["deal_url"] = enrich_url(raw_url, utm)
             post["copy"] = f"{post['copy']} {post['deal_url']}"
     return {"generated": True, "posts": posts, "replies": replies}
+
+
+SCRAPER_SCRIPT = Path("./scrape_single_deal.js").resolve()
+
+
+@app.post("/api/custom_deal_drop")
+async def custom_deal_drop(req: CustomDealRequest):
+    from urllib.parse import urlparse
+    parsed = urlparse(req.url)
+    if parsed.hostname not in ("www.groupon.com", "groupon.com") or not parsed.path.startswith("/deals/"):
+        raise HTTPException(status_code=400, detail="URL must be a groupon.com/deals/ link")
+
+    log.info("Custom deal drop: scraping %s", req.url)
+    try:
+        proc = subprocess.run(
+            ["node", str(SCRAPER_SCRIPT), req.url],
+            capture_output=True, text=True, timeout=120
+        )
+    except subprocess.TimeoutExpired:
+        raise HTTPException(status_code=504, detail="Scraping timed out")
+
+    if proc.returncode != 0:
+        log.error("Scraper failed (exit %d): %s", proc.returncode, proc.stderr[-500:])
+        raise HTTPException(status_code=502, detail=f"Scraping failed: {proc.stderr[-200:]}")
+
+    try:
+        deal = json.loads(proc.stdout)
+    except json.JSONDecodeError:
+        log.error("Scraper output not valid JSON: %s", proc.stdout[:200])
+        raise HTTPException(status_code=502, detail="Scraper returned invalid JSON")
+
+    log.info("Scraped: %s", deal.get("deal_title"))
+    result = _copy_from_cache_or_generate(deal, utm_content="deal_drop")
+    log_post(post_type="deal_drop", route="custom_deal_drop", copy=result["copy"])
+    return {"status": "posted", "copy": result["copy"], "deal": result["deal"]}
 
 
 @app.post("/api/mention")

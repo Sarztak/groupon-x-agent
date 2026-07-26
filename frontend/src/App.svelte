@@ -82,7 +82,32 @@
   }
 
   async function handleSend(text, username = 'user') {
-    if (mode === 'mention_reply') {
+    if (mode === 'deal_drop') {
+      addPill('Custom deal drop triggered', 'routing')
+      addMessage(text, 'incoming', 'Custom URL')
+
+      let result
+      try {
+        const res = await fetch('/api/custom_deal_drop', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: text.trim() })
+        })
+        result = await res.json()
+      } catch (e) {
+        addPill('API error', 'fail')
+        return
+      }
+
+      if (result.status === 'posted') {
+        addPill('Review passed', 'pass')
+        addMessage(result.copy, 'outgoing', `Agent · custom deal · ${result.deal?.merchant_name ?? ''}`)
+      } else {
+        addPill('Failed — escalated', 'fail')
+      }
+    }
+
+    else if (mode === 'mention_reply') {
       addMessage(text, 'incoming', '@' + username)
       addPill('Processing...', 'routing')
 

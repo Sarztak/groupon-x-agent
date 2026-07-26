@@ -24,7 +24,7 @@
   }
 
   $: placeholder = mode === 'deal_drop'
-    ? 'No input needed for deal drops'
+    ? 'Paste a Groupon deal URL for a custom drop, or click Run for random'
     : mode === 'trend_hook'
     ? 'No input needed — trends are auto-selected'
     : 'Type a custom mention...'
@@ -75,9 +75,9 @@
       bind:value={input}
       {placeholder}
       on:keydown={handleKey}
-      disabled={mode === 'deal_drop' || mode === 'trend_hook'}
+      disabled={mode === 'trend_hook'}
     />
-    <button on:click={handleSend} disabled={mode === 'deal_drop' || mode === 'trend_hook'}>Send</button>
+    <button on:click={handleSend} disabled={mode === 'trend_hook'}>Send</button>
   </div>
 </div>
 

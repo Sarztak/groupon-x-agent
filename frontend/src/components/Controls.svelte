@@ -5,9 +5,9 @@
   export let onRun
 
   const modes = [
-    { id: 'deal_drop', label: 'Deal drop' },
-    { id: 'trend_hook', label: 'Trend hook' },
-    { id: 'mention_reply', label: 'Mention reply' }
+    { id: 'deal_drop',    label: 'Deal drop' },
+    { id: 'trend_hook',   label: 'Trend hook' },
+    { id: 'mention_reply', label: 'Mention reply' },
   ]
 
   const segments = [
