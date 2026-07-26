@@ -7,6 +7,7 @@ from retrieval import retrieve_deal
 from orchestrator import orchestrate
 from conversational import generate_conversational_reply
 from metrics import log_post
+from url_utils import enrich_url
 
 log = logging.getLogger(__name__)
 
@@ -49,7 +50,8 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
 
     route = decision["route"]
     log.info("Route: %s | engage_with: %s", route, decision.get("engage_with"))
-    deal_info = None  # set for deal_request, passed to output guard as verified source
+    deal_info = None    # set for deal_request, passed to output guard as verified source
+    deal_raw_url = None # set for deal_request, appended after output guard passes
 
     if route in ("blocked_reply", "off_topic"):
         reply_text = FIXED_REPLIES[route]
@@ -68,6 +70,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
             queue_for_human_review(message, username, guard_report, decision)
             return {"status": "escalated", "reason": "No confident deal match found", "guard_report": guard_report}
 
+        deal_raw_url = deal.get("url")
         agent_input = build_agent_input(deal, segment="spontaneous_locals", variations=1)
         deal_info = agent_input["deal"]
         result = generate_and_review(agent_input, references_dir, model="claude-sonnet-4-6")
@@ -109,9 +112,17 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         queue_for_human_review(message, username, guard_report, decision)
         return {"status": "escalated", "reason": "Output guard blocked reply", "guard_report": guard_report}
 
+    deal_url = None
+    if route == "deal_request" and deal_raw_url:
+        deal_url = enrich_url(deal_raw_url, "mention_reply")
+        reply_text = f"{reply_text} {deal_url}"
+
     log.info("Reply posted for @%s: %s", username, reply_text)
     log_post(post_type="mention_reply", route=route, copy=reply_text)
-    return {"status": "posted", "reply": reply_text, "route": route, "guard_report": guard_report}
+    result = {"status": "posted", "reply": reply_text, "route": route, "guard_report": guard_report}
+    if deal_url:
+        result["deal_url"] = deal_url
+    return result
 
 
 def queue_for_human_review(message, username, guard_report, decision):

@@ -6,7 +6,7 @@
     "text": "@Groupon any good spa deals in Chicago this weekend?",
     "route_hint": "deal_request",
     "route": "deal_request",
-    "reply": "@sarah_chicago King Spa has a Base Rock Room \u2014 one of only three in the world. Open 24/7, so this weekend has a plan. Up to 32% off on Groupon.",
+    "reply": "@sarah_chicago King Spa has a Base Rock Room \u2014 one of only three in the world. Open 24/7, so this weekend has a plan. Up to 32% off on Groupon. https://www.groupon.com/deals/king-spa-and-sauna-chicago-35?redemptionLocationId=8b1313fe-5df1-b06a-768a-013a91155c05&utm_source=x_organic&utm_medium=social_bot&utm_campaign=groupon_social&utm_content=mention_reply",
     "guard_report": {
       "hard_block": false,
       "flags": {
@@ -21,7 +21,8 @@
       },
       "assessment": "Straightforward, on-topic request. User asks Groupon for spa deals in Chicago over the weekend. No flags triggered. Genuine, answerable query \u2014 agent can respond with relevant local spa offers."
     },
-    "status": "ok"
+    "status": "ok",
+    "deal_url": "https://www.groupon.com/deals/king-spa-and-sauna-chicago-35?redemptionLocationId=8b1313fe-5df1-b06a-768a-013a91155c05&utm_source=x_organic&utm_medium=social_bot&utm_campaign=groupon_social&utm_content=mention_reply"
   },
   {
     "id": "r2",

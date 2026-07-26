@@ -11,6 +11,7 @@ from marketing_copy import build_agent_input, generate_and_review
 from guardrails import guard_output
 from retrieval import retrieve_deal
 from metrics import log_post, summarize
+from url_utils import enrich_url
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
 log = logging.getLogger(__name__)
@@ -63,6 +64,15 @@ async def two_week_plan():
         return {"generated": False, "posts": [], "replies": []}
     posts   = json.loads(posts_path.read_text())
     replies = json.loads(replies_path.read_text())
+    for post in posts:
+        if post.get("status") != "ok" or not post.get("copy"):
+            continue
+        deal = post.get("deal") if post.get("type") == "deal_drop" else post.get("matched_deal")
+        raw_url = (deal or {}).get("url")
+        if raw_url:
+            utm = "deal_drop" if post.get("type") == "deal_drop" else "trend_hook"
+            post["deal_url"] = enrich_url(raw_url, utm)
+            post["copy"] = f"{post['copy']} {post['deal_url']}"
     return {"generated": True, "posts": posts, "replies": replies}
 
 
@@ -88,30 +98,38 @@ async def deal_drop():
     return {"status": "posted", "copy": result["copy"], "deal": result["deal"]}
 
 
-def _copy_from_cache_or_generate(deal: dict) -> dict:
+def _copy_from_cache_or_generate(deal: dict, utm_content: str = "deal_drop") -> dict:
     deal_title = deal.get("deal_title")
     cache = json.loads(DEAL_DROP_CACHE.read_text()) if DEAL_DROP_CACHE.exists() else []
     cached = next((e for e in cache if e["deal"].get("deal_title") == deal_title), None)
+
     if cached:
         log.info("Cache hit — serving existing copy for %s", deal_title)
-        return {"copy": cached["copy"], "deal": cached["deal"]}
+        copy = cached["copy"]
+        deal_info = cached["deal"]
+    else:
+        log.info("Cache miss — generating copy for %s", deal_title)
+        agent_input = build_agent_input(deal, segment="spontaneous_locals", variations=1)
+        result = generate_and_review(agent_input, REFERENCES_DIR, model="claude-sonnet-4-6", max_attempts=2)
+        if not result["results"]:
+            raise HTTPException(status_code=500, detail="Copy generation returned nothing")
 
-    log.info("Cache miss — generating copy for %s", deal_title)
-    agent_input = build_agent_input(deal, segment="spontaneous_locals", variations=1)
-    result = generate_and_review(agent_input, REFERENCES_DIR, model="claude-sonnet-4-6", max_attempts=2)
-    if not result["results"]:
-        raise HTTPException(status_code=500, detail="Copy generation returned nothing")
+        copy = result["results"][0]["copy"]
+        deal_info = agent_input["deal"]
 
-    copy = result["results"][0]["copy"]
-    deal_info = agent_input["deal"]
+        output_check = guard_output(json.dumps({"draft": copy, "deal_info": deal_info}))
+        if not output_check or output_check["action"] == "block":
+            raise HTTPException(status_code=500, detail="Output guard blocked copy")
 
-    output_check = guard_output(json.dumps({"draft": copy, "deal_info": deal_info}))
-    if not output_check or output_check["action"] == "block":
-        raise HTTPException(status_code=500, detail="Output guard blocked copy")
+        cache.append({"deal": deal_info, "copy": copy})
+        DEAL_DROP_CACHE.write_text(json.dumps(cache, indent=2))
+        log.info("Cached copy for %s", deal_title)
 
-    cache.append({"deal": deal_info, "copy": copy})
-    DEAL_DROP_CACHE.write_text(json.dumps(cache, indent=2))
-    log.info("Cached copy for %s", deal_title)
+    raw_url = deal.get("url")
+    if raw_url:
+        deal_url = enrich_url(raw_url, utm_content)
+        copy = f"{copy} {deal_url}"
+
     return {"copy": copy, "deal": deal_info}
 
 
@@ -128,7 +146,7 @@ async def trend_hook(req: TrendRequest):
         log.info("No matching deal for trend: %s", req.trend)
         return {"status": "no_match"}
 
-    result = _copy_from_cache_or_generate(deal)
+    result = _copy_from_cache_or_generate(deal, utm_content="trend_hook")
     return {"status": "posted", "copy": result["copy"], "deal": result["deal"]}
 
 
@@ -150,6 +168,6 @@ async def trend_drop():
         log.info("No matching deal for trend: %s", trend_name)
         return {"status": "no_match", "trend": trend_name}
 
-    result = _copy_from_cache_or_generate(deal)
+    result = _copy_from_cache_or_generate(deal, utm_content="trend_hook")
     log_post(post_type="trend_hook", route="trend_hook", copy=result["copy"])
     return {"status": "posted", "copy": result["copy"], "deal": result["deal"], "trend": trend_name}

@@ -50,7 +50,10 @@ def generate_deal_drop_copy(deal: dict) -> str | None:
     copy = result["results"][0]["copy"]
     check = guard_output(json.dumps({"draft": copy, "deal_info": agent_input["deal"]}))
     if not check or check.get("action") == "block":
-        log.warning("Output guard blocked copy for %s", deal.get("merchant_name"))
+        log.warning("Output guard hard-blocked copy for %s", deal.get("merchant_name"))
+        return None
+    if check.get("action") == "route_to_human":
+        log.warning("Output guard escalating %s — reason: %s", deal.get("merchant_name"), check.get("reason"))
         return None
     return copy
 
@@ -135,13 +138,16 @@ def process_replies(skeleton_replies: list):
 
         result = run_with_retry(gen_reply, rid)
         if result and result.get("status") in ("posted", "escalated"):
-            existing[rid] = {
+            entry = {
                 **reply,
                 "route": result.get("route", reply["route_hint"]),
                 "reply": result.get("reply", ""),
                 "guard_report": result.get("guard_report", {}),
                 "status": "ok",
             }
+            if result.get("deal_url"):
+                entry["deal_url"] = result["deal_url"]
+            existing[rid] = entry
         else:
             existing[rid] = {**reply, "route": reply["route_hint"], "reply": None, "status": "failed"}
 
