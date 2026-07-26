@@ -135,7 +135,8 @@
             input: text,
             reason: 'Complaint acknowledged — queued for human follow-up',
             guardReport: result.guard_report || {},
-            suggestion: ''
+            suggestion: '',
+            createdAt: Date.now(),
           }]
         }
       } else if (result.status === 'escalated') {
@@ -145,7 +146,8 @@
           input: text,
           reason: result.reason,
           guardReport: result.guard_report || {},
-          suggestion: ''
+          suggestion: '',
+          createdAt: Date.now(),
         }]
       } else if (result.status === 'paused') {
         addPill('Kill switch active', 'fail')
@@ -227,7 +229,8 @@
           input: r.text,
           reason: 'Complaint acknowledged — queued for human follow-up',
           guardReport: r.guard_report || {},
-          suggestion: r.reply
+          suggestion: r.reply,
+          createdAt: Date.now(),
         }]
       }
     }

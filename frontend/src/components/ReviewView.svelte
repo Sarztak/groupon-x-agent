@@ -1,7 +1,21 @@
 <script>
+  import { onMount, onDestroy } from 'svelte'
+
   export let items = []
   export let onApprove
   export let onDiscard
+
+  let now = Date.now()
+  let ticker
+
+  onMount(() => { ticker = setInterval(() => { now = Date.now() }, 30000) })
+  onDestroy(() => clearInterval(ticker))
+
+  function fmtAge(mins) {
+    if (mins < 1)  return 'just now'
+    if (mins < 60) return `${mins}m ago`
+    return `${Math.floor(mins / 60)}h ${mins % 60}m ago`
+  }
 </script>
 
 <aside>
@@ -18,6 +32,10 @@
     {:else}
       {#each items as item (item.id)}
         <div class="card">
+          {#if item.createdAt}
+            {@const mins = Math.floor((now - item.createdAt) / 60000)}
+            <div class="age {mins >= 240 ? 'overdue' : mins >= 60 ? 'warn' : ''}">⏱ {fmtAge(mins)}</div>
+          {/if}
           <div class="section">
             <div class="label">Incoming</div>
             <div class="content">{item.input}</div>
@@ -187,4 +205,13 @@
   }
 
   .discard:hover { background: #4a2020; }
+
+  .age {
+    font-size: 10px;
+    font-weight: 600;
+    color: #71767b;
+    letter-spacing: 0.04em;
+  }
+  .age.warn    { color: #ffd400; }
+  .age.overdue { color: #f4212e; }
 </style>
