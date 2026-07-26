@@ -13,7 +13,7 @@ TRENDS_PATH    = Path("./simulated_trends.json").resolve()
 REFERENCES_DIR = Path("./prompts/references").resolve()
 PROMPTS_DIR    = Path("./prompts").resolve()
 
-trends = json.loads(TRENDS_PATH.read_text())
+trends = json.loads(TRENDS_PATH.read_text(encoding='utf-8'))
 
 CASES = [{"label": t["name"].lower().replace("#", ""), "trend": t} for t in trends]
 

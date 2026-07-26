@@ -32,7 +32,7 @@ RETRY_DELAY = 2  # seconds between retries
 
 def load_existing(path: Path) -> dict:
     if path.exists():
-        return {item["id"]: item for item in json.loads(path.read_text())}
+        return {item["id"]: item for item in json.loads(path.read_text(encoding='utf-8'))}
     return {}
 
 
@@ -156,7 +156,7 @@ def process_replies(skeleton_replies: list):
 
 
 def main():
-    skeleton = json.loads(SKELETON_PATH.read_text())
+    skeleton = json.loads(SKELETON_PATH.read_text(encoding='utf-8'))
     log.info("Loaded skeleton: %d posts, %d replies", len(skeleton["posts"]), len(skeleton["replies"]))
 
     process_posts(skeleton["posts"])

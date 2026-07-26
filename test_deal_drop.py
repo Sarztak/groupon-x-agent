@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 CATALOG_PATH   = Path("./deals_catalog.json").resolve()
 REFERENCES_DIR = Path("./prompts/references").resolve()
 
-deals = json.loads(CATALOG_PATH.read_text())
+deals = json.loads(CATALOG_PATH.read_text(encoding='utf-8'))
 
 CASES = [
     {"label": f"deal_{i}", "deal": deals[i]}
