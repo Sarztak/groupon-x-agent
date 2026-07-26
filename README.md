@@ -16,8 +16,8 @@ Autonomous social agent for Groupon's X (Twitter) presence. Monitors mentions, p
 # Python dependencies
 uv sync
 
-# Frontend dependencies
-cd frontend && npm install && cd ..
+# Node dependencies (frontend + scraper)
+npm install
 ```
 
 ### Environment
@@ -37,7 +37,7 @@ Start the backend and frontend in separate terminals:
 uv run uvicorn server:app --reload --port 8000
 
 # Frontend
-cd frontend && npm run dev
+npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173).
