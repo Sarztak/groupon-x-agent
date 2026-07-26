@@ -35,7 +35,7 @@ MODEL = "claude-sonnet-4-6"
 def guard_input(user_message: str, backend: str = "cli", model: str = MODEL) -> dict | None:
     raw = call_model(
         system=INPUT_GUARD_PROMPT,
-        user=f"<message>{user_message}</message>",
+        user=f"<tweet>{user_message}</tweet>",
         model=model,
         backend=backend,
     )
