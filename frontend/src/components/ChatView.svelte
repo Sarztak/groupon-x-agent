@@ -28,6 +28,12 @@
     : mode === 'trend_hook'
     ? 'No input needed — trends are auto-selected'
     : 'Type a custom mention...'
+
+  function splitUrl(text) {
+    const m = text.match(/(https?:\/\/\S+)/)
+    if (!m) return { copy: text, url: null }
+    return { copy: text.slice(0, m.index).trimEnd(), url: m[1] }
+  }
 </script>
 
 <div class="chat">
@@ -47,11 +53,17 @@
       {#if msg.type === 'pill'}
         <div class="pill {msg.variant}">{msg.text}</div>
       {:else}
+        {@const { copy, url } = splitUrl(msg.text)}
         <div class="msg {msg.direction}">
           {#if msg.meta}
             <div class="meta">{msg.meta}</div>
           {/if}
-          <div class="bubble">{msg.text}</div>
+          <div class="bubble">
+            {copy}
+            {#if url}
+              <a class="deal-link" href={url} target="_blank" rel="noopener noreferrer">View deal →</a>
+            {/if}
+          </div>
         </div>
       {/if}
     {/each}
@@ -147,6 +159,29 @@
     font-size: 14px;
     line-height: 1.5;
   }
+
+  .deal-link {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0.85;
+  }
+
+  .msg.outgoing .deal-link {
+    color: rgba(255,255,255,0.9);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 6px;
+  }
+
+  .msg.incoming .deal-link {
+    color: #1d9bf0;
+    border-top: 1px solid #2f3336;
+    padding-top: 6px;
+  }
+
+  .deal-link:hover { opacity: 1; text-decoration: underline; }
 
   .msg.incoming .bubble {
     background: #1d1f23;
