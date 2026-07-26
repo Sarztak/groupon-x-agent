@@ -51,11 +51,32 @@ def load_context(references_dir: Path, extra_files: list) -> str:
 
 def call_model(system: str, user: str, model: str, backend: str = "cli") -> str | None:
     if backend == "cli":
-        import sys
-        result = subprocess.run(
-            ["claude", "-p", user, "--system-prompt", system, "--model", model],
-            capture_output=True, text=True, shell=(sys.platform == "win32"),
-        )
+        import sys, os, tempfile
+        if sys.platform == "win32":
+            # cmd.exe has an 8191-char arg limit and mangles special chars in large prompts.
+            # Write both to temp files and expand via PowerShell variables instead.
+            sys_f = tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8')
+            usr_f = tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8')
+            sys_f.write(system); sys_f.close()
+            usr_f.write(user);   usr_f.close()
+            try:
+                ps = (
+                    f"$s = Get-Content -Raw -LiteralPath '{sys_f.name}'; "
+                    f"$u = Get-Content -Raw -LiteralPath '{usr_f.name}'; "
+                    f"claude -p $u --system-prompt $s --model {model}"
+                )
+                result = subprocess.run(
+                    ["powershell", "-NoProfile", "-Command", ps],
+                    capture_output=True, text=True, encoding='utf-8',
+                )
+            finally:
+                os.unlink(sys_f.name)
+                os.unlink(usr_f.name)
+        else:
+            result = subprocess.run(
+                ["claude", "-p", user, "--system-prompt", system, "--model", model],
+                capture_output=True, text=True,
+            )
         return result.stdout.strip() if result.returncode == 0 else None
 
     from anthropic import Anthropic
