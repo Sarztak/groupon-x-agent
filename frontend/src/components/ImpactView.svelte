@@ -46,7 +46,7 @@
       <div class="summary-tile highlight">
         <div class="s-num green">{fmtUsd(data.projection?.payback?.total_monthly_benefit)}</div>
         <div class="s-lbl">Total monthly benefit</div>
-        <div class="s-sub">labor value + conversion uplift</div>
+        <div class="s-sub">labor savings + revenue generated</div>
       </div>
       <div class="summary-tile">
         <div class="s-num">{fmtUsd(data.projection?.cost_saved_usd)}</div>
@@ -55,8 +55,8 @@
       </div>
       <div class="summary-tile">
         <div class="s-num">{fmtUsd(data.projection?.conversion_value_usd)}</div>
-        <div class="s-lbl">Conversion uplift/month</div>
-        <div class="s-sub">sessions × $4.50 (assumed)</div>
+        <div class="s-lbl">Revenue generated/month</div>
+        <div class="s-sub">net-new sessions × $4.50 (assumed)</div>
       </div>
       <div class="summary-tile">
         <div class="s-num red">{fmtUsd(data.projection?.payback?.monthly_run_cost_usd)}</div>
@@ -103,7 +103,7 @@
         <div class="total-sessions">
           <span class="ts-label">Total new sessions/month</span>
           <span class="ts-num">{fmt(data.projection?.total_new_sessions)}</span>
-          <span class="ts-value">× $4.50 = {fmtUsd(data.projection?.conversion_value_usd)}</span>
+          <span class="ts-value">× $4.50 = {fmtUsd(data.projection?.conversion_value_usd)} revenue</span>
         </div>
 
         <div class="spec-label">Labor savings (execution only)</div>
@@ -117,7 +117,7 @@
             <span>{Math.round(data.projection?.agent_replies_per_month * (5/60) * 10) / 10}h</span>
           </div>
           <div class="labor-row total-row">
-            <span>Total · × $80/hr</span>
+            <span>Total · × $40/hr</span>
             <span class="green">{data.projection?.hours_saved}h · {fmtUsd(data.projection?.cost_saved_usd)}/mo @ $40/hr</span>
           </div>
         </div>
@@ -147,7 +147,7 @@
           <div class="build-cost-row">
             <div class="bc-item">
               <div class="bc-val">{fmtUsd(data.projection?.payback?.build_cost_low_usd)}–{fmtUsd(data.projection?.payback?.build_cost_high_usd)}</div>
-              <div class="bc-lbl">Build cost (100–138 hrs × $80/hr)</div>
+              <div class="bc-lbl">Build cost (150–200 hrs × $80/hr)</div>
             </div>
             <div class="bc-item">
               <div class="bc-val red">{fmtUsd(data.projection?.payback?.monthly_run_cost_usd)}/mo</div>
@@ -199,7 +199,7 @@
               <span>{fmt(data.activity?.total_sessions)}</span>
             </div>
             <div class="labor-row">
-              <span>Conversion value</span>
+              <span>Revenue generated</span>
               <span class="green">{fmtUsd(data.activity?.conversion_value_usd)}</span>
             </div>
             <div class="labor-row">

@@ -63,8 +63,8 @@ API_COST_BY_ROUTE = {
 API_COST_ESCALATED_USD = 0.006   # partial pipeline (avg 2-3 calls) before escalation
 
 # ── Build & run cost ─────────────────────────────────────────────────────────
-BUILD_COST_LOW_USD   = 8_000    # 100 hrs × $80/hr
-BUILD_COST_HIGH_USD  = 11_000   # 138 hrs × $80/hr
+BUILD_COST_LOW_USD   = 12_000   # 150 hrs × $80/hr
+BUILD_COST_HIGH_USD  = 16_000   # 200 hrs × $80/hr
 MONTHLY_RUN_COST_USD = 50       # estimated API spend at projection volume
 
 
