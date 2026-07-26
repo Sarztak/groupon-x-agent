@@ -71,12 +71,12 @@ MONTHLY_RUN_COST_USD = 50       # estimated API spend at projection volume
 def read_jsonl(path: str) -> list[dict]:
     if not Path(path).exists():
         return []
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return [json.loads(line) for line in f if line.strip()]
 
 
 def log_post(post_type: str, route: str, copy: str):
-    with open(POSTS_LOG_FILE, "a") as f:
+    with open(POSTS_LOG_FILE, "a", encoding="utf-8") as f:
         f.write(json.dumps({
             "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "type": post_type,   # mention_reply | deal_drop | trend_hook

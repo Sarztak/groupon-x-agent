@@ -10,7 +10,7 @@ CONFIDENCE_THRESHOLD = 0.6
 
 
 def load_catalog_index(catalog_path: Path) -> list[dict]:
-    deals = json.loads(catalog_path.read_text())
+    deals = json.loads(catalog_path.read_text(encoding="utf-8"))
     return [
         {
             "deal_title":    d.get("deal_title"),
@@ -23,7 +23,7 @@ def load_catalog_index(catalog_path: Path) -> list[dict]:
 
 
 def fetch_full_deal(deal_title: str, merchant_name: str, catalog_path: Path) -> dict | None:
-    deals = json.loads(catalog_path.read_text())
+    deals = json.loads(catalog_path.read_text(encoding="utf-8"))
     for d in deals:
         if d.get("deal_title") == deal_title and d.get("merchant_name") == merchant_name:
             return d
@@ -38,7 +38,7 @@ def retrieve_deal(
     backend: str = "cli",
     model: str = "claude-haiku-4-5",
 ) -> dict | None:
-    system = (prompts_dir / "retrival.txt").read_text()
+    system = (prompts_dir / "retrival.txt").read_text(encoding="utf-8")
     catalog_index = load_catalog_index(catalog_path)
 
     user = json.dumps({
@@ -83,8 +83,8 @@ if __name__ == "__main__":
     catalog_path = Path("./deals_catalog.json").resolve()
     prompts_dir  = Path("./prompts").resolve()
 
-    mentions = json.loads(Path("./simulated_mentions.json").read_text())
-    trends   = json.loads(Path("./simulated_trends.json").read_text())
+    mentions = json.loads(Path("./simulated_mentions.json").read_text(encoding='utf-8'))
+    trends   = json.loads(Path("./simulated_trends.json").read_text(encoding='utf-8'))
 
     mention = mentions[0]
     log.info("=== MENTION TEST ===")

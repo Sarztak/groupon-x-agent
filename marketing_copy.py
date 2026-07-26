@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 def load_file(path: Path) -> str:
-    with open(path, "r") as f:
+    with open(path, "r", encoding="utf-8") as f:
         return f.read()
 
 
@@ -51,9 +51,10 @@ def load_context(references_dir: Path, extra_files: list) -> str:
 
 def call_model(system: str, user: str, model: str, backend: str = "cli") -> str | None:
     if backend == "cli":
+        import sys
         result = subprocess.run(
             ["claude", "-p", user, "--system-prompt", system, "--model", model],
-            capture_output=True, text=True
+            capture_output=True, text=True, shell=(sys.platform == "win32"),
         )
         return result.stdout.strip() if result.returncode == 0 else None
 
@@ -79,7 +80,7 @@ def generate_copy(
     revision_feedback: list[dict] | None = None,
 ) -> list[dict] | None:
     context = load_context(references_dir, WRITE_ONLY)
-    write_prompt = (references_dir / ".." / "copywriter.txt").read_text()
+    write_prompt = (references_dir / ".." / "copywriter.txt").read_text(encoding="utf-8")
 
     if revision_feedback:
         feedback_block = "\n\n".join(
@@ -124,7 +125,7 @@ def review_copy(
     results: list[dict], references_dir: Path, model="claude-haiku-4-5", backend="cli"
 ) -> list[dict] | None:
     context = load_context(references_dir, REVIEW_ONLY)
-    reviewer_prompt = (references_dir / ".." / "copy_reviewer.txt").read_text()
+    reviewer_prompt = (references_dir / ".." / "copy_reviewer.txt").read_text(encoding="utf-8")
 
     text = call_model(
         system=f"{reviewer_prompt}\n\n{context}",
@@ -214,7 +215,7 @@ if __name__ == "__main__":
     references_dir = Path("./prompts/references").resolve()
     catalog = Path("./deals_catalog.json").resolve()
 
-    deals = json.loads(catalog.read_text())
+    deals = json.loads(catalog.read_text(encoding='utf-8'))
     deal = deals[0]
     log.info("Loaded deal: %s — %s", deal.get("merchant_name"), deal.get("deal_title"))
 

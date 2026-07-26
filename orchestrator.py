@@ -17,7 +17,7 @@ def orchestrate(
     model: str = "claude-sonnet-4-6",
     prompts_dir: Path = PROMPTS_DIR,
 ) -> dict | None:
-    system = (prompts_dir / "orchestrator.txt").read_text()
+    system = (prompts_dir / "orchestrator.txt").read_text(encoding="utf-8")
 
     user = json.dumps({
         "message": message,

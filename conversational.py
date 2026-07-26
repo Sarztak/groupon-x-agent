@@ -19,7 +19,7 @@ def generate_conversational_reply(
     prompts_dir: Path = PROMPTS_DIR,
     revision_feedback: str | None = None,
 ) -> dict | None:
-    system = (prompts_dir / "conversational_voice.txt").read_text()
+    system = (prompts_dir / "conversational_voice.txt").read_text(encoding="utf-8")
 
     payload = json.dumps({
         "mode": mode,

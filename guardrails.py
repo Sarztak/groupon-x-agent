@@ -17,13 +17,13 @@ SENSITIVE_TOPICS = [
     "protest", "riot", "police brutality"
 ]
 
-with open("prompts/input_guard.txt", "r") as f:
+with open("prompts/input_guard.txt", "r", encoding="utf-8") as f:
     INPUT_GUARD_PROMPT = f.read().format(
         COMPETITOR_LIST=COMPETITOR_LIST,
         SENSITIVE_TOPICS=SENSITIVE_TOPICS
     )
 
-with open("prompts/output_guard.txt", "r") as f:
+with open("prompts/output_guard.txt", "r", encoding="utf-8") as f:
     OUTPUT_GUARD_PROMPT = f.read().format(
         competitor_list=COMPETITOR_LIST,
         sensitive_topics=SENSITIVE_TOPICS
@@ -75,7 +75,7 @@ def guard_output(draft_post: str, backend: str = "cli", model: str = MODEL) -> d
 
 
 def log_action(guard_type: str, content: str, result: dict):
-    with open("agent_log.jsonl", "a") as f:
+    with open("agent_log.jsonl", "a", encoding="utf-8") as f:
         f.write(json.dumps({
             "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "guard": guard_type,

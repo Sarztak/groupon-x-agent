@@ -75,7 +75,7 @@ async def metrics():
 
 @app.get("/api/random_mention")
 async def random_mention():
-    mentions = json.loads(MENTIONS_PATH.read_text())
+    mentions = json.loads(MENTIONS_PATH.read_text(encoding="utf-8"))
     mention = random.choice(mentions)
     return {"username": mention["username"], "text": mention["text"]}
 
@@ -86,8 +86,8 @@ async def two_week_plan():
     replies_path = TWO_WEEK_DIR / "replies.json"
     if not posts_path.exists() or not replies_path.exists():
         return {"generated": False, "posts": [], "replies": []}
-    posts   = json.loads(posts_path.read_text())
-    replies = json.loads(replies_path.read_text())
+    posts   = json.loads(posts_path.read_text(encoding="utf-8"))
+    replies = json.loads(replies_path.read_text(encoding="utf-8"))
     for post in posts:
         if post.get("status") != "ok" or not post.get("copy"):
             continue
@@ -149,7 +149,7 @@ async def mention(req: MentionRequest):
 
 @app.post("/api/deal_drop")
 async def deal_drop():
-    deals = json.loads(CATALOG_PATH.read_text())
+    deals = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     deal = random.choice(deals[:10])
     log.info("Deal drop: selected %s", deal.get("deal_title"))
     result = _copy_from_cache_or_generate(deal)
@@ -159,7 +159,7 @@ async def deal_drop():
 
 def _copy_from_cache_or_generate(deal: dict, utm_content: str = "deal_drop") -> dict:
     deal_title = deal.get("deal_title")
-    cache = json.loads(DEAL_DROP_CACHE.read_text()) if DEAL_DROP_CACHE.exists() else []
+    cache = json.loads(DEAL_DROP_CACHE.read_text(encoding="utf-8")) if DEAL_DROP_CACHE.exists() else []
     cached = next((e for e in cache if e["deal"].get("deal_title") == deal_title), None)
 
     if cached:
@@ -181,7 +181,7 @@ def _copy_from_cache_or_generate(deal: dict, utm_content: str = "deal_drop") -> 
             raise HTTPException(status_code=500, detail="Output guard blocked copy")
 
         cache.append({"deal": deal_info, "copy": copy})
-        DEAL_DROP_CACHE.write_text(json.dumps(cache, indent=2))
+        DEAL_DROP_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
         log.info("Cached copy for %s", deal_title)
 
     raw_url = deal.get("url")
@@ -211,7 +211,7 @@ async def trend_hook(req: TrendRequest):
 
 @app.post("/api/trend_drop")
 async def trend_drop():
-    trends = json.loads(TRENDS_PATH.read_text())
+    trends = json.loads(TRENDS_PATH.read_text(encoding='utf-8'))
     trend = random.choice(trends)
     trend_name = trend.get("name")
     log.info("Trend drop: selected %s (%s tweets)", trend_name, trend.get("tweet_volume"))
