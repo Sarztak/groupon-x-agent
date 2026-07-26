@@ -1,20 +1,11 @@
 <script>
   export let mode = 'deal_drop'
-  export let segment = 'spontaneous_locals'
-  export let variations = 1
   export let onRun
 
   const modes = [
     { id: 'deal_drop',    label: 'Deal drop' },
     { id: 'trend_hook',   label: 'Trend hook' },
     { id: 'mention_reply', label: 'Mention reply' },
-  ]
-
-  const segments = [
-    { id: 'spontaneous_locals', label: 'Spontaneous locals' },
-    { id: 'experience_seekers', label: 'Experience seekers' },
-    { id: 'lapsed_believers', label: 'Lapsed believers' },
-    { id: 'value_hunters', label: 'Value hunters' }
   ]
 </script>
 
@@ -34,22 +25,6 @@
         >{m.label}</button>
       {/each}
     </div>
-  </div>
-
-  <div class="override-group">
-    <span class="label">Segment</span>
-    <select bind:value={segment}>
-      {#each segments as s}
-        <option value={s.id}>{s.label}</option>
-      {/each}
-    </select>
-
-    <span class="label">Variations</span>
-    <select bind:value={variations}>
-      <option value={1}>1</option>
-      <option value={2}>2</option>
-      <option value={3}>3</option>
-    </select>
   </div>
 
   <button class="run-btn" on:click={onRun}>
@@ -88,7 +63,7 @@
     white-space: nowrap;
   }
 
-  .mode-group, .override-group {
+  .mode-group {
     display: flex;
     align-items: center;
     gap: 8px;

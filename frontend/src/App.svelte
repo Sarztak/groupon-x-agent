@@ -10,8 +10,6 @@
   let activeTab = 'demo'
 
   let mode = 'deal_drop'
-  let segment = 'spontaneous_locals'
-  let variations = 1
 
   let messages = []
   let reviewItems = []
@@ -243,7 +241,7 @@
   <NavBar active={activeTab} onTabChange={(t) => activeTab = t} />
 
   {#if activeTab === 'demo'}
-    <Controls bind:mode bind:segment bind:variations onRun={handleRun} />
+    <Controls bind:mode onRun={handleRun} />
     <div class="body">
       <ChatView {messages} {mode} onSend={handleSend} onLoadHistory={handleLoadHistory} />
       <ReviewView items={reviewItems} onApprove={handleApprove} onDiscard={handleDiscard} />
