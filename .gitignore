@@ -12,3 +12,5 @@ node_modules
 
 # environment files
 .env
+
+demo_speak.txt
