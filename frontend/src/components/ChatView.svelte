@@ -128,7 +128,7 @@
   }
 
   .empty-text {
-    color: #71767b;
+    color: var(--c-t2);
     font-size: 14px;
     text-align: center;
   }
@@ -137,16 +137,16 @@
     font-size: 12px;
     padding: 6px 16px;
     border-radius: 20px;
-    border: 1px solid #2f3336;
+    border: 1px solid var(--c-border);
     background: transparent;
-    color: #71767b;
+    color: var(--c-t2);
     cursor: pointer;
     transition: color 0.15s, border-color 0.15s;
   }
 
   .load-history-btn:hover {
-    color: #e7e9ea;
-    border-color: #4b5563;
+    color: var(--c-t1);
+    border-color: var(--c-t2);
     background: transparent;
   }
 
@@ -162,7 +162,7 @@
 
   .meta {
     font-size: 11px;
-    color: #71767b;
+    color: var(--c-t2);
     padding: 0 4px;
   }
 
@@ -190,20 +190,20 @@
 
   .msg.outgoing .deal-link {
     color: rgba(255,255,255,0.9);
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.25);
     padding-top: 6px;
   }
 
   .msg.incoming .deal-link {
-    color: #1d9bf0;
-    border-top: 1px solid #2f3336;
+    color: var(--c-link);
+    border-top: 1px solid var(--c-border);
     padding-top: 6px;
   }
 
   .deal-link:hover { opacity: 1; text-decoration: underline; }
 
   .inline-link {
-    color: #1d9bf0;
+    color: var(--c-link);
     text-decoration: underline;
     font-size: inherit;
   }
@@ -211,14 +211,14 @@
   .msg.outgoing .inline-link { color: rgba(255,255,255,0.85); }
 
   .msg.incoming .bubble {
-    background: #1d1f23;
-    border: 1px solid #2f3336;
-    color: #e7e9ea;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
+    color: var(--c-t1);
     border-bottom-left-radius: 4px;
   }
 
   .msg.outgoing .bubble {
-    background: #16a34a;
+    background: var(--c-btn);
     color: white;
     border-bottom-right-radius: 4px;
   }
@@ -230,16 +230,16 @@
     border-radius: 20px;
   }
 
-  .pill.pass { background: #1a3a2a; color: #00b87a; border: 1px solid #00b87a44; }
-  .pill.fail { background: #3a1a1a; color: #f4212e; border: 1px solid #f4212e44; }
-  .pill.escalate { background: #3a2e1a; color: #ffd400; border: 1px solid #ffd40044; }
-  .pill.routing { background: #1d1f23; color: #71767b; border: 1px solid #2f3336; }
+  .pill.pass     { background: var(--c-ok-s);   color: var(--c-ok);   border: 1px solid var(--c-ok-b); }
+  .pill.fail     { background: var(--c-red-s);  color: var(--c-red);  border: 1px solid var(--c-red-b); }
+  .pill.escalate { background: var(--c-warn-s); color: var(--c-warn); border: 1px solid var(--c-warn-b); }
+  .pill.routing  { background: var(--c-tile);   color: var(--c-t2);   border: 1px solid var(--c-border); }
 
   .input-row {
     display: flex;
     gap: 8px;
     padding: 12px 16px;
-    border-top: 1px solid #2f3336;
+    border-top: 1px solid var(--c-border);
   }
 
   input {
@@ -247,12 +247,12 @@
     font-size: 14px;
     padding: 9px 14px;
     border-radius: 20px;
-    border: 1px solid #2f3336;
-    background: #1d1f23;
-    color: #e7e9ea;
+    border: 1px solid var(--c-border);
+    background: var(--c-input);
+    color: var(--c-t1);
   }
 
-  input::placeholder { color: #71767b; }
+  input::placeholder { color: var(--c-t2); }
   input:disabled { opacity: 0.4; cursor: not-allowed; }
 
   button {
@@ -261,11 +261,11 @@
     padding: 9px 18px;
     border-radius: 20px;
     border: none;
-    background: #16a34a;
+    background: var(--c-btn);
     color: white;
     cursor: pointer;
   }
 
-  button:hover { background: #15803d; }
+  button:hover { background: var(--c-btn-hov); }
   button:disabled { opacity: 0.4; cursor: not-allowed; }
 </style>

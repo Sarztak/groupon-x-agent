@@ -64,12 +64,15 @@
     } catch (_) {}
   })
 
-  const routeColor = {
-    deal_drop:        { bg: '#0d1f13', border: '#16a34a44', text: '#22c55e' },
-    trend_hook:       { bg: '#0c1220', border: '#1e40af44', text: '#60a5fa' },
-    deal_request:     { bg: '#0d1f13', border: '#16a34a44', text: '#22c55e' },
-    acknowledge:      { bg: '#1c1208', border: '#854d0e44', text: '#f59e0b' },
-    positive_response:{ bg: '#120c20', border: '#6d28d944', text: '#a78bfa' },
+  function routeClass(key) {
+    const map = {
+      deal_drop:        'rc-green',
+      trend_hook:       'rc-blue',
+      deal_request:     'rc-green',
+      acknowledge:      'rc-yellow',
+      positive_response:'rc-purple',
+    }
+    return map[key] ?? 'rc-green'
   }
 
   $: week1 = posts.slice(0, 5)
@@ -106,7 +109,7 @@
           <div class="post-card">
             <div class="post-meta">
               <span class="post-date">{post.date}</span>
-              <span class="post-type" style="background:{routeColor[post.type].bg}; border-color:{routeColor[post.type].border}; color:{routeColor[post.type].text}">
+              <span class="post-type {routeClass(post.type)}">
                 {post.type.replace('_', ' ')}
               </span>
               {#if post.trend}
@@ -127,7 +130,7 @@
           <div class="post-card">
             <div class="post-meta">
               <span class="post-date">{post.date}</span>
-              <span class="post-type" style="background:{routeColor[post.type].bg}; border-color:{routeColor[post.type].border}; color:{routeColor[post.type].text}">
+              <span class="post-type {routeClass(post.type)}">
                 {post.type.replace('_', ' ')}
               </span>
               {#if post.trend}
@@ -148,7 +151,7 @@
     <div class="threads-grid">
       {#each threads as thread}
         <div class="thread-card">
-          <div class="route-badge" style="background:{routeColor[thread.route].bg}; border-color:{routeColor[thread.route].border}; color:{routeColor[thread.route].text}">
+          <div class="route-badge {routeClass(thread.route)}">
             {thread.route.replace(/_/g, ' ')}
           </div>
           <div class="bubble incoming">
@@ -181,16 +184,16 @@
   }
 
   .page-header { display: flex; align-items: flex-start; justify-content: space-between; }
-  .page-title { font-size: 20px; font-weight: 700; color: #e7e9ea; }
-  .page-sub { font-size: 12px; color: #71767b; margin-top: 4px; }
+  .page-title { font-size: 20px; font-weight: 700; color: var(--c-t1); }
+  .page-sub { font-size: 12px; color: var(--c-t2); margin-top: 4px; }
 
   .live-badge {
     font-size: 11px;
     padding: 4px 12px;
     border-radius: 20px;
-    background: #0d1f13;
-    border: 1px solid #16a34a44;
-    color: #22c55e;
+    background: var(--c-green-s);
+    border: 1px solid var(--c-green-b);
+    color: var(--c-green);
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -199,9 +202,9 @@
     font-size: 11px;
     padding: 4px 12px;
     border-radius: 20px;
-    background: #1c1208;
-    border: 1px solid #854d0e44;
-    color: #f59e0b;
+    background: var(--c-yellow-s);
+    border: 1px solid var(--c-yellow-b);
+    color: var(--c-yellow);
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -217,13 +220,13 @@
   .section-title {
     font-size: 11px;
     font-weight: 600;
-    color: #e7e9ea;
+    color: var(--c-t1);
     text-transform: uppercase;
     letter-spacing: 0.07em;
   }
 
   .legend { display: flex; gap: 14px; }
-  .leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #71767b; }
+  .leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--c-t2); }
   .leg-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 
   /* Plan section */
@@ -234,7 +237,7 @@
   .week-label {
     font-size: 12px;
     font-weight: 600;
-    color: #71767b;
+    color: var(--c-t2);
     padding: 0 4px;
   }
 
@@ -245,8 +248,8 @@
   }
 
   .post-card {
-    background: #0e0f11;
-    border: 1px solid #2f3336;
+    background: var(--c-panel);
+    border: 1px solid var(--c-border);
     border-radius: 12px;
     padding: 14px 16px;
     display: flex;
@@ -258,7 +261,7 @@
 
   .post-date {
     font-size: 11px;
-    color: #71767b;
+    color: var(--c-t2);
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
@@ -274,9 +277,9 @@
 
   .post-trend {
     font-size: 10px;
-    color: #60a5fa;
-    background: #0c1220;
-    border: 1px solid #1e40af44;
+    color: var(--c-blue);
+    background: var(--c-blue-s);
+    border: 1px solid var(--c-blue-b);
     padding: 2px 8px;
     border-radius: 6px;
     white-space: nowrap;
@@ -284,13 +287,13 @@
 
   .post-copy {
     font-size: 13px;
-    color: #e7e9ea;
+    color: var(--c-t1);
     line-height: 1.55;
   }
 
   .post-merchant {
     font-size: 10px;
-    color: #4b5563;
+    color: var(--c-t3);
   }
 
   /* Threads */
@@ -303,8 +306,8 @@
   }
 
   .thread-card {
-    background: #0e0f11;
-    border: 1px solid #2f3336;
+    background: var(--c-panel);
+    border: 1px solid var(--c-border);
     border-radius: 12px;
     padding: 14px;
     display: flex;
@@ -322,6 +325,12 @@
     text-transform: capitalize;
   }
 
+  /* Route color classes (post-type badge + route-badge) */
+  .rc-green  { background: var(--c-green-s);  border-color: var(--c-green-b);  color: var(--c-green); }
+  .rc-blue   { background: var(--c-blue-s);   border-color: var(--c-blue-b);   color: var(--c-blue); }
+  .rc-yellow { background: var(--c-yellow-s); border-color: var(--c-yellow-b); color: var(--c-yellow); }
+  .rc-purple { background: var(--c-purple-s); border-color: var(--c-purple-b); color: var(--c-purple); }
+
   .bubble {
     border-radius: 10px;
     padding: 10px 12px;
@@ -331,28 +340,28 @@
   }
 
   .bubble.incoming {
-    background: #16181c;
-    border: 1px solid #2f3336;
+    background: var(--c-row);
+    border: 1px solid var(--c-border);
   }
 
   .bubble.outgoing {
-    background: #0d1f13;
-    border: 1px solid #16a34a44;
+    background: var(--c-green-s);
+    border: 1px solid var(--c-green-b);
   }
 
-  .bubble-user { font-size: 10px; font-weight: 600; color: #71767b; }
-  .bubble.outgoing .bubble-user { color: #22c55e; }
-  .bubble-text { font-size: 12px; color: #e7e9ea; line-height: 1.5; }
+  .bubble-user { font-size: 10px; font-weight: 600; color: var(--c-t2); }
+  .bubble.outgoing .bubble-user { color: var(--c-green); }
+  .bubble-text { font-size: 12px; color: var(--c-t1); line-height: 1.5; }
 
   .thread-arrow {
     text-align: center;
-    color: #2f3336;
+    color: var(--c-border);
     font-size: 14px;
   }
 
   .disclaimer {
     font-size: 11px;
-    color: #4b5563;
+    color: var(--c-t3);
     text-align: center;
     font-style: italic;
     padding-bottom: 8px;

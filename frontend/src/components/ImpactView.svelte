@@ -51,12 +51,12 @@
       <div class="summary-tile">
         <div class="s-num">{fmtUsd(data.projection?.cost_saved_usd)}</div>
         <div class="s-lbl">Labor savings/month</div>
-        <div class="s-sub">execution time at $40/hr coordinator rate</div>
+        <div class="s-sub">execution time at ${data.projection?.assumptions?.coordinator_hourly_rate}/hr coordinator rate</div>
       </div>
       <div class="summary-tile">
         <div class="s-num">{fmtUsd(data.projection?.conversion_value_usd)}</div>
         <div class="s-lbl">Revenue generated/month</div>
-        <div class="s-sub">net-new sessions × $4.50 (assumed)</div>
+        <div class="s-sub">total agent sessions × ${data.projection?.assumptions?.value_per_session_usd} (assumed)</div>
       </div>
       <div class="summary-tile">
         <div class="s-num red">{fmtUsd(data.projection?.payback?.monthly_run_cost_usd)}</div>
@@ -117,8 +117,8 @@
             <span>{Math.round(data.projection?.agent_replies_per_month * (5/60) * 10) / 10}h</span>
           </div>
           <div class="labor-row total-row">
-            <span>Total · × $40/hr</span>
-            <span class="green">{data.projection?.hours_saved}h · {fmtUsd(data.projection?.cost_saved_usd)}/mo @ $40/hr</span>
+            <span>Total · × ${data.projection?.assumptions?.coordinator_hourly_rate}/hr</span>
+            <span class="green">{data.projection?.hours_saved}h · {fmtUsd(data.projection?.cost_saved_usd)}/mo</span>
           </div>
         </div>
 
@@ -147,7 +147,7 @@
           <div class="build-cost-row">
             <div class="bc-item">
               <div class="bc-val">{fmtUsd(data.projection?.payback?.build_cost_low_usd)}–{fmtUsd(data.projection?.payback?.build_cost_high_usd)}</div>
-              <div class="bc-lbl">Build cost (150–200 hrs × $80/hr)</div>
+              <div class="bc-lbl">Build cost ({data.projection?.payback?.build_hours_low}–{data.projection?.payback?.build_hours_high} hrs × ${data.projection?.payback?.engineer_hourly_rate}/hr)</div>
             </div>
             <div class="bc-item">
               <div class="bc-val red">{fmtUsd(data.projection?.payback?.monthly_run_cost_usd)}/mo</div>
@@ -259,35 +259,35 @@
   .page-title {
     font-size: 20px;
     font-weight: 700;
-    color: #e7e9ea;
+    color: var(--c-t1);
   }
 
   .page-sub {
     font-size: 12px;
-    color: #71767b;
+    color: var(--c-t2);
     margin-top: 4px;
   }
 
   .refresh-btn {
-    background: #1d1f23;
-    border: 1px solid #2f3336;
-    color: #e7e9ea;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
+    color: var(--c-t1);
     font-size: 13px;
     padding: 6px 14px;
     border-radius: 20px;
     cursor: pointer;
   }
-  .refresh-btn:hover { background: #2f3336; }
+  .refresh-btn:hover { background: var(--c-row); }
 
   .loading {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #71767b;
+    color: var(--c-t2);
     font-size: 14px;
   }
-  .loading.err { color: #f4212e; }
+  .loading.err { color: var(--c-red); }
 
   /* Summary row */
   .summary-row {
@@ -297,25 +297,25 @@
   }
 
   .summary-tile {
-    background: #1d1f23;
-    border: 1px solid #2f3336;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
     border-radius: 12px;
     padding: 16px 18px;
   }
-  .summary-tile.highlight { border-color: #16a34a44; background: #0d1f13; }
+  .summary-tile.highlight { border-color: var(--c-green-b); background: var(--c-green-s); }
 
   .s-num {
     font-size: 28px;
     font-weight: 700;
-    color: #e7e9ea;
+    color: var(--c-t1);
     font-variant-numeric: tabular-nums;
     line-height: 1.1;
   }
-  .s-num.green { color: #22c55e; }
-  .s-num.red   { color: #f4212e; }
+  .s-num.green { color: var(--c-green); }
+  .s-num.red   { color: var(--c-red); }
 
-  .s-lbl { font-size: 12px; color: #e7e9ea; font-weight: 500; margin-top: 4px; }
-  .s-sub { font-size: 11px; color: #71767b; margin-top: 2px; }
+  .s-lbl { font-size: 12px; color: var(--c-t1); font-weight: 500; margin-top: 4px; }
+  .s-sub { font-size: 11px; color: var(--c-t2); margin-top: 2px; }
 
   /* Main grid */
   .main-grid {
@@ -333,8 +333,8 @@
 
   /* Panel */
   .panel {
-    background: #0e0f11;
-    border: 1px solid #2f3336;
+    background: var(--c-panel);
+    border: 1px solid var(--c-border);
     border-radius: 14px;
     padding: 20px;
     display: flex;
@@ -345,7 +345,7 @@
   .panel-title {
     font-size: 14px;
     font-weight: 600;
-    color: #e7e9ea;
+    color: var(--c-t1);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -354,17 +354,17 @@
   .panel-badge {
     font-size: 10px;
     font-weight: 500;
-    background: #1d1f23;
-    border: 1px solid #2f3336;
-    color: #71767b;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
+    color: var(--c-t2);
     padding: 2px 8px;
     border-radius: 20px;
   }
-  .panel-badge.warn { border-color: #854d0e44; background: #1c1208; color: #a16207; }
+  .panel-badge.warn { border-color: var(--c-yellow-b); background: var(--c-yellow-s); color: var(--c-yellow); }
 
   .spec-label {
     font-size: 10px;
-    color: #71767b;
+    color: var(--c-t2);
     text-transform: uppercase;
     letter-spacing: 0.07em;
   }
@@ -376,8 +376,8 @@
   }
 
   .spec-tile {
-    background: #1d1f23;
-    border: 1px solid #2f3336;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
     border-radius: 10px;
     padding: 12px 14px;
   }
@@ -385,17 +385,17 @@
   .sp-num {
     font-size: 24px;
     font-weight: 700;
-    color: #e7e9ea;
+    color: var(--c-t1);
     font-variant-numeric: tabular-nums;
     line-height: 1.1;
   }
 
-  .sp-lbl { font-size: 11px; color: #e7e9ea; font-weight: 500; margin-top: 3px; }
-  .sp-sub { font-size: 10px; color: #71767b; margin-top: 2px; line-height: 1.4; }
+  .sp-lbl { font-size: 11px; color: var(--c-t1); font-weight: 500; margin-top: 3px; }
+  .sp-sub { font-size: 10px; color: var(--c-t2); margin-top: 2px; line-height: 1.4; }
 
   .total-sessions {
-    background: #1d1f23;
-    border: 1px solid #2f3336;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
     border-radius: 10px;
     padding: 12px 14px;
     display: flex;
@@ -403,13 +403,13 @@
     gap: 12px;
   }
 
-  .ts-label { font-size: 12px; color: #71767b; flex: 1; }
-  .ts-num { font-size: 20px; font-weight: 700; color: #e7e9ea; font-variant-numeric: tabular-nums; }
-  .ts-value { font-size: 13px; color: #22c55e; font-weight: 600; }
+  .ts-label { font-size: 12px; color: var(--c-t2); flex: 1; }
+  .ts-num { font-size: 20px; font-weight: 700; color: var(--c-t1); font-variant-numeric: tabular-nums; }
+  .ts-value { font-size: 13px; color: var(--c-green); font-weight: 600; }
 
   .labor-table {
-    background: #1d1f23;
-    border: 1px solid #2f3336;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
     border-radius: 10px;
     overflow: hidden;
   }
@@ -420,18 +420,18 @@
     align-items: center;
     padding: 8px 14px;
     font-size: 12px;
-    color: #71767b;
-    border-bottom: 1px solid #16181c;
+    color: var(--c-t2);
+    border-bottom: 1px solid var(--c-divider);
   }
   .labor-row:last-child { border-bottom: none; }
-  .labor-row.total-row { background: #16181c; color: #e7e9ea; font-weight: 500; }
+  .labor-row.total-row { background: var(--c-row); color: var(--c-t1); font-weight: 500; }
 
-  .green { color: #22c55e; }
-  .red   { color: #f4212e; }
+  .green { color: var(--c-green); }
+  .red   { color: var(--c-red); }
 
   .spec-note {
     font-size: 11px;
-    color: #71767b;
+    color: var(--c-t2);
     line-height: 1.5;
     font-style: italic;
   }
@@ -444,29 +444,29 @@
   }
 
   .payback-scenario { flex: 1; }
-  .payback-divider { width: 1px; background: #2f3336; align-self: stretch; flex-shrink: 0; }
+  .payback-divider { width: 1px; background: var(--c-border); align-self: stretch; flex-shrink: 0; }
 
-  .pb-label { font-size: 10px; color: #71767b; text-transform: uppercase; letter-spacing: 0.07em; }
-  .pb-num { font-size: 22px; font-weight: 700; color: #e7e9ea; margin: 4px 0; }
-  .pb-num.green { color: #22c55e; }
-  .pb-sub { font-size: 10px; color: #71767b; line-height: 1.4; }
+  .pb-label { font-size: 10px; color: var(--c-t2); text-transform: uppercase; letter-spacing: 0.07em; }
+  .pb-num { font-size: 22px; font-weight: 700; color: var(--c-t1); margin: 4px 0; }
+  .pb-num.green { color: var(--c-green); }
+  .pb-sub { font-size: 10px; color: var(--c-t2); line-height: 1.4; }
 
   .build-cost-row {
     display: flex;
     gap: 16px;
-    border-top: 1px solid #2f3336;
+    border-top: 1px solid var(--c-border);
     padding-top: 12px;
   }
 
   .bc-item { flex: 1; }
-  .bc-val { font-size: 16px; font-weight: 700; color: #e7e9ea; }
-  .bc-val.red { color: #f4212e; }
-  .bc-lbl { font-size: 10px; color: #71767b; margin-top: 2px; }
+  .bc-val { font-size: 16px; font-weight: 700; color: var(--c-t1); }
+  .bc-val.red { color: var(--c-red); }
+  .bc-lbl { font-size: 10px; color: var(--c-t2); margin-top: 2px; }
 
   /* Route list */
   .route-list {
-    background: #1d1f23;
-    border: 1px solid #2f3336;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
     border-radius: 10px;
     overflow: hidden;
   }
@@ -476,12 +476,12 @@
     justify-content: space-between;
     padding: 6px 12px;
     font-size: 11px;
-    color: #71767b;
-    border-bottom: 1px solid #16181c;
+    color: var(--c-t2);
+    border-bottom: 1px solid var(--c-divider);
     text-transform: capitalize;
   }
   .route-row:last-child { border-bottom: none; }
-  .route-count { font-weight: 600; color: #e7e9ea; font-variant-numeric: tabular-nums; }
+  .route-count { font-weight: 600; color: var(--c-t1); font-variant-numeric: tabular-nums; }
 
   /* Assumptions bar */
   .assumptions-bar {
@@ -490,13 +490,13 @@
     gap: 6px 8px;
     align-items: center;
     font-size: 11px;
-    color: #71767b;
-    background: #0e0f11;
-    border: 1px solid #2f3336;
+    color: var(--c-t2);
+    background: var(--c-panel);
+    border: 1px solid var(--c-border);
     border-radius: 10px;
     padding: 10px 16px;
   }
 
-  .assump-title { font-weight: 600; color: #e7e9ea; margin-right: 4px; }
-  .dot { color: #2f3336; }
+  .assump-title { font-weight: 600; color: var(--c-t1); margin-right: 4px; }
+  .dot { color: var(--c-border); }
 </style>

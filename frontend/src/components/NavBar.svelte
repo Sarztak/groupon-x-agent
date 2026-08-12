@@ -1,6 +1,8 @@
 <script>
   export let active = 'demo'
   export let onTabChange = () => {}
+  export let theme = 'dark'
+  export let toggleTheme = () => {}
 
   const tabs = [
     { id: 'demo',         label: 'Demo' },
@@ -23,6 +25,9 @@
       </button>
     {/each}
   </div>
+  <button class="theme-btn" on:click={toggleTheme} title="Toggle theme">
+    {theme === 'dark' ? '☀' : '☾'}
+  </button>
 </nav>
 
 <style>
@@ -30,17 +35,17 @@
     display: flex;
     align-items: center;
     padding: 0 20px;
-    border-bottom: 1px solid #2f3336;
+    border-bottom: 1px solid var(--c-border);
     height: 48px;
     flex-shrink: 0;
     gap: 32px;
-    background: #000;
+    background: var(--c-bg);
   }
 
   .brand {
     font-size: 13px;
     font-weight: 700;
-    color: #e7e9ea;
+    color: var(--c-t1);
     letter-spacing: -0.01em;
     white-space: nowrap;
   }
@@ -48,12 +53,13 @@
   .tabs {
     display: flex;
     height: 100%;
+    flex: 1;
   }
 
   .tab {
     background: none;
     border: none;
-    color: #71767b;
+    color: var(--c-t2);
     font-size: 14px;
     padding: 0 16px;
     height: 100%;
@@ -63,10 +69,10 @@
     white-space: nowrap;
   }
 
-  .tab:hover { color: #e7e9ea; }
+  .tab:hover { color: var(--c-t1); }
 
   .tab.active {
-    color: #e7e9ea;
+    color: var(--c-t1);
     font-weight: 500;
   }
 
@@ -77,7 +83,30 @@
     left: 16px;
     right: 16px;
     height: 2px;
-    background: #22c55e;
+    background: var(--c-green);
     border-radius: 2px 2px 0 0;
+  }
+
+  .theme-btn {
+    margin-left: auto;
+    background: none;
+    border: 1px solid var(--c-border);
+    color: var(--c-t2);
+    font-size: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .theme-btn:hover {
+    color: var(--c-t1);
+    border-color: var(--c-t2);
   }
 </style>

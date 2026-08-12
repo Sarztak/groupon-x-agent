@@ -105,7 +105,7 @@
   aside {
     width: 300px;
     flex-shrink: 0;
-    border-left: 1px solid #2f3336;
+    border-left: 1px solid var(--c-border);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -113,7 +113,7 @@
 
   .header {
     padding: 14px 16px;
-    border-bottom: 1px solid #2f3336;
+    border-bottom: 1px solid var(--c-border);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -123,7 +123,7 @@
   .title {
     font-size: 15px;
     font-weight: 600;
-    color: #e7e9ea;
+    color: var(--c-t1);
   }
 
   .kill-btn {
@@ -132,17 +132,17 @@
     font-weight: 600;
     padding: 4px 10px;
     border-radius: 20px;
-    border: 1px solid #00b87a44;
-    background: #1a3a2a;
-    color: #00b87a;
+    border: 1px solid var(--c-ok-b);
+    background: var(--c-ok-s);
+    color: var(--c-ok);
     cursor: pointer;
     letter-spacing: 0.03em;
   }
 
   .kill-btn.kill-active {
-    border-color: #f4212e44;
-    background: #3a1a1a;
-    color: #f4212e;
+    border-color: var(--c-red-b);
+    background: var(--c-red-s);
+    color: var(--c-red);
   }
 
   .kill-btn:hover { opacity: 0.85; }
@@ -151,9 +151,9 @@
     font-size: 11px;
     padding: 2px 7px;
     border-radius: 20px;
-    background: #ffd40022;
-    color: #ffd400;
-    border: 1px solid #ffd40044;
+    background: var(--c-warn-s);
+    color: var(--c-warn);
+    border: 1px solid var(--c-warn-b);
     font-weight: 600;
   }
 
@@ -171,15 +171,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #71767b;
+    color: var(--c-t2);
     font-size: 13px;
     text-align: center;
     padding: 2rem;
   }
 
   .card {
-    background: #1d1f23;
-    border: 1px solid #2f3336;
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
     border-radius: 12px;
     padding: 12px;
     display: flex;
@@ -191,16 +191,16 @@
 
   .label {
     font-size: 10px;
-    color: #71767b;
+    color: var(--c-t2);
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
 
   .content {
     font-size: 13px;
-    color: #e7e9ea;
-    background: #16181c;
-    border: 1px solid #2f3336;
+    color: var(--c-t1);
+    background: var(--c-row);
+    border: 1px solid var(--c-border);
     border-radius: 8px;
     padding: 8px 10px;
     line-height: 1.5;
@@ -212,9 +212,9 @@
     font-size: 10px;
     padding: 2px 8px;
     border-radius: 20px;
-    background: #3a1a1a;
-    color: #f4212e;
-    border: 1px solid #f4212e44;
+    background: var(--c-red-s);
+    color: var(--c-red);
+    border: 1px solid var(--c-red-b);
     text-transform: capitalize;
   }
 
@@ -224,34 +224,34 @@
     flex: 1;
     padding: 7px;
     border-radius: 20px;
-    border: 1px solid #00b87a44;
-    background: #1a3a2a;
-    color: #00b87a;
+    border: 1px solid var(--c-ok-b);
+    background: var(--c-ok-s);
+    color: var(--c-ok);
     font-size: 12px;
     cursor: pointer;
   }
 
-  .approve:hover { background: #1f4a34; }
+  .approve:hover { opacity: 0.8; }
 
   .discard {
     flex: 1;
     padding: 7px;
     border-radius: 20px;
-    border: 1px solid #f4212e44;
-    background: #3a1a1a;
-    color: #f4212e;
+    border: 1px solid var(--c-red-b);
+    background: var(--c-red-s);
+    color: var(--c-red);
     font-size: 12px;
     cursor: pointer;
   }
 
-  .discard:hover { background: #4a2020; }
+  .discard:hover { opacity: 0.8; }
 
   .age {
     font-size: 10px;
     font-weight: 600;
-    color: #71767b;
+    color: var(--c-t2);
     letter-spacing: 0.04em;
   }
-  .age.warn    { color: #ffd400; }
-  .age.overdue { color: #f4212e; }
+  .age.warn    { color: var(--c-warn); }
+  .age.overdue { color: var(--c-red); }
 </style>

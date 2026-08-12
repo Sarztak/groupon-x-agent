@@ -42,8 +42,8 @@
     gap: 20px;
     padding: 0 20px;
     height: 56px;
-    background: #16181c;
-    border-bottom: 1px solid #2f3336;
+    background: var(--c-row);
+    border-bottom: 1px solid var(--c-border);
     flex-shrink: 0;
     flex-wrap: wrap;
   }
@@ -56,10 +56,9 @@
   }
 
   .logo-text {
-    font-size: 15px;
     font-size: 35px;
     font-weight: 600;
-    color: #22c55e;
+    color: var(--c-green);
     white-space: nowrap;
   }
 
@@ -71,7 +70,7 @@
 
   .label {
     font-size: 12px;
-    color: #71767b;
+    color: var(--c-t2);
     white-space: nowrap;
   }
 
@@ -84,30 +83,29 @@
     font-size: 13px;
     padding: 5px 12px;
     border-radius: 20px;
-    border: 1px solid #2f3336;
+    border: 1px solid var(--c-border);
     background: transparent;
-    color: #e7e9ea;
+    color: var(--c-t1);
     cursor: pointer;
     transition: background 0.15s;
     white-space: nowrap;
   }
 
-  .mode-btn:hover { background: #1d1f23; }
+  .mode-btn:hover { background: var(--c-tile); }
 
   .mode-btn.active {
-    background: #16a34a;
-    border-color: #16a34a;
+    background: var(--c-btn);
+    border-color: var(--c-btn);
     color: white;
   }
-
 
   select {
     font-size: 13px;
     padding: 5px 10px;
     border-radius: 20px;
-    border: 1px solid #2f3336;
-    background: #16181c;
-    color: #e7e9ea;
+    border: 1px solid var(--c-border);
+    background: var(--c-row);
+    color: var(--c-t1);
     cursor: pointer;
   }
 
@@ -121,11 +119,11 @@
     padding: 7px 18px;
     border-radius: 20px;
     border: none;
-    background: #16a34a;
+    background: var(--c-btn);
     color: white;
     cursor: pointer;
     white-space: nowrap;
   }
 
-  .run-btn:hover { background: #15803d; }
+  .run-btn:hover { background: var(--c-btn-hov); }
 </style>
