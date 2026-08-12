@@ -1,6 +1,7 @@
+import datetime
 import json
 import logging
-import datetime
+
 from marketing_copy import call_model
 
 log = logging.getLogger(__name__)
@@ -77,7 +78,7 @@ def guard_output(draft_post: str, backend: str = "cli", model: str = MODEL) -> d
 def log_action(guard_type: str, content: str, result: dict):
     with open("agent_log.jsonl", "a", encoding="utf-8") as f:
         f.write(json.dumps({
-            "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "timestamp": datetime.datetime.now(datetime.UTC).isoformat(),
             "guard": guard_type,
             "content": content,
             "result": result
