@@ -51,6 +51,10 @@ MINS_PER_TREND_HOOK    = 30
 
 # ── Estimated API cost per action — Sonnet 4.6 with prompt caching ───────────
 # System prompts are cached ($0.30/MTok); output tokens dominate ($15/MTok).
+# The $0.003 estimate for a single input_guard call on Sonnet 4.6:
+# - Input tokens: ~800 (guard prompt + tweet) — cached system prompt at $0.30/MTok = ~$0.00024, uncached at $3/MTok
+# - Output tokens: ~150 (JSON report) at $15/MTok = ~$0.00225
+# - Total ≈ $0.003 per call
 # Estimates reflect call count per route.
 API_COST_BY_ROUTE = {
     "blocked_reply":     0.003,   # hard_block: input_guard only (1 call)
@@ -65,8 +69,10 @@ API_COST_BY_ROUTE = {
 API_COST_ESCALATED_USD = 0.006   # partial pipeline (avg 2-3 calls) before escalation
 
 # ── Build & run cost ─────────────────────────────────────────────────────────
-BUILD_COST_LOW_USD   = 12_000   # 150 hrs × $80/hr
-BUILD_COST_HIGH_USD  = 16_000   # 200 hrs × $80/hr
+ENGINEER_HOURLY_RATE  = 60              # USD/hr, junior-level engineer loaded rate
+BUILD_HOURS_RANGE     = (150, 200)      # estimated engineering hours to productionize
+BUILD_COST_LOW_USD    = BUILD_HOURS_RANGE[0] * ENGINEER_HOURLY_RATE
+BUILD_COST_HIGH_USD   = BUILD_HOURS_RANGE[1] * ENGINEER_HOURLY_RATE
 MONTHLY_RUN_COST_USD = 50       # estimated API spend at projection volume
 
 
@@ -110,7 +116,7 @@ def _build_projection() -> dict:
 
     payback = {
         "conservative": {
-            "basis":    "hours saved only (most confident figure)",
+            "basis":    f"hours saved only — ${ENGINEER_HOURLY_RATE}/hr × {BUILD_HOURS_RANGE[0]}–{BUILD_HOURS_RANGE[1]}h",
             "low_months":  round(BUILD_COST_LOW_USD  / net_labor_monthly, 1),
             "high_months": round(BUILD_COST_HIGH_USD / net_labor_monthly, 1),
         },
@@ -121,6 +127,9 @@ def _build_projection() -> dict:
         },
         "build_cost_low_usd":    BUILD_COST_LOW_USD,
         "build_cost_high_usd":   BUILD_COST_HIGH_USD,
+        "engineer_hourly_rate":  ENGINEER_HOURLY_RATE,
+        "build_hours_low":       BUILD_HOURS_RANGE[0],
+        "build_hours_high":      BUILD_HOURS_RANGE[1],
         "monthly_run_cost_usd":  MONTHLY_RUN_COST_USD,
         "monthly_labor_value":   cost_saved,
         "monthly_conversion_uplift": round(conversion_value, 2),
@@ -142,16 +151,17 @@ def _build_projection() -> dict:
         "cost_saved_usd":               cost_saved,
         "payback":                      payback,
         "assumptions": {
-            "deal_drops_per_week":      AGENT_DEAL_DROPS_PER_WEEK,
-            "trend_hooks_per_week":     AGENT_TREND_HOOKS_PER_WEEK,
-            "inbound_mentions_per_week": INBOUND_MENTIONS_PER_WEEK,
-            "agent_reply_rate":         AGENT_REPLY_RATE,
-            "sessions_per_post":        round(SESSIONS_PER_POST, 1),
+            "deal_drops_per_week":        AGENT_DEAL_DROPS_PER_WEEK,
+            "trend_hooks_per_week":       AGENT_TREND_HOOKS_PER_WEEK,
+            "inbound_mentions_per_week":  INBOUND_MENTIONS_PER_WEEK,
+            "agent_reply_rate":           AGENT_REPLY_RATE,
+            "sessions_per_post":          round(SESSIONS_PER_POST, 1),
             "deal_request_reply_fraction": DEAL_REQUEST_REPLY_FRACTION,
-            "sessions_per_reply":       SESSIONS_PER_REPLY,
-            "reply_reach":              REPLY_REACH,
-            "reply_ctr":                REPLY_CTR,
-            "value_per_session_usd":    VALUE_PER_SESSION,
+            "sessions_per_reply":         SESSIONS_PER_REPLY,
+            "reply_reach":                REPLY_REACH,
+            "reply_ctr":                  REPLY_CTR,
+            "value_per_session_usd":      VALUE_PER_SESSION,
+            "coordinator_hourly_rate":    COORDINATOR_HOURLY_RATE,
         }
     }
 
@@ -249,15 +259,24 @@ if __name__ == "__main__":
     s = summarize()
     p = s["projection"]
     a = s["activity"]
+    pb = p["payback"]
 
     print("\n── Projection (capacity-based, monthly) ──")
     print(f"Proactive posts/month:    {p['proactive_posts_per_month']}  ({p['deal_drops_per_month']} deal drops + {p['trend_hooks_per_month']} trend hooks)")
-    print(f"Incremental replies:      {p['incremental_replies_per_month']}  ({p['agent_replies_per_month']} agent − {p['baseline_replies_per_month']} baseline)")
+    print(f"Replies/month:            {p['agent_replies_per_month']}  ({p['inbound_mentions_per_month']} inbound × {AGENT_REPLY_RATE:.0%} reply rate)")
     print(f"Sessions from posts:      {p['sessions_from_posts']:,}")
     print(f"Sessions from replies:    {p['sessions_from_replies']:,}  ({SESSIONS_PER_REPLY} sessions/reply: {REPLY_REACH} reach × {REPLY_CTR} CTR)")
     print(f"Total new sessions:       {p['total_new_sessions']:,}")
     print(f"Est. conversion value:    ${p['conversion_value_usd']:,.0f}/month")
     print(f"Hours saved (execution):  {p['hours_saved']}h  (${p['cost_saved_usd']:,.0f})")
+
+    print("\n── Build & Payback ──")
+    print(f"Engineer rate:            ${ENGINEER_HOURLY_RATE}/hr  ·  estimate {BUILD_HOURS_RANGE[0]}–{BUILD_HOURS_RANGE[1]}h")
+    print(f"Build cost range:         ${pb['build_cost_low_usd']:,.0f}–${pb['build_cost_high_usd']:,.0f}")
+    print(f"Monthly run cost:         ${pb['monthly_run_cost_usd']}")
+    print(f"Monthly labor value:      ${pb['monthly_labor_value']:,.0f}  ·  total benefit ${pb['total_monthly_benefit']:,.0f}")
+    print(f"Conservative payback:     {pb['conservative']['low_months']}–{pb['conservative']['high_months']} months  ({pb['conservative']['basis']})")
+    print(f"Full payback:             {pb['full']['low_days']}–{pb['full']['high_days']} days  ({pb['full']['basis']})")
 
     print("\n── Activity (log telemetry — test env) ──")
     print(f"Deal drops:               {a['deal_drops_published']}")
