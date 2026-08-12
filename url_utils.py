@@ -1,4 +1,4 @@
-from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
+from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 
 def enrich_url(raw_url: str, utm_content: str = "auto_reply") -> str:

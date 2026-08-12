@@ -10,8 +10,8 @@ import sys
 import time
 from pathlib import Path
 
-from marketing_copy import build_agent_input, generate_and_review
 from guardrails import guard_output
+from marketing_copy import build_agent_input, generate_and_review
 from retrieval import retrieve_deal
 from router import handle_mention
 
@@ -79,7 +79,7 @@ def run_with_retry(fn, label: str):
             if result is not None:
                 return result
             log.warning("%s attempt %d returned None", label, attempt)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             log.warning("%s attempt %d failed: %s", label, attempt, e)
         if attempt < MAX_RETRIES:
             time.sleep(RETRY_DELAY)

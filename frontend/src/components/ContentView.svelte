@@ -297,8 +297,8 @@
   .threads-section { display: flex; flex-direction: column; gap: 12px; }
 
   .threads-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 14px;
   }
 

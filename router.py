@@ -1,12 +1,13 @@
 import datetime
 import json
 import logging
-from marketing_copy import generate_and_review, build_agent_input
-from guardrails import guard_input, guard_output, is_killed
-from retrieval import retrieve_deal
-from orchestrator import orchestrate
+
 from conversational import generate_conversational_reply
+from guardrails import guard_input, guard_output, is_killed
+from marketing_copy import build_agent_input, generate_and_review
 from metrics import log_post
+from orchestrator import orchestrate
+from retrieval import retrieve_deal
 from url_utils import enrich_url
 
 log = logging.getLogger(__name__)
@@ -80,14 +81,14 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
             return {"status": "escalated", "reason": "Deal copy failed review", "guard_report": guard_report}
 
         deal_copy = result["results"][0]["copy"]
-        conv_params = dict(mode="deal_reply", mention_text=decision["engage_with"], username=username, deal_copy=deal_copy)
+        conv_params = {"mode": "deal_reply", "mention_text": decision["engage_with"], "username": username, "deal_copy": deal_copy}
 
     elif route == "acknowledge":
-        conv_params = dict(mode="acknowledge", mention_text=message, username=username)
+        conv_params = {"mode": "acknowledge", "mention_text": message, "username": username}
         queue_for_human_review(message, username, guard_report, decision)
 
     elif route == "positive_response":
-        conv_params = dict(mode="positive_response", mention_text=message, username=username)
+        conv_params = {"mode": "positive_response", "mention_text": message, "username": username}
 
     else:
         queue_for_human_review(message, username, guard_report, decision)
@@ -128,7 +129,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
 def queue_for_human_review(message, username, guard_report, decision):
     with open("human_review_queue.jsonl", "a", encoding="utf-8") as f:
         f.write(json.dumps({
-            "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "timestamp": datetime.datetime.now(datetime.UTC).isoformat(),
             "message": message,
             "username": username,
             "guard_report": guard_report,

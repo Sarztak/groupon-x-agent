@@ -1,17 +1,18 @@
+import asyncio
 import json
 import logging
 import random
-import subprocess
 from pathlib import Path
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from router import handle_mention
-from marketing_copy import build_agent_input, generate_and_review
 from guardrails import guard_output
-from retrieval import retrieve_deal
+from marketing_copy import build_agent_input, generate_and_review
 from metrics import log_post, summarize
+from retrieval import retrieve_deal
+from router import handle_mention
 from url_utils import enrich_url
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
@@ -112,21 +113,25 @@ async def custom_deal_drop(req: CustomDealRequest):
 
     log.info("Custom deal drop: scraping %s", req.url)
     try:
-        proc = subprocess.run(
-            ["node", str(SCRAPER_SCRIPT), req.url],
-            capture_output=True, text=True, timeout=120
+        proc = await asyncio.create_subprocess_exec(
+            "node", str(SCRAPER_SCRIPT), req.url,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
         )
-    except subprocess.TimeoutExpired:
+        stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=120)
+    except TimeoutError:
         raise HTTPException(status_code=504, detail="Scraping timed out")
 
     if proc.returncode != 0:
-        log.error("Scraper failed (exit %d): %s", proc.returncode, proc.stderr[-500:])
-        raise HTTPException(status_code=502, detail=f"Scraping failed: {proc.stderr[-200:]}")
+        stderr_text = stderr.decode(errors="replace")
+        log.error("Scraper failed (exit %d): %s", proc.returncode, stderr_text[-500:])
+        raise HTTPException(status_code=502, detail=f"Scraping failed: {stderr_text[-200:]}")
 
+    stdout_text = stdout.decode(errors="replace")
     try:
-        deal = json.loads(proc.stdout)
+        deal = json.loads(stdout_text)
     except json.JSONDecodeError:
-        log.error("Scraper output not valid JSON: %s", proc.stdout[:200])
+        log.error("Scraper output not valid JSON: %s", stdout_text[:200])
         raise HTTPException(status_code=502, detail="Scraper returned invalid JSON")
 
     log.info("Scraped: %s", deal.get("deal_title"))

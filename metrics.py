@@ -1,5 +1,5 @@
-import json
 import datetime
+import json
 from collections import Counter
 from pathlib import Path
 
@@ -78,7 +78,7 @@ def read_jsonl(path: str) -> list[dict]:
 def log_post(post_type: str, route: str, copy: str):
     with open(POSTS_LOG_FILE, "a", encoding="utf-8") as f:
         f.write(json.dumps({
-            "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "timestamp": datetime.datetime.now(datetime.UTC).isoformat(),
             "type": post_type,   # mention_reply | deal_drop | trend_hook
             "route": route,
             "copy": copy
@@ -205,7 +205,7 @@ def summarize(since: datetime.datetime | None = None) -> dict:
     return {
         "period": {
             "since":        since.isoformat() if since else "all time",
-            "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
+            "generated_at": datetime.datetime.now(datetime.UTC).isoformat()
         },
         "projection": _build_projection(),
         "activity": {
@@ -248,7 +248,7 @@ if __name__ == "__main__":
     p = s["projection"]
     a = s["activity"]
 
-    print(f"\n── Projection (capacity-based, monthly) ──")
+    print("\n── Projection (capacity-based, monthly) ──")
     print(f"Proactive posts/month:    {p['proactive_posts_per_month']}  ({p['deal_drops_per_month']} deal drops + {p['trend_hooks_per_month']} trend hooks)")
     print(f"Incremental replies:      {p['incremental_replies_per_month']}  ({p['agent_replies_per_month']} agent − {p['baseline_replies_per_month']} baseline)")
     print(f"Sessions from posts:      {p['sessions_from_posts']:,}")
@@ -257,7 +257,7 @@ if __name__ == "__main__":
     print(f"Est. conversion value:    ${p['conversion_value_usd']:,.0f}/month")
     print(f"Hours saved (execution):  {p['hours_saved']}h  (${p['cost_saved_usd']:,.0f})")
 
-    print(f"\n── Activity (log telemetry — test env) ──")
+    print("\n── Activity (log telemetry — test env) ──")
     print(f"Deal drops:               {a['deal_drops_published']}")
     print(f"Trend hooks:              {a['trend_hooks_published']}")
     print(f"Mention replies:          {a['mention_replies_sent']}  (by route: {dict(a['by_route'])})")
