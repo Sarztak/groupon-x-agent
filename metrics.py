@@ -9,19 +9,21 @@ REVIEW_QUEUE_FILE = "human_review_queue.jsonl"
 
 # ── Baseline (illustrative scenario — not live Groupon figures) ───────────────
 BASELINE_FOLLOWERS            = 120_000
-BASELINE_POSTS_PER_MONTH      = 12        # 3 posts/week × 4 weeks
+BASELINE_POSTS_PER_WEEK       = 3         # 3 posts/week
 BASELINE_SESSIONS_PER_MONTH   = 4_000     # assumed traffic from social posts
 BASELINE_CONVERSION_VALUE     = 18_000    # USD/month, assumed
 BASELINE_REPLY_RATE           = 0.10      # <10% of inbound mentions get a reply today
 COORDINATOR_HOURLY_RATE       = 40        # USD/hr loaded rate, conservative US market
 
-# Derived baseline rates
-VALUE_PER_SESSION  = BASELINE_CONVERSION_VALUE / BASELINE_SESSIONS_PER_MONTH  # $4.50
-SESSIONS_PER_POST  = BASELINE_SESSIONS_PER_MONTH / BASELINE_POSTS_PER_MONTH   # ~333
 # ── Projection constants (capacity-based, not log-driven) ────────────────────
 AGENT_DEAL_DROPS_PER_WEEK  = 4    # given ceiling — deals worth surfacing per week
 AGENT_TREND_HOOKS_PER_WEEK = 3    # assumed opportunistic trend-aligned posts
 WEEKS_PER_MONTH            = 4.33
+
+# Derived baseline rates — use same WEEKS_PER_MONTH as agent projection for consistency
+BASELINE_POSTS_PER_MONTH   = BASELINE_POSTS_PER_WEEK * WEEKS_PER_MONTH  # ~13
+VALUE_PER_SESSION  = BASELINE_CONVERSION_VALUE / BASELINE_SESSIONS_PER_MONTH  # $4.50
+SESSIONS_PER_POST  = BASELINE_SESSIONS_PER_MONTH / BASELINE_POSTS_PER_MONTH   # ~308
 
 INBOUND_MENTIONS_PER_WEEK  = 100  # assumed for 120K-follower consumer brand
 AGENT_REPLY_RATE           = 0.95 # ~95%: hard-blocks and true escalations excluded
