@@ -8,7 +8,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from guardrails import guard_output
+from guardrails import guard_output, is_killed
 from marketing_copy import build_agent_input, generate_and_review
 from metrics import log_post, summarize
 from retrieval import retrieve_deal
@@ -106,6 +106,8 @@ SCRAPER_SCRIPT = Path("./scrape_single_deal.js").resolve()
 
 @app.post("/api/custom_deal_drop")
 async def custom_deal_drop(req: CustomDealRequest):
+    if is_killed():
+        return {"status": "paused"}
     from urllib.parse import urlparse
     parsed = urlparse(req.url)
     if parsed.hostname not in ("www.groupon.com", "groupon.com") or not parsed.path.startswith("/deals/"):
@@ -154,6 +156,8 @@ async def mention(req: MentionRequest):
 
 @app.post("/api/deal_drop")
 async def deal_drop():
+    if is_killed():
+        return {"status": "paused"}
     deals = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     deal = random.choice(deals[:10])
     log.info("Deal drop: selected %s", deal.get("deal_title"))
@@ -216,6 +220,8 @@ async def trend_hook(req: TrendRequest):
 
 @app.post("/api/trend_drop")
 async def trend_drop():
+    if is_killed():
+        return {"status": "paused"}
     trends = json.loads(TRENDS_PATH.read_text(encoding='utf-8'))
     trend = random.choice(trends)
     trend_name = trend.get("name")

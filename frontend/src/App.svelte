@@ -48,8 +48,18 @@
       if (result.status === 'posted') {
         addPill('Review passed', 'pass')
         addMessage(result.copy, 'outgoing', `Agent · deal drop · ${result.deal?.merchant_name ?? ''}`)
+      } else if (result.status === 'paused') {
+        addPill('Kill switch active', 'fail')
       } else {
         addPill('Failed — escalated', 'fail')
+        reviewItems = [...reviewItems, {
+          id: nextId++,
+          input: 'Deal drop',
+          reason: result.detail ?? 'Copy generation or output guard failed',
+          guardReport: {},
+          suggestion: '',
+          createdAt: Date.now(),
+        }]
       }
     }
 
@@ -69,6 +79,8 @@
         addMessage(`${result.trend} is trending`, 'incoming', 'Trend signal')
         addPill('Deal matched', 'pass')
         addMessage(result.copy, 'outgoing', `Agent · trend hook · ${result.deal?.merchant_name ?? ''}`)
+      } else if (result.status === 'paused') {
+        addPill('Kill switch active', 'fail')
       } else if (result.status === 'no_match') {
         addMessage(`${result.trend} is trending`, 'incoming', 'Trend signal')
         addPill('No matching deal found', 'escalate')
@@ -109,8 +121,18 @@
       if (result.status === 'posted') {
         addPill('Review passed', 'pass')
         addMessage(result.copy, 'outgoing', `Agent · custom deal · ${result.deal?.merchant_name ?? ''}`)
+      } else if (result.status === 'paused') {
+        addPill('Kill switch active', 'fail')
       } else {
         addPill('Failed — escalated', 'fail')
+        reviewItems = [...reviewItems, {
+          id: nextId++,
+          input: text,
+          reason: result.detail ?? 'Copy generation or output guard failed',
+          guardReport: {},
+          suggestion: '',
+          createdAt: Date.now(),
+        }]
       }
     }
 
