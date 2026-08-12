@@ -77,6 +77,19 @@
 
   $: week1 = posts.slice(0, 5)
   $: week2 = posts.slice(5)
+
+  function parseSegments(text) {
+    const parts = []
+    const re = /(https?:\/\/\S+)/g
+    let last = 0, m
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) parts.push({ type: 'text', value: text.slice(last, m.index) })
+      parts.push({ type: m[1].includes('/deals/') ? 'deal_url' : 'url', value: m[1] })
+      last = m.index + m[1].length
+    }
+    if (last < text.length) parts.push({ type: 'text', value: text.slice(last) })
+    return parts
+  }
 </script>
 
 <div class="content">
@@ -116,7 +129,11 @@
                 <span class="post-trend">↗ {post.trend}</span>
               {/if}
             </div>
-            <div class="post-copy">{post.copy}</div>
+            <div class="post-copy">
+              {#each parseSegments(post.copy) as seg}
+                {#if seg.type === 'text'}{seg.value}{:else if seg.type === 'deal_url'}<a class="deal-link" href={seg.value} target="_blank" rel="noopener noreferrer">View deal →</a>{:else}<a class="deal-link" href={seg.value} target="_blank" rel="noopener noreferrer">View deal →</a>{/if}
+              {/each}
+            </div>
             <div class="post-merchant">{post.merchant}</div>
           </div>
         {/each}
@@ -137,7 +154,11 @@
                 <span class="post-trend">↗ {post.trend}</span>
               {/if}
             </div>
-            <div class="post-copy">{post.copy}</div>
+            <div class="post-copy">
+              {#each parseSegments(post.copy) as seg}
+                {#if seg.type === 'text'}{seg.value}{:else if seg.type === 'deal_url'}<a class="deal-link" href={seg.value} target="_blank" rel="noopener noreferrer">View deal →</a>{:else}<a class="deal-link" href={seg.value} target="_blank" rel="noopener noreferrer">View deal →</a>{/if}
+              {/each}
+            </div>
             <div class="post-merchant">{post.merchant}</div>
           </div>
         {/each}
@@ -161,7 +182,7 @@
           <div class="thread-arrow">↓</div>
           <div class="bubble outgoing">
             <span class="bubble-user">@Groupon (agent)</span>
-            <span class="bubble-text">{thread.reply}</span>
+            <span class="bubble-text">{#each parseSegments(thread.reply) as seg}{#if seg.type === 'text'}{seg.value}{:else}<a class="deal-link reply-deal-link" href={seg.value} target="_blank" rel="noopener noreferrer">View deal →</a>{/if}{/each}</span>
           </div>
         </div>
       {/each}
@@ -289,6 +310,27 @@
     font-size: 13px;
     color: var(--c-t1);
     line-height: 1.55;
+  }
+
+  .deal-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: var(--c-green-s);
+    border: 1px solid var(--c-green-b);
+    color: var(--c-green);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .deal-link:hover { opacity: 0.8; text-decoration: none; }
+
+  .reply-deal-link {
+    display: inline-block;
+    margin-top: 4px;
   }
 
   .post-merchant {

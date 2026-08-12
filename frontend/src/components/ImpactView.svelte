@@ -123,6 +123,18 @@
         </div>
 
         <div class="spec-note">Covers drafting + posting execution only. Escalation handling load may increase — agent opens new coverage of previously ignored mentions.</div>
+
+        <div class="realloc-box">
+          <div class="realloc-title">Coordinator reallocation — not elimination</div>
+          <div class="realloc-row">
+            <span class="realloc-lbl">Freed from</span>
+            <span class="realloc-val">Reactive reply drafting · deal post scheduling · mention monitoring</span>
+          </div>
+          <div class="realloc-row">
+            <span class="realloc-lbl">Shifts to</span>
+            <span class="realloc-val realloc-up">Campaign strategy · merchant relations · content planning · escalation triage</span>
+          </div>
+        </div>
       </div>
 
       <!-- RIGHT: ACTIVITY + PAYBACK -->
@@ -499,4 +511,49 @@
 
   .assump-title { font-weight: 600; color: var(--c-t1); margin-right: 4px; }
   .dot { color: var(--c-border); }
+
+  /* Reallocation box */
+  .realloc-box {
+    background: var(--c-tile);
+    border: 1px solid var(--c-border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .realloc-title {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--c-t2);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .realloc-row {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 11px;
+  }
+
+  .realloc-lbl {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--c-t3);
+    white-space: nowrap;
+    min-width: 62px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .realloc-val {
+    color: var(--c-t2);
+    line-height: 1.4;
+  }
+
+  .realloc-up {
+    color: var(--c-green);
+  }
 </style>

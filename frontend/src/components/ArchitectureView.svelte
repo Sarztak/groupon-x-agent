@@ -78,7 +78,7 @@
     { route: 'blocked_reply',     trigger: 'Hard block (jailbreak, hate, competitor)', handler: 'Fixed reply — skip orchestrator', output: 'Auto-publish', auto: true },
     { route: 'sensitive_block',   trigger: 'Hard block + sensitive_news flag',        handler: 'Fixed reply — skip orchestrator', output: 'Auto-publish', auto: true },
     { route: 'off_topic',         trigger: 'Orchestrator: unrelated to Groupon',      handler: 'Fixed reply',                    output: 'Auto-publish', auto: true },
-    { route: 'deal_request',      trigger: 'Orchestrator: user wants a deal',         handler: 'Retrieval → Copy → Conversational → Output guard', output: 'Auto-publish or human', auto: false },
+    { route: 'deal_request',      trigger: 'Orchestrator: user wants a deal',         handler: 'Retrieval → Copy → Conversational → Output guard', output: 'Auto-publish', auto: true },
     { route: 'acknowledge',       trigger: 'Orchestrator: complaint or issue',        handler: 'Conversational → Output guard + queue for human', output: 'Auto-publish + follow-up', auto: false },
     { route: 'positive_response', trigger: 'Orchestrator: praise or positive mention', handler: 'Conversational → Output guard', output: 'Auto-publish', auto: true },
   ]
