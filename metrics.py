@@ -83,6 +83,15 @@ def read_jsonl(path: str) -> list[dict]:
         return [json.loads(line) for line in f if line.strip()]
 
 
+def log_event(event: str, **fields):
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(json.dumps({
+            "timestamp": datetime.datetime.now(datetime.UTC).isoformat(),
+            "event": event,
+            **fields,
+        }) + "\n")
+
+
 def log_post(post_type: str, route: str, copy: str):
     with open(POSTS_LOG_FILE, "a", encoding="utf-8") as f:
         f.write(json.dumps({
