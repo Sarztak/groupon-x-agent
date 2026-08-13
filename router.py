@@ -1,6 +1,7 @@
 import datetime
 import json
 import logging
+import os
 
 from conversational import generate_conversational_reply
 from guardrails import guard_input, guard_output, is_killed
@@ -11,6 +12,8 @@ from retrieval import retrieve_deal
 from url_utils import enrich_url
 
 log = logging.getLogger(__name__)
+
+BACKEND = os.environ.get("BACKEND", "cli")
 
 GROUPON_HELP_LINK = "https://www.groupon.com/articles/about"
 GROUPON_HOME_LINK = "https://www.groupon.com/"
@@ -29,7 +32,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         log.warning("Kill switch active — pausing")
         return {"status": "paused", "reason": "Kill switch active"}
 
-    guard_report = guard_input(message)
+    guard_report = guard_input(message, backend=BACKEND)
     if not guard_report:
         log.error("Input guard failed for @%s — escalating", username)
         queue_for_human_review(message, username, {}, {})
@@ -43,7 +46,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         log.info("Hard block — skipping orchestrator, sending blocked_reply")
         return {"status": "posted", "reply": FIXED_REPLIES["blocked_reply"], "route": "blocked_reply", "guard_report": guard_report}
 
-    decision = orchestrate(message, username, guard_report)
+    decision = orchestrate(message, username, guard_report, backend=BACKEND)
     if not decision:
         log.error("Orchestrator returned None — escalating")
         queue_for_human_review(message, username, guard_report, {})
@@ -65,7 +68,8 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
             trigger_type="mention",
             trigger_text=decision["engage_with"],
             catalog_path=catalog_path,
-            prompts_dir=prompts_dir
+            prompts_dir=prompts_dir,
+            backend=BACKEND,
         )
         if not deal:
             queue_for_human_review(message, username, guard_report, decision)
@@ -74,27 +78,32 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
         deal_raw_url = deal.get("url")
         agent_input = build_agent_input(deal, segment="spontaneous_locals", variations=1)
         deal_info = agent_input["deal"]
-        result = generate_and_review(agent_input, references_dir, model="claude-sonnet-4-6")
+        result = generate_and_review(agent_input, references_dir, model="claude-sonnet-4-6", backend=BACKEND)
 
         if result["status"] != "pass":
             queue_for_human_review(message, username, guard_report, decision)
             return {"status": "escalated", "reason": "Deal copy failed review", "guard_report": guard_report}
 
         deal_copy = result["results"][0]["copy"]
-        conv_params = {"mode": "deal_reply", "mention_text": decision["engage_with"], "username": username, "deal_copy": deal_copy}
+        reply = generate_conversational_reply(
+            mode="deal_reply", mention_text=decision["engage_with"],
+            username=username, deal_copy=deal_copy, backend=BACKEND,
+        )
 
     elif route == "acknowledge":
-        conv_params = {"mode": "acknowledge", "mention_text": message, "username": username}
         queue_for_human_review(message, username, guard_report, decision)
+        reply = generate_conversational_reply(
+            mode="acknowledge", mention_text=message, username=username, backend=BACKEND,
+        )
 
     elif route == "positive_response":
-        conv_params = {"mode": "positive_response", "mention_text": message, "username": username}
+        reply = generate_conversational_reply(
+            mode="positive_response", mention_text=message, username=username, backend=BACKEND,
+        )
 
     else:
         queue_for_human_review(message, username, guard_report, decision)
         return {"status": "escalated", "reason": f"Unrecognized route: {route}", "guard_report": guard_report}
-
-    reply = generate_conversational_reply(**conv_params)
     if not reply:
         log.error("Conversational agent returned None — escalating")
         queue_for_human_review(message, username, guard_report, decision)
@@ -102,7 +111,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
     reply_text = reply["reply"]
 
     guard_payload = json.dumps({"draft": reply_text, "deal_info": deal_info})
-    output_check = guard_output(guard_payload)
+    output_check = guard_output(guard_payload, backend=BACKEND)
     if not output_check:
         log.error("Output guard failed — escalating")
         queue_for_human_review(message, username, guard_report, decision)

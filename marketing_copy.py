@@ -92,8 +92,16 @@ def call_model(system: str, user: str, model: str, backend: str = "cli") -> str 
     response = client.messages.create(
         model=model,
         max_tokens=1024,
-        system=system,
-        messages=[{"role": "user", "content": user}]
+        system=[{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}],
+        messages=[{"role": "user", "content": user}],
+        extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
+    )
+    u = response.usage
+    import logging
+    logging.getLogger(__name__).info(
+        "API usage — in:%d cache_read:%d cache_write:%d out:%d",
+        u.input_tokens, getattr(u, 'cache_read_input_tokens', 0),
+        getattr(u, 'cache_creation_input_tokens', 0), u.output_tokens,
     )
     for block in response.content:
         if block.type == "text":
@@ -199,7 +207,9 @@ def build_agent_input(deal, segment, variations=1):
 
 def generate_and_review(agent_input: dict, references_dir: Path, max_attempts=3, backend="cli", model="claude-haiku-4-5"):
     import logging
+    from metrics import log_event
     log = logging.getLogger(__name__)
+    merchant = agent_input.get("deal", {}).get("merchant_name", "unknown")
     reviewed = []
     feedback: list[dict] | None = None
     for attempt in range(1, max_attempts + 1):
@@ -208,18 +218,26 @@ def generate_and_review(agent_input: dict, references_dir: Path, max_attempts=3,
                                 revision_feedback=feedback)
         if not results:
             log.warning("generate_copy returned nothing — skipping")
+            log_event("copy_attempt", attempt=attempt, max_attempts=max_attempts,
+                      merchant=merchant, outcome="generate_failed", copies=[], verdicts=[], feedback=feedback)
             continue
         log.info("Generated %d copy variation(s)", len(results) if isinstance(results, list) else 1)
 
         reviewed = review_copy(results, references_dir, model=model, backend=backend)
         if not reviewed:
             log.warning("review_copy returned nothing — skipping")
+            log_event("copy_attempt", attempt=attempt, max_attempts=max_attempts,
+                      merchant=merchant, outcome="review_failed",
+                      copies=[r.get("copy") for r in results], verdicts=[], feedback=feedback)
             continue
         log.info("Review results: %s", json.dumps(reviewed, indent=2))
 
         verdicts = [r.get("verdict") for r in reviewed]
         log.info("Verdicts: %s", verdicts)
         if all(v == "pass" for v in verdicts):
+            log_event("copy_attempt", attempt=attempt, max_attempts=max_attempts,
+                      merchant=merchant, outcome="pass",
+                      copies=[r.get("copy") for r in reviewed], verdicts=verdicts, feedback=feedback)
             return {"status": "pass", "results": reviewed}
 
         feedback = [
@@ -227,10 +245,18 @@ def generate_and_review(agent_input: dict, references_dir: Path, max_attempts=3,
             for r in reviewed
             if r.get("verdict") != "pass" and r.get("feedback_for_rewrite")
         ]
+        log_event("copy_attempt", attempt=attempt, max_attempts=max_attempts,
+                  merchant=merchant, outcome="fail",
+                  copies=[r.get("copy") for r in reviewed], verdicts=verdicts,
+                  reviewer_feedback=feedback)
         if feedback:
             log.info("Feeding reviewer feedback into next attempt")
         log.info("Not all passed — retrying")
 
+    log_event("copy_attempt", attempt=max_attempts, max_attempts=max_attempts,
+              merchant=merchant, outcome="escalate",
+              copies=[r.get("copy") for r in reviewed], verdicts=[r.get("verdict") for r in reviewed],
+              reviewer_feedback=feedback)
     return {"status": "escalate", "results": reviewed}
 
 if __name__ == "__main__":

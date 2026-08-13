@@ -1,8 +1,12 @@
 import asyncio
 import json
 import logging
+import os
 import random
 from pathlib import Path
+
+from dotenv import load_dotenv
+load_dotenv()
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -17,6 +21,8 @@ from url_utils import enrich_url
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
 log = logging.getLogger(__name__)
+
+BACKEND = os.environ.get("BACKEND", "cli")
 
 app = FastAPI()
 
@@ -178,7 +184,7 @@ def _copy_from_cache_or_generate(deal: dict, utm_content: str = "deal_drop") -> 
     else:
         log.info("Cache miss — generating copy for %s", deal_title)
         agent_input = build_agent_input(deal, segment="spontaneous_locals", variations=1)
-        result = generate_and_review(agent_input, REFERENCES_DIR, model="claude-sonnet-4-6", max_attempts=2)
+        result = generate_and_review(agent_input, REFERENCES_DIR, model="claude-sonnet-4-6", max_attempts=2, backend=BACKEND)
         if not result["results"]:
             raise HTTPException(status_code=500, detail="Copy generation returned nothing")
 
