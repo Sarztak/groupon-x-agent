@@ -39,7 +39,7 @@ Classify the message across ALL of the following dimensions:
    - Private contact details such as home address, personal phone number, or personal email
    (Note: a public Twitter handle is not PII)
  
-6. OFF-TOPIC — Note whether the message is unrelated to Groupon deals, offers, vouchers, merchants, or the platform itself.
+6. OFF-TOPIC — Note whether the message is unrelated to Groupon deals, offers, vouchers, merchants, or the platform itself. Requests for recommendations, suggestions, or deals in any category Groupon serves — restaurants, spas, fitness, experiences, entertainment, travel, beauty, activities — are ON-TOPIC even if the user does not explicitly mention Groupon or use the word "deal". Treat any recommendation request that Groupon could fulfill as on-topic.
  
 7. COMPETITOR MENTION — Does this message name or reference any competitor from the list above?
  
