@@ -3,9 +3,9 @@ import json
 from collections import Counter
 from pathlib import Path
 
-LOG_FILE          = "agent_log.jsonl"
-POSTS_LOG_FILE    = "posts_log.jsonl"
-REVIEW_QUEUE_FILE = "human_review_queue.jsonl"
+LOG_FILE          = "logs/agent_log.jsonl"
+POSTS_LOG_FILE    = "logs/posts_log.jsonl"
+REVIEW_QUEUE_FILE = "logs/human_review_queue.jsonl"
 
 # ── Baseline (illustrative scenario — not live Groupon figures) ───────────────
 BASELINE_FOLLOWERS            = 120_000

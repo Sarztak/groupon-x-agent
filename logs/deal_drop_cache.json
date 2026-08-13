@@ -194,5 +194,91 @@
       ]
     },
     "copy": "Peppermint oil. Lime. Traditional cupping. On the Chicago River. The Spa at LondonHouse isn't messing around \u2014 and at up to 41% off, neither are you. Find it on Groupon."
+  },
+  {
+    "deal": {
+      "deal_title": "Luxury Spa Day with Pool Access at The Spa at Trump Chicago: 60 or 90 Minute Massage, Facial, Both or Couples, Up to 35%",
+      "merchant_name": "The Spa at Trump Chicago",
+      "location": null,
+      "city": "Chicago",
+      "merchant_info": "Renowned luxury spa within the iconic Trump International Hotel & Tower Chicago, specializing in transformative massage and facial treatments.\n\nIconic Trump International Hotel & Tower\u00ae Chicago",
+      "reviews": [
+        "Amazing",
+        "Great views.",
+        "Great experience",
+        "Best massage I ever had!!",
+        "Caeser gave the best massage ever!"
+      ]
+    },
+    "copy": "Saturday morning. One idea: The Spa at Trump International Hotel & Tower. Pool access, 90-minute massage \u2014 ask for Caesar, apparently he's the one. Up to 35% off. Find it on Groupon."
+  },
+  {
+    "deal": {
+      "deal_title": "Experience Derma Bliss Beauty Spa's HydroFacial, IPL Facial, Micro Needling, Dermaplaning, or Chemical Peel up to 28% off",
+      "merchant_name": "Derma Bliss Beauty Spa",
+      "location": "Lincoln Park\n5.2 mi\n2335 North Clark Street, Chicago",
+      "city": null,
+      "merchant_info": "Derma Bliss Beauty Spa combines licensed estheticians with advanced skincare technology to deliver personalized, non-invasive facial treatments in a luxurious setting. Each treatment plan is tailored to individual skin needs for customized results.\n\nExperience purified, exfoliated skin as an aesthetician works to nourish your complexion for a smooth and glowing finish",
+      "reviews": [
+        "My hydro facial was relaxing and calming. The staff at Derma Bliss is so friendly and welcoming, my scheduled appointment was on time. I didn\u2019t feel rushed as I nearly fell asleep during the treatment. My face looked radiant!",
+        "I had a great experience my esthetician was very knowledgeable maybe feel comfortable and gave me information for my next session I definitely will recommend and I will be returning",
+        "Isobel was great. My service was thorough and within the time expected. My face feels great and everything was well explained and felt very gentle. I thoroughly enjoyed my experience and plan to come back.",
+        "Olivia was fantastic. I had a dermaplaning facial. My skin felt fantastic after the facial. She answered my questions during the facial and we talked about what l needed for my skin type.",
+        "Very good service"
+      ]
+    },
+    "copy": "Fall asleep in the chair. Wake up glowing. Derma Bliss Beauty Spa on North Clark Street \u2014 HydroFacials, dermaplaning, chemical peels, and more, up to 28% off. Find it on Groupon."
+  },
+  {
+    "deal": {
+      "deal_title": "Rediscover Your Fitness Potential: CrossTown Fitness' 2 or 4 Weeks of Unlimited Fitness Classes- Up to 67% Off)",
+      "merchant_name": "CrossTown Fitness",
+      "location": "West Loop\n2.2 mi\n1031 West Madison Street, Chicago\nClosed\nOpening at 5:00 AM\nLake View\n6.6 mi\n3406 North Lincoln Avenue, Chicago\nOpen\nCloses at 8:30 PM\nCall",
+      "city": "Chicago",
+      "merchant_info": "CrossTown Fitness specializes in High-Intensity Interval Training (HIIT), scientifically designed to boost endurance and build strength efficiently. With expert trainers delivering 200+ weekly classes across four Chicago locations and a 4.9-star community rating, it's a vibrant gym where all fitness levels come together.\n\nCrossTown Fitness, Chicago is all about making fitness an exciting and dynamic part of life. With over 200 unique classes each week, they cater to everyone from beginners to seasoned athletes. Their high-intensity interval workouts focus on cardio, stamina, strength, flexibility, speed, and balance. Each session is designed to keep members engaged and continuously challenged.\n\nEnjoy high-intensity interval workouts that include drills focusing on cardio, stamina, strength, flexibility, speed, and balance",
+      "reviews": [
+        "The most welcoming place, the staff are friendly. The workout was exhausting but fun. I haven't exercised in years. I'll be back tomorrow."
+      ]
+    },
+    "copy": "Your Saturday is good. CrossTown Fitness, West Loop \u2014 where someone who hadn't worked out in years walked out already booked for tomorrow \u2014 makes it better. Up to 67% off unlimited HIIT classes. Find it on Groupon."
+  },
+  {
+    "deal": {
+      "deal_title": "Ultimate Spa Experience! 50-Minute Massage, Facial or Couples Massage at Leaf Spa | Fairmont Chicago!",
+      "merchant_name": "Leaf Spa at The Fairmont Chicago",
+      "location": null,
+      "city": "Chicago",
+      "merchant_info": "Leaf Spa at Fairmont Chicago is a USA Today award-winning sanctuary specializing in holistic wellness, featuring signature experiences like the Wish Tree for intention-setting and the House of Knowledge, which celebrates the healing power of global botanicals.\n\nA romantic retreat, just the two of you. Warm oils, soothing hands, and a moment of pure connection. Love and relaxation, perfectly intertwined.",
+      "reviews": [
+        "Very clean place. Rly beautiful waiting area. Massage was good. Room was big. They do add on a service charge if you use Groupon",
+        "The staff were wonderful. The spa is gorgeous and so peaceful and relaxing. It was very nice.",
+        "This spa was a wonderful experience and afternoon. They were kind and accommodating to our group which was made of a large age range. we wall left feeling rejuvenated and relaxed.",
+        "Vanessa is so great,",
+        "Great experience! A little confusing about pricing and payments that needs to be more clear and understanding. But overall a great experience"
+      ]
+    },
+    "copy": "There's a Wish Tree at Leaf Spa in the Fairmont. You set an intention. Then a massage happens \u2014 couples, solo, your call. USA Today gave it an award. Make of that what you will."
+  },
+  {
+    "deal": {
+      "deal_title": "$25 Worth Food and Drinks for Dine-In and Carryout at Blueberry Hill (Up to 40% Off)",
+      "merchant_name": "Blueberry Hill",
+      "location": null,
+      "city": null,
+      "merchant_info": "Blueberry Hill is a restaurant offering delicious meals in a cozy and inviting atmosphere.\n\nEnjoy a delicious meal in a cozy and inviting atmosphere at Blueberry Hill",
+      "reviews": []
+    },
+    "copy": "Somewhere called Blueberry Hill is asking you to dinner. $25 of food and drinks, up to 40% off. Find it on Groupon."
+  },
+  {
+    "deal": {
+      "deal_title": "Up to 23% Off! Transform Your Smile with Zoom Teeth Whitening - 30, 45, or 60 Minute Options Available",
+      "merchant_name": "Viva La Med Spa",
+      "location": null,
+      "city": null,
+      "merchant_info": "Viva La MedSpa is a patient-focused medspa specializing in advanced Zoom teeth whitening with personalized treatments, distinguished by its commitment to community giving through The Children's Burn Foundation.\n\nViva La Med Spa was created with the intent to provide the best quality care that places our patients at complete ease. Our experience and enthusiasm for the profession welcomes you with an ambience visit that is centered completely around you. We cater to your personal needs and guarantee a satisfying experience.\n\nExperience the power of teeth whitening at Viva La MedSpa and discover the joy of a dazzling smile. Teeth whitening reduces the appearance of stains, leaving a restored bright and white smile",
+      "reviews": []
+    },
+    "copy": "Your smile's fine. A Zoom whitening session at Viva La Med Spa makes it the thing people mention. 30, 45, or 60 minutes \u2014 pick your level of dazzling. Find it on Groupon."
   }
 ]

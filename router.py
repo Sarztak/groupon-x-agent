@@ -136,7 +136,7 @@ def handle_mention(message: str, username: str, catalog_path, prompts_dir, refer
 
 
 def queue_for_human_review(message, username, guard_report, decision):
-    with open("human_review_queue.jsonl", "a", encoding="utf-8") as f:
+    with open("logs/human_review_queue.jsonl", "a", encoding="utf-8") as f:
         f.write(json.dumps({
             "timestamp": datetime.datetime.now(datetime.UTC).isoformat(),
             "message": message,

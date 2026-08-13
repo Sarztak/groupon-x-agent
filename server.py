@@ -36,7 +36,7 @@ app.add_middleware(
 CATALOG_PATH      = Path("./deals_catalog.json").resolve()
 TRENDS_PATH       = Path("./simulated_trends.json").resolve()
 MENTIONS_PATH     = Path("./simulated_mentions.json").resolve()
-DEAL_DROP_CACHE   = Path("./deal_drop_cache.json").resolve()
+DEAL_DROP_CACHE   = Path("./logs/deal_drop_cache.json").resolve()
 PROMPTS_DIR       = Path("./prompts").resolve()
 REFERENCES_DIR    = Path("./prompts/references").resolve()
 
