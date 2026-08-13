@@ -1,5 +1,6 @@
 import json
 import logging
+
 from guardrails import guard_output
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
@@ -53,7 +54,7 @@ CASES = [
     },
     {
         "name": "blocked_reply_fixed",
-        "draft": f"Not something I can help with, but if you're looking for something to do — check out today's local deals on Groupon. https://www.groupon.com/",
+        "draft": "Not something I can help with, but if you're looking for something to do — check out today's local deals on Groupon. https://www.groupon.com/",
         "deal_info": None,
         "expected_action": "publish",
     },

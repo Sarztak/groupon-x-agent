@@ -1,5 +1,6 @@
 import logging
 from pathlib import Path
+
 from router import handle_mention
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")

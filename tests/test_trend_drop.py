@@ -1,9 +1,10 @@
 import json
 import logging
 from pathlib import Path
-from retrieval import retrieve_deal
-from marketing_copy import build_agent_input, generate_and_review
+
 from guardrails import guard_output
+from marketing_copy import build_agent_input, generate_and_review
+from retrieval import retrieve_deal
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
 log = logging.getLogger(__name__)
