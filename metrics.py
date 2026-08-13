@@ -50,30 +50,36 @@ MINS_PER_DEAL_DROP     = 30   # realistic drafting time with brand voice
 MINS_PER_TREND_HOOK    = 30
 
 # ── Estimated API cost per action — Sonnet 4.6 with prompt caching ───────────
-# System prompts are cached ($0.30/MTok); output tokens dominate ($15/MTok).
-# The $0.003 estimate for a single input_guard call on Sonnet 4.6:
-# - Input tokens: ~800 (guard prompt + tweet) — cached system prompt at $0.30/MTok = ~$0.00024, uncached at $3/MTok
-# - Output tokens: ~150 (JSON report) at $15/MTok = ~$0.00225
-# - Total ≈ $0.003 per call
-# Estimates reflect call count per route.
+# Actual system prompt sizes (bytes → tokens at ~4 chars/token):
+#   input_guard:   4,474 B → ~1,100 tok   output_guard:   6,659 B → ~1,650 tok
+#   orchestrator:  5,871 B → ~1,470 tok   conversational: 4,692 B → ~1,170 tok
+#   copywriter:   19,569 B → ~4,900 tok   reviewer:      21,676 B → ~5,400 tok
+#   retrieval:     1,576 B →   ~394 tok
+# Pricing: Sonnet 4.6 — $3/MTok input, $11.25/MTok cache-write, $15/MTok output.
+# Cache TTL is 5 min; at realistic prod cadence every call is a cold write — no warm reads assumed.
+# Measured (cold): input_guard $0.015, copywriter $0.061, reviewer $0.070, output_guard $0.022.
+# Orchestrator, retrieval, conversational estimated at ~$0.020 each (unmeasured, similar prompt size to input_guard).
 API_COST_BY_ROUTE = {
-    "blocked_reply":     0.003,   # hard_block: input_guard only (1 call)
-    "sensitive_block":   0.003,   # hard_block: input_guard only (1 call)
-    "off_topic":         0.006,   # input_guard + orchestrator (2 calls)
-    "acknowledge":       0.012,   # input_guard + orchestrator + conversational + output_guard (4 calls)
-    "positive_response": 0.012,   # same (4 calls)
-    "deal_request":      0.025,   # full pipeline: +retrieval +copywriter +reviewer +conversational (7 calls)
-    "deal_drop":         0.008,   # copywriter + reviewer + output_guard (3 calls; ~$0.001 on cache hit)
-    "trend_hook":        0.010,   # retrieval + copywriter + reviewer + output_guard (4 calls)
+    "blocked_reply":     0.015,   # input_guard only (1 call, measured)
+    "sensitive_block":   0.015,   # input_guard only (1 call, measured)
+    "off_topic":         0.035,   # input_guard + orchestrator (2 calls)
+    "acknowledge":       0.075,   # input_guard + orchestrator + conversational + output_guard (4 calls)
+    "positive_response": 0.075,   # same (4 calls)
+    "deal_request":      0.220,   # full pipeline: all 7 calls ($0.168 measured + ~$0.05 estimated for 3 CLI calls)
+    "deal_drop":         0.150,   # copywriter + reviewer + output_guard (3 calls, measured)
+    "trend_hook":        0.150,   # copywriter + reviewer + output_guard (3 calls, same as deal_drop)
 }
-API_COST_ESCALATED_USD = 0.006   # partial pipeline (avg 2-3 calls) before escalation
+API_COST_ESCALATED_USD = 0.035   # input_guard + orchestrator before escalation (2 calls)
 
 # ── Build & run cost ─────────────────────────────────────────────────────────
 ENGINEER_HOURLY_RATE  = 60              # USD/hr, junior-level engineer loaded rate
 BUILD_HOURS_RANGE     = (150, 200)      # estimated engineering hours to productionize
 BUILD_COST_LOW_USD    = BUILD_HOURS_RANGE[0] * ENGINEER_HOURLY_RATE
 BUILD_COST_HIGH_USD   = BUILD_HOURS_RANGE[1] * ENGINEER_HOURLY_RATE
-MONTHLY_RUN_COST_USD = 50       # estimated API spend at projection volume
+MONTHLY_RUN_COST_USD = 55       # estimated API spend at projection volume (cold-cache pricing, all Sonnet 4.6)
+# Derivation: ~17 deal_drops ($2.60) + ~13 trend_hooks ($1.95) + ~411 handled mentions
+# (144 deal_request × $0.22 + 123 acknowledge × $0.075 + 103 positive × $0.075 + 42 blocked/off_topic × $0.025 avg)
+# = $54 → rounded to $55
 
 
 def read_jsonl(path: str) -> list[dict]:
