@@ -1,8 +1,9 @@
-import os
-import subprocess
-import re
 import json
+import os
+import re
+import subprocess
 from pathlib import Path
+
 
 def load_file(path: Path) -> str:
     with open(path, "r", encoding="utf-8") as f:
@@ -10,24 +11,11 @@ def load_file(path: Path) -> str:
 
 
 SHARED_TOV = [
-    "messaging-house.md",
-    "tov/voice-pillars.md",
-    "tov/voice-dna.md",
-    "tov/audience-modulation.md",
-    "tov/pillar-translator.md",
-    "tov/funnel-application.md",
-    "tov/channels/organic-social.md",
-    "tov/channels/display-ads.md",
-    "tov/channels/crm.md",
-    "tov/channels/sem.md",
-    "tov/channels/seo.md",
-    "tov/channels/imp.md",
+    "voice_compact.md",
 ]
 
 WRITE_ONLY = [
-    "tov/key-messages.md",
     "agent-notes/named-patterns.md",
-    "_SOURCES.md",
 ]
 
 REVIEW_ONLY = [
@@ -51,36 +39,40 @@ def load_context(references_dir: Path, extra_files: list) -> str:
 
 def call_model(system: str, user: str, model: str, backend: str = "cli") -> str | None:
     if backend == "cli":
-        import sys, os, tempfile
+        import os
+        import sys
+        import tempfile
         if sys.platform == "win32":
             # cmd.exe has an 8191-char arg limit; PS 5.1 word-splits variables in native calls.
             # Fix: write prompts to temp files, invoke via a .ps1 script using array splatting
             # (@a) so each element is passed as a discrete arg with no word-splitting.
-            sys_f = tempfile.NamedTemporaryFile(mode='w', suffix='_sys.txt', delete=False, encoding='utf-8')
-            usr_f = tempfile.NamedTemporaryFile(mode='w', suffix='_usr.txt', delete=False, encoding='utf-8')
-            ps1_f = tempfile.NamedTemporaryFile(mode='w', suffix='.ps1',    delete=False, encoding='utf-8')
-            sys_f.write(system); sys_f.close()
-            usr_f.write(user);   usr_f.close()
-            ps1_f.write(
-                f"$u = Get-Content -Raw -LiteralPath '{usr_f.name}'\n"
-                f"$u = $u -replace '\"', '\\\"'\n"
-                f"$a = @('-p', $u, '--system-prompt-file', '{sys_f.name}', '--model', '{model}')\n"
-                f"& claude @a\n"
-            )
-            ps1_f.close()
+            with (
+                tempfile.NamedTemporaryFile(mode='w', suffix='_sys.txt', delete=False, encoding='utf-8') as sys_f,
+                tempfile.NamedTemporaryFile(mode='w', suffix='_usr.txt', delete=False, encoding='utf-8') as usr_f,
+                tempfile.NamedTemporaryFile(mode='w', suffix='.ps1',    delete=False, encoding='utf-8') as ps1_f,
+            ):
+                sys_f.write(system)
+                usr_f.write(user)
+                ps1_f.write(
+                    f"$u = Get-Content -Raw -LiteralPath '{usr_f.name}'\n"
+                    f"$u = $u -replace '\"', '\\\"'\n"
+                    f"$a = @('-p', $u, '--system-prompt-file', '{sys_f.name}', '--model', '{model}')\n"
+                    f"& claude @a\n"
+                )
+                sys_name, usr_name, ps1_name = sys_f.name, usr_f.name, ps1_f.name
             try:
                 result = subprocess.run(
-                    ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", ps1_f.name],
-                    capture_output=True, text=True, encoding='utf-8',
+                    ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", ps1_name],
+                    capture_output=True, text=True, encoding='utf-8', check=False,
                 )
             finally:
-                os.unlink(sys_f.name)
-                os.unlink(usr_f.name)
-                os.unlink(ps1_f.name)
+                os.unlink(sys_name)
+                os.unlink(usr_name)
+                os.unlink(ps1_name)
         else:
             result = subprocess.run(
                 ["claude", "-p", user, "--system-prompt", system, "--model", model],
-                capture_output=True, text=True,
+                capture_output=True, text=True, check=False,
             )
         return result.stdout.strip() if result.returncode == 0 else None
 
